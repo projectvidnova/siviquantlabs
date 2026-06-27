@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers — Software Engineer · Sivi Quant Labs</title>
+<meta name="description" content="Software Engineer build challenge at Sivi Quant Labs. Fold a 2D dieline into a 3D box in the browser. We hire on what you can build, not résumés.">
+<link rel="icon" href="/assets/mark.png">
+<meta property="og:title" content="Build Challenge: 2D Dieline → 3D Box — Sivi Quant Labs">
+<meta property="og:description" content="We don't hire on résumés. We hire on what you can build. Take-home Software Engineer challenge — 3 days.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://siviquantlabs.com/careers/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --accent:#8FB4E0;
+    --bg:#070d16;
+    --ink:#f4f7fb;
+    --body:#9aa7ba;
+    --soft:#8b99ad;
+    --muted:#5b6a7d;
+    --line:rgba(148,163,184,0.16);
+    --line-soft:rgba(148,163,184,0.10);
+    --mono:'JetBrains Mono',monospace;
+    --sans:'Jost',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    background-image:linear-gradient(rgba(148,163,184,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,0.05) 1px,transparent 1px);
+    background-size:62px 62px;
+    color:#e7ecf3;
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{text-decoration:none;color:inherit}
+  ::selection{background:rgba(143,180,224,0.28)}
+  .frame{position:fixed;inset:0;pointer-events:none;z-index:60;border:1px solid rgba(148,163,184,0.10);mix-blend-mode:screen}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+  .read{max-width:760px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(7,13,22,0.72);border-bottom:1px solid rgba(148,163,184,0.14)}
+  .nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand .mark{height:30px;width:auto;display:block;opacity:0.95}
+  .brand .word{height:13px;width:auto;display:block;opacity:0.92}
+  .back{font-family:var(--mono);font-size:12.5px;letter-spacing:0.04em;color:var(--soft);transition:color .2s;display:inline-flex;align-items:center;gap:8px}
+  .back:hover{color:var(--ink)}
+
+  /* eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;letter-spacing:0.18em;color:var(--accent)}
+  .eyebrow .tick{width:28px;height:1px;background:var(--accent)}
+
+  /* hero */
+  .hero{padding:78px 0 64px}
+  h1{font-family:var(--sans);font-weight:600;font-size:clamp(34px,5.2vw,64px);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);margin:28px 0 0}
+  h1 .arrow{color:var(--accent);font-weight:500}
+  .lead{margin-top:26px;font-size:clamp(18px,2.3vw,22px);line-height:1.5;color:#cdd6e3;font-weight:500;max-width:640px}
+  .hero p.body{margin-top:20px;font-size:16.5px;line-height:1.68;color:var(--body);max-width:600px}
+  .note{margin-top:24px;font-style:italic;font-size:15px;color:var(--soft)}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:38px}
+  .btn{cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;letter-spacing:0.02em;padding:16px 26px;border:1px solid;transition:opacity .2s,background .2s,border-color .2s,color .2s}
+  .btn-primary{color:#07101c;background:#e7ecf3;border-color:#e7ecf3}
+  .btn-primary:hover{opacity:0.88}
+  .btn-ghost{color:#c4cfde;background:transparent;border-color:rgba(148,163,184,0.3)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--ink)}
+  .micro{margin-top:16px;font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--muted)}
+  .micro b{color:var(--soft);font-weight:500}
+
+  /* spec grid */
+  .spec{border:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);margin-top:54px}
+  .spec > div{padding:22px 22px;border-right:1px solid var(--line)}
+  .spec > div:last-child{border-right:none}
+  .spec dt{font-family:var(--mono);font-size:10.5px;letter-spacing:0.14em;color:var(--muted);margin-bottom:10px}
+  .spec dd{font-size:15px;line-height:1.4;color:var(--ink);font-weight:500}
+  .spec dd small{display:block;margin-top:5px;font-size:12px;color:var(--soft);font-weight:400}
+  .spec dd a{color:var(--accent)}
+
+  /* sections */
+  section.block{padding:60px 0;border-top:1px solid var(--line-soft)}
+  .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:0.16em;color:var(--accent);margin-bottom:18px}
+  h2{font-family:var(--sans);font-weight:600;font-size:clamp(26px,3.4vw,38px);letter-spacing:-0.015em;color:var(--ink);line-height:1.12}
+  .block p{font-size:16.5px;line-height:1.72;color:var(--body);margin-top:18px;max-width:680px}
+  .block p strong, .block li strong{color:#dbe3ef;font-weight:600}
+
+  /* steps */
+  .steps{margin-top:36px;border-top:1px solid var(--line)}
+  .step{display:flex;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
+  .step .num{flex:none;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(143,180,224,0.4);font-family:var(--mono);font-size:14px;color:var(--accent)}
+  .step h3{font-family:var(--sans);font-size:19px;font-weight:600;color:var(--ink);margin-bottom:8px;letter-spacing:-0.01em}
+  .step p{margin:0;font-size:15.5px;line-height:1.66;color:var(--soft);max-width:640px}
+  .step p a{color:var(--accent)}
+  .step code{font-family:var(--mono);font-size:13.5px;background:rgba(148,163,184,0.1);padding:1px 6px;color:#c4cfde}
+
+  /* deadline callout */
+  .deadline{display:flex;gap:20px;align-items:flex-start;margin-top:40px;padding:26px 28px;background:rgba(143,180,224,0.07);border:1px solid rgba(143,180,224,0.3)}
+  .deadline .clock{font-size:26px;line-height:1}
+  .deadline .t{font-family:var(--mono);font-size:11.5px;letter-spacing:0.14em;color:var(--accent);margin-bottom:9px}
+  .deadline p{margin:0;font-size:16px;line-height:1.62;color:#dbe3ef}
+  .deadline a{color:var(--accent)}
+
+  /* final cta band */
+  .band{border-top:1px solid var(--line);background:radial-gradient(80% 130% at 50% 0%,rgba(143,180,224,0.08),transparent 62%);text-align:center;padding:76px 0}
+  .band h2{margin-bottom:14px}
+  .band p{margin:0 auto;color:var(--soft)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line-soft)}
+  .foot{padding:26px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .foot .brand .mark{height:22px}
+  .foot .brand .word{height:10px;opacity:0.7}
+  .foot span{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:#46535f}
+
+  @media (max-width:880px){
+    .spec{grid-template-columns:1fr 1fr}
+    .spec > div{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .spec > div:nth-child(2n){border-right:none}
+  }
+  @media (max-width:640px){
+    .wrap{padding-left:20px;padding-right:20px}
+    .hero{padding:48px 0 52px}
+    section.block{padding:48px 0}
+    .brand .word{display:none}
+    .spec{grid-template-columns:1fr}
+    .spec > div{border-right:none !important}
+    .step{gap:16px}
+    .step .num{width:38px;height:38px;font-size:13px}
+    .btn{width:100%;justify-content:center}
+    .cta-row{gap:12px}
+    .band{padding:60px 0}
+  }
+</style>
+</head>
+<body>
+<div class="frame"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Sivi Quant Labs — home">
+      <img class="mark" src="/assets/mark.png" alt="Sivi Quant Labs mark">
+      <img class="word" src="/assets/wordmark.png" alt="SIVI QUANT LABS">
+    </a>
+    <a class="back" href="/">← Back to site</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="tick"></span> // CAREERS — WE’RE HIRING</span>
+    <h1>Build Challenge:<br>2D Dieline <span class="arrow">→</span> 3D Box</h1>
+    <p class="lead">We don’t hire on résumés. We hire on what you can build.</p>
+    <p class="body">Take a flat box-cutting layout, read it, and fold it into a closed 3D box in the browser — with the fold animating in front of you. Pick any frontend stack and any 3D library. Show us it works, and explain how you did it.</p>
+    <p class="note">Recent grads (2025–2026). Doer attitude required.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/challengezip/SiviQuantLabs_Build_Challenge.zip" download>Download the Challenge ↓</a>
+      <a class="btn btn-ghost" href="mailto:connect@siviquantlabs.com?subject=Build%20Challenge%20%E2%80%94%20Your%20Name">Submit by email</a>
+    </div>
+    <p class="micro">Includes the full brief + sample dieline. Submit your video + code to <b>connect@siviquantlabs.com</b><br>You have <b>3 days from download</b> to send it in.</p>
+
+    <!-- SPEC -->
+    <dl class="spec">
+      <div><dt>ROLE</dt><dd>Software Engineer</dd></div>
+      <div><dt>ELIGIBILITY</dt><dd>2025 &amp; 2026 grads<small>Earlier? Explain your availability</small></dd></div>
+      <div><dt>FORMAT</dt><dd>Take-home build challenge</dd></div>
+      <div><dt>TIME LIMIT</dt><dd>3 days from download</dd></div>
+      <div><dt>SUBMIT TO</dt><dd><a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- WHAT THIS IS -->
+<section class="block">
+  <div class="wrap read">
+    <div class="kicker">// WHAT THIS IS</div>
+    <h2>A real slice of the work we do.</h2>
+    <p>High-performance 3D, built from the math up. Everything you need is in the download: a full brief and a real sample dieline to build against. No take-home busywork — this is the actual kind of problem we solve.</p>
+  </div>
+</section>
+
+<!-- AFTER YOU DOWNLOAD -->
+<section class="block">
+  <div class="wrap read">
+    <div class="kicker">// AFTER YOU DOWNLOAD</div>
+    <h2>The path.</h2>
+    <p>The zip contains your <strong>brief (PDF)</strong> and a <strong>sample dieline</strong> (<code>.pdf</code> + <code>.png</code>). Here’s exactly what to do.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <div>
+          <h3>Read the brief</h3>
+          <p>Open <code>SiviQuantLabs_Build_Challenge.pdf</code> — it has the full spec, the dieline primer (cut vs. crease lines), and exactly what we grade.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <div>
+          <h3>Build it</h3>
+          <p>A web app that lets you upload the dieline, builds a 3D box from it, and <strong>folds it closed with a clearly visible animation</strong> — then lets you orbit and rotate it. Use the included <code>sample_dieline</code> files as your input. Any frontend framework, any 3D library (Three.js, Babylon.js, your call).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div>
+          <h3>Record ~60 seconds</h3>
+          <p>First 30 sec: demo the upload, the fold-closed, and the rotate. Next 30 sec: walk through your code structure and the fold logic. Talk over it — we want to hear how you think.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <div>
+          <h3>Push your code</h3>
+          <p>GitHub repo or a zip — somewhere we can open it.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">05</div>
+        <div>
+          <h3>Send it in</h3>
+          <p>Email your video + code link to <a href="mailto:connect@siviquantlabs.com?subject=Build%20Challenge%20%E2%80%94%20Your%20Name">connect@siviquantlabs.com</a>, subject line <code>Build Challenge — &lt;your name&gt;</code> — within 3 days of downloading.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="deadline">
+      <div class="clock">⏱</div>
+      <div>
+        <div class="t">TIME LIMIT — 3 DAYS</div>
+        <p>From the moment you download, the clock starts. You have <strong>3 days</strong> to send your video + GitHub link to <a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>. Working + explainable wins — we’re not grading polish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO CAN APPLY -->
+<section class="block">
+  <div class="wrap read">
+    <div class="kicker">// WHO CAN APPLY</div>
+    <h2>The degree isn’t the point.</h2>
+    <p>Open to <strong>2025 and 2026 graduates</strong>. If you graduated earlier and you’re available now, apply anyway — just tell us what you’ve been doing since.</p>
+    <p>We’re looking for someone who picks up a new library fast, builds the thing, and can explain it. Never touched 3D before and learned it for this? That’s exactly the signal we want.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="band">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center"><span class="tick"></span> // SHOW US WHAT YOU CAN BUILD <span class="tick"></span></span>
+    <h2 style="margin-top:22px">Ready? Start the clock.</h2>
+    <p style="max-width:520px">Download the brief, build the box, record the walkthrough, and send it in within 3 days.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary" href="/challengezip/SiviQuantLabs_Build_Challenge.zip" download>Download the Challenge ↓</a>
+    </div>
+    <p class="micro" style="text-align:center">Submit to <b>connect@siviquantlabs.com</b> · subject <b>Build Challenge — &lt;your name&gt;</b></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="/">
+      <img class="mark" src="/assets/mark.png" alt="">
+      <img class="word" src="/assets/wordmark.png" alt="SIVI QUANT LABS">
+    </a>
+    <span>© 2026 · SOVEREIGN AI · DEEP MATH · 3D SYSTEMS</span>
+  </div>
+</footer>
+
+</body>
+</html>
