@@ -117,6 +117,11 @@
   .foot .brand .word{height:10px;opacity:0.7}
   .foot span{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:#46535f}
 
+  /* toast for email-copy feedback */
+  #toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(14px);background:#0a1320;border:1px solid rgba(143,180,224,0.45);color:#e7ecf3;font-family:var(--mono);font-size:13px;letter-spacing:0.02em;padding:13px 20px;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;z-index:100;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+  #toast .ok{color:var(--accent);margin-right:9px}
+  #toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
   @media (max-width:880px){
     .spec{grid-template-columns:1fr 1fr}
     .spec > div{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -272,6 +277,42 @@
     <span>© 2026 · SOVEREIGN AI · DEEP MATH · 3D SYSTEMS</span>
   </div>
 </footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  function fallbackCopy(t){
+    try{
+      var ta=document.createElement('textarea');
+      ta.value=t; ta.setAttribute('readonly','');
+      ta.style.position='fixed'; ta.style.top='-1000px'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+    }catch(e){}
+  }
+  function copy(t){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).catch(function(){ fallbackCopy(t); });
+    } else { fallbackCopy(t); }
+  }
+  var toast=document.getElementById('toast'), timer;
+  function show(addr){
+    toast.innerHTML='<span class="ok">✓</span>'+addr+' copied to clipboard';
+    toast.classList.add('on');
+    clearTimeout(timer);
+    timer=setTimeout(function(){ toast.classList.remove('on'); },2800);
+  }
+  // Any mailto link: let the mail app open if one exists, and always copy + confirm.
+  document.addEventListener('click',function(e){
+    var a=e.target.closest ? e.target.closest('a[href^="mailto:"]') : null;
+    if(!a) return;
+    var addr=(a.getAttribute('href')||'').replace(/^mailto:/i,'').split('?')[0];
+    if(!addr) return;
+    copy(addr);
+    show(addr);
+  });
+})();
+</script>
 
 </body>
 </html>
