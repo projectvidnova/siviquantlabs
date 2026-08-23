@@ -185,6 +185,7 @@ header{
 .hero-copy{max-width:640px}
 .hero .lead{margin-top:var(--s3)}
 
+.stage-wrap{width:100%}
 .stage{
   position:relative;
   aspect-ratio:1/1;
@@ -194,8 +195,9 @@ header{
 .stage canvas{width:100%;height:100%;display:block;cursor:grab}
 .stage canvas:active{cursor:grabbing}
 .stage-cap{
-  position:absolute;left:0;bottom:0;
-  font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);
+  margin-top:var(--s2);
+  font-size:13.5px;line-height:1.5;color:var(--mid);
+  max-width:34ch;
 }
 
 /* ---------- client strip ------------------------------------------------ */
@@ -515,7 +517,7 @@ html.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transfor
 
 @media (max-width:980px){
   .hero{grid-template-columns:1fr;gap:var(--s4)}
-  .stage{max-width:400px;margin:0 auto}
+  .stage-wrap{max-width:400px;margin:0 auto}
   .roles{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr}
   .grid-3 > *{

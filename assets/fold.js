@@ -16,7 +16,7 @@
   var canvas = document.createElement('canvas');
   canvas.setAttribute('role', 'img');
   canvas.setAttribute('aria-label',
-    'A flat packaging dieline folding into a closed three-dimensional box. Drag to rotate.');
+    'A flat sheet folding up into a closed three-dimensional box, drawn live. Drag to rotate.');
   canvas.tabIndex = 0;
   stage.appendChild(canvas);
 
