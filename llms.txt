@@ -1,6 +1,6 @@
 # Sivi Quant Labs
 
-> Sivi Quant Labs is an AI, 3D visualization and cloud engineering company that
+> Sivi Quant Labs is an AI, 3D Visualization and Cloud engineering company that
 > builds private, self-hosted AI systems, real-time 3D that runs in the browser,
 > and cloud migrations, with every project tied to a measurable business return.
 
@@ -18,7 +18,7 @@ modernization of AI systems a client already runs. Deployed to the client's clou
 account, VPC, on-premise hardware, or the edge device itself, not to a shared
 third-party service.
 
-**Visualization and 3D.** Real-time, interactive 3D delivered in the browser:
+**Visualization & 3D.** Real-time, interactive 3D delivered in the browser:
 data visualization, product configurators, digital twins, and engineering
 viewers. Built with Three.js plus an in-house rendering core for the parts where
 a general-purpose library costs more than it returns.
@@ -64,8 +64,8 @@ connect@siviquantlabs.com.
 
 - [Home](https://siviquantlabs.com/): overview, engagement process, data
   sovereignty approach, and frequently asked questions.
-- [Services](https://siviquantlabs.com/services/): the full catalogue of fifteen
-  named offerings across AI (6), visualization and 3D (5), and cloud (4), each
+- [Services](https://siviquantlabs.com/services/): the full catalog of fifteen
+  named offerings across AI (6), Visualization & 3D (5), and Cloud (4), each
   with the deliverables a client receives.
 - [Careers](https://siviquantlabs.com/careers/): all three open roles and the
   build challenge download.

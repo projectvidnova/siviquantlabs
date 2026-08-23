@@ -1,7 +1,7 @@
 /* ==========================================================================
    Sivi Quant Labs, design system
    White background, near-black text. Hierarchy from size, weight and space
-   only. One typeface. No brand colour, no gradients, no shadows.
+   only. One typeface. No brand color, no gradients, no shadows.
    Spacing scale, base 8: 8 / 16 / 24 / 48 / 96.
    ========================================================================== */
 
@@ -268,7 +268,7 @@ header{
 /* ---------- contact / apply dialog -------------------------------------- */
 
 dialog.modal{
-  /* margin:auto is what centres a native dialog, and the global `*{margin:0}`
+  /* margin:auto is what centers a native dialog, and the global `*{margin:0}`
      reset above wipes it out. Put it back explicitly. */
   margin:auto;
   padding:0;border:1px solid var(--ink);border-radius:2px;

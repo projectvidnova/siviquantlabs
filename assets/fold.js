@@ -24,7 +24,7 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---- geometry ---------------------------------------------------------
-     Unit box, side s, base lying in the z = 0 plane centred on the origin.
+     Unit box, side s, base lying in the z = 0 plane centered on the origin.
      Four walls hinge on the four edges of the base; the lid hinges on the
      far edge of the +Y wall. `t` is the fold angle in radians: 0 is flat,
      PI/2 is closed.                                                        */
@@ -125,8 +125,8 @@
 
     var fl = faces(t);
 
-    // Auto-fit: centre on the model's bounding box and scale by its bounding
-    // radius. Both are measured before rotation, so the artwork stays centred
+    // Auto-fit: center on the model's bounding box and scale by its bounding
+    // radius. Both are measured before rotation, so the artwork stays centered
     // and framed at every fold angle without breathing as it spins.
     var lo = [Infinity, Infinity, Infinity], hi = [-Infinity, -Infinity, -Infinity];
     fl.forEach(function (f) {
