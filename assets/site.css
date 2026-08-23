@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Sivi Quant Labs — design system
+   Sivi Quant Labs, design system
    White background, near-black text. Hierarchy from size, weight and space
    only. One typeface. No brand colour, no gradients, no shadows.
    Spacing scale, base 8: 8 / 16 / 24 / 48 / 96.
@@ -159,17 +159,19 @@ header{
 .brand .word{height:11px;width:auto}
 
 .navlinks{display:flex;align-items:center;gap:var(--s3)}
-.navlinks a{
+/* :not(.btn) matters, a bare `.navlinks a` rule outranks `.btn-solid` on
+   specificity and would repaint the CTA's white label grey on black. */
+.navlinks a:not(.btn){
   font-size:14.5px;color:var(--mid);
   transition:color .15s ease;
 }
-.navlinks a:hover{color:var(--ink)}
+.navlinks a:not(.btn):hover{color:var(--ink)}
 .navlinks .btn{padding:10px 16px;font-size:13.5px}
 
 /* ---------- hero -------------------------------------------------------- */
 
 .hero{
-  /* padding-block only — .hero shares an element with .wrap, and the shorthand
+  /* padding-block only, .hero shares an element with .wrap, and the shorthand
      would wipe out .wrap's horizontal gutter. */
   padding-top:var(--s5);
   padding-bottom:var(--s5);
@@ -259,6 +261,76 @@ header{
 
 @media (max-width:860px){
   .offers{grid-template-columns:1fr;gap:0}
+}
+
+/* ---------- contact / apply dialog -------------------------------------- */
+
+dialog.modal{
+  /* margin:auto is what centres a native dialog, and the global `*{margin:0}`
+     reset above wipes it out. Put it back explicitly. */
+  margin:auto;
+  padding:0;border:1px solid var(--ink);border-radius:2px;
+  background:var(--bg);color:var(--ink);
+  width:min(560px,calc(100vw - 32px));
+  max-height:calc(100vh - 48px);
+  overflow:auto;
+}
+dialog.modal::backdrop{background:rgba(17,17,17,0.42)}
+.modal-inner{padding:var(--s3) var(--s4) var(--s3)}
+
+.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s3)}
+.modal-head h2{font-size:22px;max-width:none;letter-spacing:-0.025em}
+.modal-sub{color:var(--mid);font-size:14.5px;margin-top:8px;max-width:44ch}
+
+.modal-close{
+  flex:none;width:32px;height:32px;line-height:1;
+  border:1px solid var(--line);border-radius:2px;background:transparent;
+  color:var(--ink);font-size:18px;cursor:pointer;
+  transition:border-color .15s ease;
+}
+.modal-close:hover{border-color:var(--ink)}
+
+.field{margin-top:var(--s2)}
+.field label{
+  display:block;font-size:11.5px;font-weight:500;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--mid);margin-bottom:6px;
+}
+.field label .opt{text-transform:none;letter-spacing:0;font-size:12.5px}
+.field input,.field textarea,.field select{
+  width:100%;font-family:inherit;font-size:16px;color:var(--ink);
+  background:var(--bg);
+  border:1px solid var(--line);border-radius:2px;
+  padding:10px 13px;
+  transition:border-color .15s ease;
+}
+.field textarea{resize:vertical;min-height:84px;line-height:1.5}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;border-color:var(--ink);
+}
+.field input:user-invalid,.field textarea:user-invalid{border-color:var(--ink)}
+.field .err{display:none;margin-top:6px;font-size:13px;color:var(--ink)}
+.field.invalid .err{display:block}
+.field.invalid input,.field.invalid textarea{border-color:var(--ink)}
+
+/* honeypot: never shown to a person, catches naive bots */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* The apply form is taller than a short laptop viewport, so the dialog
+   scrolls internally and the actions stay pinned; Send is never out of reach. */
+.modal-actions{
+  display:flex;gap:var(--s2);align-items:center;flex-wrap:wrap;
+  position:sticky;bottom:0;
+  margin-top:var(--s3);
+  padding:var(--s2) 0 var(--s1);
+  background:var(--bg);
+  border-top:1px solid var(--line);
+}
+.modal-note{font-size:12.5px;color:var(--mid);margin-top:var(--s2);line-height:1.45}
+
+@media (max-width:560px){
+  .modal-inner{padding:var(--s3) var(--s3) var(--s3)}
+  .modal-head h2{font-size:21px}
+  .modal-actions .btn{width:100%}
 }
 
 /* ---------- generic grids ---------------------------------------------- */
@@ -432,7 +504,7 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0}
 
 /* ---------- scroll reveal ----------------------------------------------- */
 
-/* Hidden only once JS has confirmed it can reveal them again — without the
+/* Hidden only once JS has confirmed it can reveal them again, without the
    `js` class (no JavaScript) every .reveal stays visible. */
 html.js .reveal{opacity:0;transform:translateY(12px)}
 html.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}

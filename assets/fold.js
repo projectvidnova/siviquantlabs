@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Sivi Quant Labs — hero renderer
+   Sivi Quant Labs, hero renderer
    A flat dieline folding into a closed box. Canvas 2D, perspective projection
    and hidden-surface ordering written from first principles. No dependencies.
 
-   Cut edges draw solid; crease (fold) edges draw dashed — the same convention
+   Cut edges draw solid; crease (fold) edges draw dashed, the same convention
    the printing industry uses on a real dieline.
    ========================================================================== */
 
@@ -39,7 +39,7 @@
     var c2 = Math.cos(2 * t), s2 = Math.sin(2 * t);
 
     return [
-      // base — every edge is a crease
+      // base, every edge is a crease
       { p: [[-h,-h,0], [h,-h,0], [h,h,0], [-h,h,0]], crease: [0,1,2,3] },
 
       // +Y wall (hinge on edge 0)

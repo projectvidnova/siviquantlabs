@@ -14,7 +14,7 @@
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-    } catch (e) { /* clipboard unavailable — the mailto link still works */ }
+    } catch (e) { /* clipboard unavailable, the mailto link still works */ }
   }
 
   function copy(text) {
@@ -39,6 +39,8 @@
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
     if (!a) return;
+    // Triggers that open the contact dialog handle their own click.
+    if (a.hasAttribute('data-form')) return;
     var addr = (a.getAttribute('href') || '').replace(/^mailto:/i, '').split('?')[0];
     if (!addr) return;
     copy(decodeURIComponent(addr));

@@ -1,4 +1,4 @@
-# Sivi Quant Labs — https://siviquantlabs.com
+# Sivi Quant Labs, https://siviquantlabs.com
 # Everything here is public. Search engines and AI assistants are both welcome.
 
 # ---- Search engines ----
@@ -24,7 +24,7 @@ Allow: /
 # These are the agents behind ChatGPT, Claude, Gemini, Perplexity and Copilot
 # answers. Allowing them is what makes this site quotable in an AI answer.
 
-# OpenAI — training, search index, and live user-triggered fetches
+# OpenAI, training, search index, and live user-triggered fetches
 User-agent: GPTBot
 Allow: /
 
@@ -34,7 +34,7 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-# Anthropic — Claude
+# Anthropic, Claude
 User-agent: ClaudeBot
 Allow: /
 
@@ -47,7 +47,7 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-# Google — Gemini and AI Overviews (separate from Googlebot)
+# Google, Gemini and AI Overviews (separate from Googlebot)
 User-agent: Google-Extended
 Allow: /
 
@@ -77,7 +77,7 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-# Common Crawl — the corpus many models are trained from
+# Common Crawl, the corpus many models are trained from
 User-agent: CCBot
 Allow: /
 

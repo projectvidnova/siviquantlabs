@@ -2,12 +2,12 @@
 
 > Sivi Quant Labs is an AI, 3D visualization and cloud engineering company that
 > builds private, self-hosted AI systems, real-time 3D that runs in the browser,
-> and cloud migrations — with every project tied to a measurable business return.
+> and cloud migrations, with every project tied to a measurable business return.
 
 - **Website:** https://siviquantlabs.com
 - **Contact:** connect@siviquantlabs.com
 - **Structure:** Remote-first
-- **Industries served:** Any — the company is deliberately not tied to one vertical
+- **Industries served:** Any. The company is deliberately not tied to one vertical
 - **Current clients:** Technumen, Styliamo, Red Coral, byteXL
 
 ## What the company does
@@ -15,7 +15,7 @@
 **Artificial Intelligence.** Private, cost-efficient AI built to run inside the
 client's own environment. Small language models (SLMs), AI on edge devices, and
 modernization of AI systems a client already runs. Deployed to the client's cloud
-account, VPC, on-premise hardware, or the edge device itself — not to a shared
+account, VPC, on-premise hardware, or the edge device itself, not to a shared
 third-party service.
 
 **Visualization and 3D.** Real-time, interactive 3D delivered in the browser:
@@ -51,12 +51,12 @@ budget and timeline, rather than defaulting to a full rebuild.
 Three open roles, all fully remote, applicants based in India. Applications go to
 connect@siviquantlabs.com.
 
-- **Junior Developer** — hired via a take-home build challenge: read a flat 2D
+- **Junior Developer**: hired via a take-home build challenge: read a flat 2D
   packaging dieline and fold it into a closed 3D box in the browser, with the
   fold animated. 3 days from download. Open to 2025 and 2026 graduates.
-- **Junior Designer** — portfolio review, no challenge. Minimal, functional
+- **Junior Designer**: portfolio review, no challenge. Minimal, functional
   design; making dense technical things feel obvious.
-- **Senior Developer** — 4+ years shipping production software. Depth in at least
+- **Senior Developer**: 4+ years shipping production software. Depth in at least
   one of: model training / SLMs and edge inference; real-time 3D (Three.js,
   WebGL, rendering math); or cloud architecture and cost optimization.
 
@@ -64,7 +64,7 @@ connect@siviquantlabs.com.
 
 - [Home](https://siviquantlabs.com/): overview, engagement process, data
   sovereignty approach, and frequently asked questions.
-- [Services](https://siviquantlabs.com/services/): the full catalogue — fifteen
+- [Services](https://siviquantlabs.com/services/): the full catalogue of fifteen
   named offerings across AI (6), visualization and 3D (5), and cloud (4), each
   with the deliverables a client receives.
 - [Careers](https://siviquantlabs.com/careers/): all three open roles and the
