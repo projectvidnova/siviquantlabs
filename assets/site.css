@@ -155,7 +155,9 @@ header{
 }
 .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:var(--s3)}
 .brand{display:flex;align-items:center;gap:12px;flex:none}
-.brand .mark{height:26px;width:auto}
+/* The deck's mark has thinner strokes than the old trace, so it carries a
+   little more height to sit level with the wordmark. */
+.brand .mark{height:30px;width:auto}
 .brand .word{height:11px;width:auto}
 
 .navlinks{display:flex;align-items:center;gap:var(--s3)}
