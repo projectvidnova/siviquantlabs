@@ -1,0 +1,475 @@
+/* ==========================================================================
+   Sivi Quant Labs — design system
+   White background, near-black text. Hierarchy from size, weight and space
+   only. One typeface. No brand colour, no gradients, no shadows.
+   Spacing scale, base 8: 8 / 16 / 24 / 48 / 96.
+   ========================================================================== */
+
+:root{
+  --bg:#FFFFFF;
+  --ink:#111111;
+  --mid:#666666;
+  --line:#E5E5E5;
+
+  --s1:8px; --s2:16px; --s3:24px; --s4:48px; --s5:96px;
+
+  --sans:'Inter','Inter var',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+  --wrap:1120px;   /* outer container */
+  --read:720px;    /* measure for running text */
+  --gutter:32px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+::selection{background:var(--ink);color:#fff}
+
+img,canvas,svg{max-width:100%;display:block}
+
+a{color:inherit;text-decoration:none}
+
+/* Visible, monochrome focus ring for keyboard users */
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--ink);color:#fff;padding:var(--s2) var(--s3);font-size:14px;
+}
+.skip:focus{left:0}
+
+/* ---------- layout ------------------------------------------------------ */
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.read{max-width:var(--read)}
+
+.section{padding:var(--s5) 0;border-top:1px solid var(--line)}
+.section--flush{border-top:none}
+
+/* ---------- type -------------------------------------------------------- */
+
+h1,h2,h3,h4{font-weight:600;letter-spacing:-0.02em;line-height:1.12}
+
+h1{
+  font-size:clamp(38px,5.6vw,64px);
+  letter-spacing:-0.035em;
+  line-height:1.04;
+  max-width:15ch;
+}
+
+h2{font-size:clamp(27px,3.4vw,40px);letter-spacing:-0.03em;max-width:20ch}
+
+h3{font-size:20px;letter-spacing:-0.015em;line-height:1.3}
+
+h4{font-size:16px;letter-spacing:-0.01em}
+
+p{max-width:var(--read)}
+
+.lead{font-size:clamp(17px,2vw,20px);line-height:1.55;color:var(--ink);max-width:640px}
+
+.body{color:var(--mid);font-size:17px;line-height:1.65}
+
+.caption{font-size:13.5px;line-height:1.55;color:var(--mid)}
+
+strong,b{font-weight:600;color:var(--ink)}
+
+/* Inline link inside running text */
+.link{
+  color:var(--ink);
+  border-bottom:1px solid var(--line);
+  transition:border-color .15s ease;
+}
+.link:hover{border-bottom-color:var(--ink)}
+
+code{
+  font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;
+  font-size:0.88em;
+  background:#F6F6F6;
+  padding:2px 5px;
+  color:var(--ink);
+}
+
+/* ---------- section label (tiny cube glyph + uppercase caption) --------- */
+
+.label{
+  display:flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--mid);
+  margin-bottom:var(--s3);
+}
+.label .cube{width:14px;height:14px;flex:none;opacity:.75}
+
+/* ---------- buttons ----------------------------------------------------- */
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:inherit;font-size:15px;font-weight:500;letter-spacing:-0.005em;
+  line-height:1;
+  padding:15px 24px;
+  border:1px solid var(--ink);
+  border-radius:2px;
+  cursor:pointer;
+  transition:background-color .16s ease,color .16s ease,border-color .16s ease;
+  white-space:nowrap;
+}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:#000;border-color:#000}
+
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+
+.btn-row{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s4)}
+
+/* Text link that behaves like a CTA */
+.arrow-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:500;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:2px;
+}
+.arrow-link span{transition:transform .18s ease}
+.arrow-link:hover span{transform:translateX(4px)}
+
+/* ---------- header ------------------------------------------------------ */
+
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:var(--s3)}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand .mark{height:26px;width:auto}
+.brand .word{height:11px;width:auto}
+
+.navlinks{display:flex;align-items:center;gap:var(--s3)}
+.navlinks a{
+  font-size:14.5px;color:var(--mid);
+  transition:color .15s ease;
+}
+.navlinks a:hover{color:var(--ink)}
+.navlinks .btn{padding:10px 16px;font-size:13.5px}
+
+/* ---------- hero -------------------------------------------------------- */
+
+.hero{
+  /* padding-block only — .hero shares an element with .wrap, and the shorthand
+     would wipe out .wrap's horizontal gutter. */
+  padding-top:var(--s5);
+  padding-bottom:var(--s5);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,460px);
+  gap:var(--s4);
+  align-items:center;
+}
+.hero-copy{max-width:640px}
+.hero .lead{margin-top:var(--s3)}
+
+.stage{
+  position:relative;
+  aspect-ratio:1/1;
+  width:100%;
+  touch-action:pan-y;
+}
+.stage canvas{width:100%;height:100%;display:block;cursor:grab}
+.stage canvas:active{cursor:grabbing}
+.stage-cap{
+  position:absolute;left:0;bottom:0;
+  font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);
+}
+
+/* ---------- client strip ------------------------------------------------ */
+
+/* Logos render as flat #111 silhouettes so four clashing brand palettes
+   (teal, black, rust, blue/orange) don't break the monochrome rule. Each one
+   gets its own height because stacked lockups and wordmarks need different
+   sizing to read at the same optical weight. */
+.clients{padding:var(--s4) 0;border-top:1px solid var(--line)}
+.clients .label{margin-bottom:var(--s3)}
+.client-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  align-items:center;
+  justify-items:start;
+  gap:var(--s3);
+  margin:var(--s3) 0;
+}
+.client-row img{
+  width:auto;
+  opacity:.62;
+  transition:opacity .18s ease;
+}
+.client-row img:hover{opacity:1}
+.client-row img[data-c="technumen"]{height:50px}
+.client-row img[data-c="styliamo"]{height:27px}
+.client-row img[data-c="redcoral"]{height:40px}
+.client-row img[data-c="bytexl"]{height:26px}
+
+@media (max-width:720px){
+  .client-row{grid-template-columns:repeat(2,1fr);gap:var(--s3) var(--s2);justify-items:center}
+  .client-row img[data-c="technumen"]{height:40px}
+  .client-row img[data-c="styliamo"]{height:23px}
+  .client-row img[data-c="redcoral"]{height:34px}
+  .client-row img[data-c="bytexl"]{height:22px}
+}
+
+/* ---------- offerings --------------------------------------------------- */
+
+.offer-intro{margin-top:var(--s2);max-width:var(--read)}
+
+.offers{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 var(--s5);
+  margin-top:var(--s4);
+}
+.offer{
+  padding:var(--s3) 0;
+  border-top:1px solid var(--line);
+}
+.offer h3{font-size:18px;margin-bottom:10px}
+.offer p{font-size:16px;color:var(--mid);max-width:46ch}
+.offer .deliver{
+  margin-top:12px;font-size:14.5px;color:var(--mid);
+}
+.offer .deliver b{
+  display:block;font-size:11.5px;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--ink);margin-bottom:4px;
+}
+
+/* Area heading sits above its own grid of offerings */
+.area{padding:var(--s5) 0;border-top:1px solid var(--line)}
+.area-lead{margin-top:var(--s2)}
+
+@media (max-width:860px){
+  .offers{grid-template-columns:1fr;gap:0}
+}
+
+/* ---------- generic grids ---------------------------------------------- */
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  margin-top:var(--s4);
+}
+.grid-3 > *{
+  padding:0 var(--s3) 0 0;
+  border-right:1px solid var(--line);
+}
+.grid-3 > *:last-child{border-right:none;padding-right:0}
+.grid-3 > * + *{padding-left:var(--s3)}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--s4) var(--s5);
+  margin-top:var(--s4);
+}
+
+.stack > * + *{margin-top:var(--s2)}
+
+/* Service / principle entry */
+.entry h3{margin-bottom:var(--s2)}
+.entry p{color:var(--mid);max-width:42ch}
+.entry .num{
+  display:block;font-size:12px;font-weight:500;letter-spacing:0.12em;
+  color:var(--mid);margin-bottom:var(--s2);
+}
+
+/* ---------- numbered steps --------------------------------------------- */
+
+.steps{margin-top:var(--s4);counter-reset:step}
+.step{
+  display:grid;grid-template-columns:56px 1fr;gap:var(--s3);
+  padding:var(--s3) 0;
+  border-top:1px solid var(--line);
+}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .n{
+  font-size:13px;font-weight:500;color:var(--mid);
+  letter-spacing:0.06em;padding-top:3px;
+}
+.step h3{margin-bottom:6px;font-size:18px}
+.step p{color:var(--mid);font-size:16px}
+
+/* ---------- definition table (role spec) -------------------------------- */
+
+.spec{margin-top:var(--s4);border-top:1px solid var(--line)}
+.spec > div{
+  display:grid;grid-template-columns:200px 1fr;gap:var(--s3);
+  padding:var(--s2) 0;
+  border-bottom:1px solid var(--line);
+}
+.spec dt{
+  font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--mid);padding-top:4px;
+}
+.spec dd{font-size:16px}
+.spec dd small{display:block;color:var(--mid);font-size:14px;margin-top:3px}
+
+/* ---------- bullet list ------------------------------------------------- */
+
+.list{margin-top:var(--s3);list-style:none;max-width:var(--read)}
+.list li{
+  position:relative;padding-left:22px;color:var(--mid);
+  font-size:16.5px;line-height:1.6;
+}
+.list li + li{margin-top:12px}
+.list li::before{
+  content:'';position:absolute;left:0;top:11px;
+  width:6px;height:6px;border:1px solid var(--ink);
+}
+
+/* ---------- role cards (careers index) ---------------------------------- */
+
+.roles{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--s2);margin-top:var(--s4);
+}
+.role-card{
+  display:flex;flex-direction:column;gap:var(--s1);
+  padding:var(--s3);
+  border:1px solid var(--line);
+  border-radius:2px;
+  transition:border-color .16s ease;
+}
+.role-card:hover{border-color:var(--ink)}
+.role-card .r-kind{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.role-card h2{font-size:19px;letter-spacing:-0.015em;line-height:1.3;max-width:none}
+.role-card p{font-size:15px;color:var(--mid);line-height:1.55;flex:1}
+.role-card .go{font-size:14px;font-weight:500;display:inline-flex;gap:8px;align-items:center;margin-top:var(--s1)}
+
+/* ---------- role section ------------------------------------------------ */
+
+.role{padding:var(--s5) 0;border-top:1px solid var(--line)}
+.role-head{display:flex;align-items:baseline;gap:var(--s2);flex-wrap:wrap;margin-bottom:var(--s2)}
+.role-head .r-index{font-size:13px;color:var(--mid);letter-spacing:0.1em}
+
+.subhead{margin-top:var(--s5);margin-bottom:var(--s2);font-size:16px;font-weight:600}
+.subhead:first-of-type{margin-top:var(--s4)}
+
+/* ---------- callout ----------------------------------------------------- */
+
+.callout{
+  margin-top:var(--s4);
+  padding:var(--s3);
+  border:1px solid var(--ink);
+  border-radius:2px;
+  display:grid;grid-template-columns:auto 1fr;gap:var(--s3);align-items:start;
+}
+.callout .cube{width:22px;height:22px;flex:none;margin-top:2px}
+.callout .t{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px}
+.callout p{font-size:16px;color:var(--mid)}
+
+/* ---------- FAQ --------------------------------------------------------- */
+
+.faq{border-top:1px solid var(--line);max-width:var(--read)}
+.faq + .subhead{margin-top:var(--s4)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;
+  padding:var(--s3) 40px var(--s3) 0;
+  position:relative;
+}
+/* The question is a real heading for outline and SEO purposes, but it should
+   read as plain summary text. */
+.faq summary .q{
+  display:inline;font-size:17px;font-weight:500;
+  letter-spacing:-0.01em;line-height:1.45;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:'';position:absolute;right:8px;top:50%;
+  width:10px;height:10px;margin-top:-6px;
+  border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  transform:rotate(45deg);transition:transform .2s ease;
+}
+.faq details[open] summary::after{transform:rotate(-135deg);margin-top:-2px}
+.faq .a{padding:0 0 var(--s3);color:var(--mid);font-size:16px}
+
+/* ---------- closing band ------------------------------------------------ */
+
+.band{padding:var(--s5) 0;border-top:1px solid var(--line)}
+.band h2{margin-bottom:var(--s3)}
+
+/* ---------- footer ------------------------------------------------------ */
+
+footer{border-top:1px solid var(--line);padding:var(--s4) 0}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);flex-wrap:wrap}
+.foot-links{display:flex;gap:var(--s3);flex-wrap:wrap}
+.foot-links a,.foot .caption{font-size:13.5px;color:var(--mid)}
+.foot-links a{transition:color .15s ease}
+.foot-links a:hover{color:var(--ink)}
+
+/* ---------- toast (email copied) ---------------------------------------- */
+
+#toast{
+  position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);
+  background:var(--ink);color:#fff;
+  padding:12px 18px;border-radius:2px;
+  font-size:14px;
+  opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;
+  z-index:150;max-width:calc(100vw - 32px);
+}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- scroll reveal ----------------------------------------------- */
+
+/* Hidden only once JS has confirmed it can reveal them again — without the
+   `js` class (no JavaScript) every .reveal stays visible. */
+html.js .reveal{opacity:0;transform:translateY(12px)}
+html.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
+
+/* ---------- responsive -------------------------------------------------- */
+
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;gap:var(--s4)}
+  .stage{max-width:400px;margin:0 auto}
+  .roles{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .grid-3 > *{
+    border-right:none;border-top:1px solid var(--line);
+    padding:var(--s3) 0 0 0 !important;
+  }
+  .grid-3 > *:first-child{border-top:none;padding-top:0 !important}
+  .grid-2{grid-template-columns:1fr;gap:var(--s3)}
+}
+
+@media (max-width:720px){
+  :root{--gutter:20px;--s5:64px}
+  .navlinks .desktop-only{display:none}
+  .spec > div{grid-template-columns:1fr;gap:4px}
+  .spec dt{padding-top:0}
+  .step{grid-template-columns:36px 1fr;gap:var(--s2)}
+  .btn-row .btn{width:100%}
+  .foot{flex-direction:column;align-items:flex-start;gap:var(--s2)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  html.js .reveal{opacity:1;transform:none}
+}
+
+@media print{
+  header,#toast,.stage{display:none}
+  body{font-size:12pt}
+  .section,.role{border-top:1px solid #ccc;padding:16pt 0}
+}

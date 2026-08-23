@@ -1,0 +1,95 @@
+# Sivi Quant Labs — https://siviquantlabs.com
+# Everything here is public. Search engines and AI assistants are both welcome.
+
+# ---- Search engines ----
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# ---- AI answer engines and their live-retrieval fetchers ----
+# These are the agents behind ChatGPT, Claude, Gemini, Perplexity and Copilot
+# answers. Allowing them is what makes this site quotable in an AI answer.
+
+# OpenAI — training, search index, and live user-triggered fetches
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google — Gemini and AI Overviews (separate from Googlebot)
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Copilot
+User-agent: Bingbot-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Common Crawl — the corpus many models are trained from
+User-agent: CCBot
+Allow: /
+
+# You.com, Mistral and other retrieval agents
+User-agent: YouBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# ---- Everyone else ----
+User-agent: *
+Allow: /
+
+Sitemap: https://siviquantlabs.com/sitemap.xml
