@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css?v=20260927">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -202,18 +202,31 @@
 <main id="main">
 
 <!-- ================= HERO ================= -->
-<section class="wrap" style="padding-top:var(--s5);padding-bottom:var(--s4)">
-  <div class="label">
+<section class="wrap p-top">
+  <div>
+    <div class="label">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
       Products
     </div>
-  <h1>Products.</h1>
-  <p class="lead" style="margin-top:var(--s3)">Six products for work where a mistake is expensive: releasing sensitive documents, shipping code, and keeping buildings safe.</p>
-  <p class="body offer-intro">Each one keeps a full audit trail, and each is built to be deployed where your data needs to stay. Pick one below, or tell us the problem and we'll tell you which fits.</p>
-  <div class="btn-row">
-    <a class="btn btn-solid" href="#documents">Browse products</a>
-    <a class="btn btn-ghost" href="mailto:connect@siviquantlabs.com?subject=Product%20enquiry" data-form="general" data-subject="Product enquiry" data-title="Ask about our products." data-sub="Tell us which product you are looking at and what you need it to do. We reply from a person.">Talk to us</a>
+    <h1>Software for work where mistakes are expensive.</h1>
+    <p class="lead">Six products for releasing sensitive documents, shipping code, and keeping buildings safe.</p>
+    <p class="body">Each one keeps a full audit trail and is built to be deployed where your data needs to stay. Pick one, or tell us the problem and we'll tell you which fits.</p>
+    <div class="btn-row">
+      <a class="btn btn-solid" href="#documents">Browse products</a>
+      <a class="btn btn-ghost" href="mailto:connect@siviquantlabs.com?subject=Product%20enquiry" data-form="general" data-subject="Product enquiry" data-title="Ask about our products." data-sub="Tell us which product you are looking at and what you need it to do. We reply from a person.">Talk to us</a>
+    </div>
   </div>
+  <nav class="p-index" aria-label="All products">
+    <span class="grp">Documents &amp; records</span>
+    <a href="docket/"><b>Docket</b><span class="k">Document platform</span><span class="ar" aria-hidden="true">&rarr;</span></a>
+    <a href="folio/"><b>Folio</b><span class="k">Document viewer</span><span class="ar" aria-hidden="true">&rarr;</span></a>
+    <a href="sweep/"><b>Sweep</b><span class="k">Document hygiene scanner</span><span class="ar" aria-hidden="true">&rarr;</span></a>
+    <span class="grp">Software engineering</span>
+    <a href="ireview/"><b>iReview</b><span class="k">Code review</span><span class="ar" aria-hidden="true">&rarr;</span></a>
+    <a href="sonetx/"><b>SonetX</b><span class="k">AI engineering platform</span><span class="ar" aria-hidden="true">&rarr;</span></a>
+    <span class="grp">Public safety</span>
+    <a href="marshal/"><b>Marshal</b><span class="k">Fire prevention inspection</span><span class="ar" aria-hidden="true">&rarr;</span></a>
+  </nav>
 </section>
 
 <!-- ================= DOCUMENTS & RECORDS ================= -->
@@ -227,10 +240,12 @@
     <p class="body reveal">Redact and release with Docket, embed a secure viewer in your own application with Folio, and check every file on its way out with Sweep.</p>
     <div class="p-grid">
       <a class="p-card reveal" href="docket/">
-        <picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/docket-still.svg">
-          <img src="../assets/products/docket.svg" alt="" width="560" height="420" loading="lazy">
-        </picture>
+        <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/docket-still.svg">
+            <img src="../assets/products/docket-card.svg" alt="" width="560" height="420" loading="lazy">
+          </picture>
+        </div>
         <div class="p-body">
           <span class="p-kind">Document platform</span>
           <h3>Docket</h3>
@@ -239,10 +254,12 @@
         </div>
       </a>
       <a class="p-card reveal" href="folio/">
-        <picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/folio-still.svg">
-          <img src="../assets/products/folio.svg" alt="" width="560" height="420" loading="lazy">
-        </picture>
+        <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/folio-still.svg">
+            <img src="../assets/products/folio-card.svg" alt="" width="560" height="420" loading="lazy">
+          </picture>
+        </div>
         <div class="p-body">
           <span class="p-kind">Document viewer</span>
           <h3>Folio</h3>
@@ -251,10 +268,12 @@
         </div>
       </a>
       <a class="p-card reveal" href="sweep/">
-        <picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/sweep-still.svg">
-          <img src="../assets/products/sweep.svg" alt="" width="560" height="420" loading="lazy">
-        </picture>
+        <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/sweep-still.svg">
+            <img src="../assets/products/sweep-card.svg" alt="" width="560" height="420" loading="lazy">
+          </picture>
+        </div>
         <div class="p-body">
           <span class="p-kind">Document hygiene scanner</span>
           <h3>Sweep</h3>
@@ -277,10 +296,12 @@
     <p class="body reveal">Review every pull request with iReview. Plan, build and test from the terminal with SonetX.</p>
     <div class="p-grid p-grid--2">
       <a class="p-card reveal" href="ireview/">
-        <picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/ireview-still.svg">
-          <img src="../assets/products/ireview.svg" alt="" width="560" height="420" loading="lazy">
-        </picture>
+        <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/ireview-still.svg">
+            <img src="../assets/products/ireview-card.svg" alt="" width="560" height="420" loading="lazy">
+          </picture>
+        </div>
         <div class="p-body">
           <span class="p-kind">Code review</span>
           <h3>iReview</h3>
@@ -289,10 +310,12 @@
         </div>
       </a>
       <a class="p-card reveal" href="sonetx/">
-        <picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/sonetx-still.svg">
-          <img src="../assets/products/sonetx.svg" alt="" width="560" height="420" loading="lazy">
-        </picture>
+        <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/sonetx-still.svg">
+            <img src="../assets/products/sonetx-card.svg" alt="" width="560" height="420" loading="lazy">
+          </picture>
+        </div>
         <div class="p-body">
           <span class="p-kind">AI engineering platform</span>
           <h3>SonetX</h3>
@@ -315,10 +338,12 @@
     <p class="body reveal">Classify, schedule, inspect and certify with Marshal.</p>
     <div class="p-grid p-grid--1">
       <a class="p-card reveal" href="marshal/">
-        <picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/marshal-still.svg">
-          <img src="../assets/products/marshal.svg" alt="" width="560" height="420" loading="lazy">
-        </picture>
+        <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../assets/products/marshal-still.svg">
+            <img src="../assets/products/marshal-card.svg" alt="" width="560" height="420" loading="lazy">
+          </picture>
+        </div>
         <div class="p-body">
           <span class="p-kind">Fire prevention inspection</span>
           <h3>Marshal</h3>
@@ -371,7 +396,7 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="../assets/site.js" defer></script>
-<script src="../assets/forms.js" defer></script>
+<script src="../assets/site.js?v=20260927" defer></script>
+<script src="../assets/forms.js?v=20260927" defer></script>
 </body>
 </html>

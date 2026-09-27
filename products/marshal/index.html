@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css?v=20260927">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -124,9 +124,12 @@
   <div>
     <div class="label crumb">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
-      <a href="../">Products</a><span>/</span><span>Fire prevention inspection</span>
+      <a href="../">Products</a><span>/</span><a href="../#public-safety">Public safety</a>
     </div>
-    <p style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:var(--s2)">Marshal</p>
+    <div class="p-lockup">
+      <span class="tile" aria-hidden="true">M</span>
+      <div><b>Marshal</b><span>Fire prevention inspection</span></div>
+    </div>
     <h1>Inspections scheduled by code, not by memory.</h1>
     <p class="lead">Marshal tracks every property, classifies its hazard level and schedules inspections at the intervals the fire code requires. Inspectors capture findings in the field, even offline, and every violation is tracked from citation to correction.</p>
     <p class="body">Built for municipal and state fire prevention bureaus still working from spreadsheets and paper.</p>
@@ -136,10 +139,12 @@
     </div>
   </div>
   <figure class="p-figure">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/marshal-still.svg">
-      <img src="../../assets/products/marshal.svg" alt="Properties are classified and scheduled. In the field, offline, the AI flags a blocked exit, the inspector confirms it, and the violation is tracked through to a filed certificate." width="560" height="420">
-    </picture>
+    <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/marshal-still.svg">
+            <img src="../../assets/products/marshal.svg" alt="Properties are classified and scheduled. In the field, offline, the AI flags a blocked exit, the inspector confirms it, and the violation is tracked through to a filed certificate." width="560" height="420">
+          </picture>
+        </div>
     <figcaption>Properties are classified and scheduled. In the field, offline, the AI flags a blocked exit, the inspector confirms it, and the violation is tracked through to a filed certificate.</figcaption>
   </figure>
 </section>
@@ -162,45 +167,39 @@
       How it works
     </div>
     <h2 class="reveal">From property record to filed certificate.</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="n">01</span>
-        <div>
-          <h3>Classify and schedule</h3>
+    <div class="phases">
+      <div class="phase reveal">
+        <span class="n">STAGE 01</span>
+        <h3>Classify and schedule</h3>
           <p>Every property, on the schedule the code sets.</p>
-          <ul class="list">
+        <ul class="list">
             <li>One database of addresses, building types, occupancy classifications and contacts, searchable and filterable</li>
             <li>Properties classified as life hazard or non-life hazard, with construction-date rules (before and after 1979) applied automatically</li>
             <li>Inspection intervals generated from the code: up to four a year for schools, at most five years for non-life-hazard properties</li>
             <li>Checklist templates aligned to the fire code, managed by admins</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">02</span>
-        <div>
-          <h3>Inspect and flag</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 02</span>
+        <h3>Inspect and flag</h3>
           <p>Field work captured once, at the property.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Photos and checklists captured offline and synced automatically when the device reconnects</li>
             <li>AI reviews field photos against the active checklist and drafts findings with suggested code citations</li>
             <li>Nothing becomes a violation until the inspector confirms it</li>
             <li>A code lookup tool to check any citation</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">03</span>
-        <div>
-          <h3>Certify and file</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 03</span>
+        <h3>Certify and file</h3>
           <p>Every violation followed through to the end.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Each violation tracked in one record, from citation through correction and re-inspection</li>
             <li>Inspection reports and narratives drafted from structured findings</li>
             <li>Notifications for upcoming inspections, overdue tasks and critical findings</li>
             <li>Certificates filed with the full audit history attached</li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -273,23 +272,40 @@
   </div>
 </section>
 
+<!-- ================= MORE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      More products
+    </div>
+    <h2 class="reveal">The other five products.</h2>
+    <nav class="mini reveal" aria-label="Other products">
+      <a href="../docket/"><span class="tile" aria-hidden="true">D</span><b>Docket</b><span>Document platform</span></a>
+      <a href="../folio/"><span class="tile" aria-hidden="true">F</span><b>Folio</b><span>Document viewer</span></a>
+      <a href="../sweep/"><span class="tile" aria-hidden="true">S</span><b>Sweep</b><span>Document hygiene scanner</span></a>
+      <a href="../ireview/"><span class="tile" aria-hidden="true">I</span><b>iReview</b><span>Code review</span></a>
+      <a href="../sonetx/"><span class="tile" aria-hidden="true">S</span><b>SonetX</b><span>AI engineering platform</span></a>
+    </nav>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <section class="band">
   <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Next step
+    </div>
     <h2 class="reveal">See Marshal with your bureau's properties.</h2>
     <p class="lead reveal">Tell us how your bureau schedules and records inspections today. We'll show you Marshal set up the same way.</p>
     <div class="btn-row reveal">
       <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20Marshal" data-form="general" data-subject="Demo request: Marshal" data-title="See Marshal with your bureau's properties." data-sub="Tell us how your bureau schedules and records inspections today. We'll show you Marshal set up the same way.">Request a demo</a>
       <a class="btn btn-ghost" href="../">All products</a>
     </div>
-    <p class="caption reveal" style="margin-top:var(--s4)">More products</p>
-    <nav class="more-products reveal" aria-label="Other products">
-      <a href="../docket/">Docket: document platform</a>
-      <a href="../folio/">Folio: document viewer</a>
-      <a href="../sweep/">Sweep: document hygiene scanner</a>
-      <a href="../ireview/">iReview: code review</a>
-      <a href="../sonetx/">SonetX: AI engineering platform</a>
-    </nav>
+    <p class="caption reveal" style="margin-top:var(--s3)">
+      <a class="link" href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
+    </p>
   </div>
 </section>
 
@@ -315,7 +331,7 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="../../assets/site.js" defer></script>
-<script src="../../assets/forms.js" defer></script>
+<script src="../../assets/site.js?v=20260927" defer></script>
+<script src="../../assets/forms.js?v=20260927" defer></script>
 </body>
 </html>

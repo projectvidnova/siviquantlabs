@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css?v=20260927">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -124,9 +124,12 @@
   <div>
     <div class="label crumb">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
-      <a href="../">Products</a><span>/</span><span>AI engineering platform</span>
+      <a href="../">Products</a><span>/</span><a href="../#engineering">Software engineering</a>
     </div>
-    <p style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:var(--s2)">SonetX</p>
+    <div class="p-lockup">
+      <span class="tile" aria-hidden="true">S</span>
+      <div><b>SonetX</b><span>AI engineering platform</span></div>
+    </div>
     <h1>A full engineering team, one terminal command away.</h1>
     <p class="lead">SonetX is two modules under one product. The SonetX CLI runs your pipeline, from requirements to docs, through a private gateway of specialist AI personas. SonetX Test Generation reads your requirements and API contracts and writes test suites traced back to them.</p>
     <p class="body">One gateway, one audit trail, and no persona prompts ever sent to the client.</p>
@@ -136,10 +139,12 @@
     </div>
   </div>
   <figure class="p-figure">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/sonetx-still.svg">
-      <img src="../../assets/products/sonetx.svg" alt="A run plans itself, stops to ask a real question, resumes, and hands off from persona to persona. The test engine then turns the requirement into traced scenarios." width="560" height="420">
-    </picture>
+    <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/sonetx-still.svg">
+            <img src="../../assets/products/sonetx.svg" alt="A run plans itself, stops to ask a real question, resumes, and hands off from persona to persona. The test engine then turns the requirement into traced scenarios." width="560" height="420">
+          </picture>
+        </div>
     <figcaption>A run plans itself, stops to ask a real question, resumes, and hands off from persona to persona. The test engine then turns the requirement into traced scenarios.</figcaption>
   </figure>
 </section>
@@ -163,41 +168,35 @@
     </div>
     <h2 class="reveal">Eight personas, three stages, one orchestrator.</h2>
     <p class="body area-lead reveal">An orchestrator plans each run and skips stages that don't apply, so a bug fix starts at implementation rather than requirements. When a persona is blocked, the run stops and asks you a specific question instead of guessing.</p>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="n">01</span>
-        <div>
-          <h3>Plan and design</h3>
-          <ul class="list">
+    <div class="phases">
+      <div class="phase reveal">
+        <span class="n">STAGE 01</span>
+        <h3>Plan and design</h3>
+        <ul class="list">
             <li>Requirements persona captures scope and constraints</li>
             <li>Architecture and API design drafted before any code is written</li>
             <li>Orchestrator delegates each stage to the right specialist</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">02</span>
-        <div>
-          <h3>Build and verify</h3>
-          <ul class="list">
+      <div class="phase reveal">
+        <span class="n">STAGE 02</span>
+        <h3>Build and verify</h3>
+        <ul class="list">
             <li>Implementation persona writes the code</li>
             <li>QA persona verifies the change and writes a test report</li>
             <li>Code review persona flags issues with read-only tool access</li>
             <li>Security persona audits before release</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">03</span>
-        <div>
-          <h3>Ship and track</h3>
-          <ul class="list">
+      <div class="phase reveal">
+        <span class="n">STAGE 03</span>
+        <h3>Ship and track</h3>
+        <ul class="list">
             <li>Documentation is its own stage, not an afterthought</li>
             <li>Every artifact stored durably in the pipeline folder</li>
             <li>A live activity view shows which persona is working and what it costs</li>
             <li>Every run ends in a structured report: done, blocked, or needs review. Nothing fails silently.</li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -212,42 +211,36 @@
     </div>
     <h2 class="reveal">From requirement to traceable test suite.</h2>
     <p class="body area-lead reveal">Reads requirements, specs and API contracts, builds a knowledge graph from them, and generates BDD tests mapped back to the requirement each one proves.</p>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="n">01</span>
-        <div>
-          <h3>Ingest and analyze</h3>
-          <ul class="list">
+    <div class="phases">
+      <div class="phase reveal">
+        <span class="n">STAGE 01</span>
+        <h3>Ingest and analyze</h3>
+        <ul class="list">
             <li>Detects and parses OpenAPI, Swagger, Postman collections and Markdown API docs</li>
             <li>Self-healing extraction splits a document recursively when it's too large for the model's context</li>
             <li>Requirements and their dependencies stored as a knowledge graph, not a flat list</li>
             <li>Semantic deduplication merges requirements that say the same thing</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">02</span>
-        <div>
-          <h3>Reason and generate</h3>
-          <ul class="list">
+      <div class="phase reveal">
+        <span class="n">STAGE 02</span>
+        <h3>Reason and generate</h3>
+        <ul class="list">
             <li>Pluggable reasoning: chain-of-thought, multi-hop retrieval or document analysis</li>
             <li>A multi-phase BDD pipeline: plan, discover scenarios, write Gherkin, validate</li>
             <li>Enforced variety: authentication, edge cases, non-functional limits and security scenarios</li>
             <li>An adversarial critic reviews every scenario before handoff</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">03</span>
-        <div>
-          <h3>Govern and track</h3>
-          <ul class="list">
+      <div class="phase reveal">
+        <span class="n">STAGE 03</span>
+        <h3>Govern and track</h3>
+        <ul class="list">
             <li>A traceability matrix links every test to its requirement, source file and coverage</li>
             <li>Coverage gaps surfaced with recommended scenarios</li>
             <li>When a requirement changes, see which tests and components it touches</li>
             <li>Cost tracked per project, document and pipeline run</li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -320,23 +313,40 @@
   </div>
 </section>
 
+<!-- ================= MORE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      More products
+    </div>
+    <h2 class="reveal">The other five products.</h2>
+    <nav class="mini reveal" aria-label="Other products">
+      <a href="../docket/"><span class="tile" aria-hidden="true">D</span><b>Docket</b><span>Document platform</span></a>
+      <a href="../folio/"><span class="tile" aria-hidden="true">F</span><b>Folio</b><span>Document viewer</span></a>
+      <a href="../sweep/"><span class="tile" aria-hidden="true">S</span><b>Sweep</b><span>Document hygiene scanner</span></a>
+      <a href="../ireview/"><span class="tile" aria-hidden="true">I</span><b>iReview</b><span>Code review</span></a>
+      <a href="../marshal/"><span class="tile" aria-hidden="true">M</span><b>Marshal</b><span>Fire prevention inspection</span></a>
+    </nav>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <section class="band">
   <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Next step
+    </div>
     <h2 class="reveal">Run both modules against your own project.</h2>
     <p class="lead reveal">Tell us what you're building and where testing hurts today. We'll run SonetX against it with you.</p>
     <div class="btn-row reveal">
       <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20SonetX" data-form="general" data-subject="Demo request: SonetX" data-title="Run both modules against your own project." data-sub="Tell us what you're building and where testing hurts today. We'll run SonetX against it with you.">Request a demo</a>
       <a class="btn btn-ghost" href="../">All products</a>
     </div>
-    <p class="caption reveal" style="margin-top:var(--s4)">More products</p>
-    <nav class="more-products reveal" aria-label="Other products">
-      <a href="../docket/">Docket: document platform</a>
-      <a href="../folio/">Folio: document viewer</a>
-      <a href="../sweep/">Sweep: document hygiene scanner</a>
-      <a href="../ireview/">iReview: code review</a>
-      <a href="../marshal/">Marshal: fire prevention inspection</a>
-    </nav>
+    <p class="caption reveal" style="margin-top:var(--s3)">
+      <a class="link" href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
+    </p>
   </div>
 </section>
 
@@ -362,7 +372,7 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="../../assets/site.js" defer></script>
-<script src="../../assets/forms.js" defer></script>
+<script src="../../assets/site.js?v=20260927" defer></script>
+<script src="../../assets/forms.js?v=20260927" defer></script>
 </body>
 </html>

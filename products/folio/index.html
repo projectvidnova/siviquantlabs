@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css?v=20260927">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -124,9 +124,12 @@
   <div>
     <div class="label crumb">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
-      <a href="../">Products</a><span>/</span><span>Document viewer</span>
+      <a href="../">Products</a><span>/</span><a href="../#documents">Documents &amp; records</a>
     </div>
-    <p style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:var(--s2)">Folio</p>
+    <div class="p-lockup">
+      <span class="tile" aria-hidden="true">F</span>
+      <div><b>Folio</b><span>Document viewer</span></div>
+    </div>
     <h1>A viewer that only shows what the server says you can see.</h1>
     <p class="lead">Folio embeds in your web application through an iframe and renders PDFs and TIFFs of 600 MB and more. Permissions, redactions, downloads and printing are all decided on the server. Hints from the host page are never trusted.</p>
     <p class="body">The usual choice is licensing a desktop-era SDK or spending months building a viewer yourself. Folio is the third option.</p>
@@ -136,10 +139,12 @@
     </div>
   </div>
   <figure class="p-figure">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/folio-still.svg">
-      <img src="../../assets/products/folio.svg" alt="The host asks for download rights and the server ignores the hint. Pages stream in, and a redaction is drawn, burned and logged." width="560" height="420">
-    </picture>
+    <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/folio-still.svg">
+            <img src="../../assets/products/folio.svg" alt="The host asks for download rights and the server ignores the hint. Pages stream in, and a redaction is drawn, burned and logged." width="560" height="420">
+          </picture>
+        </div>
     <figcaption>The host asks for download rights and the server ignores the hint. Pages stream in, and a redaction is drawn, burned and logged.</figcaption>
   </figure>
 </section>
@@ -162,44 +167,38 @@
       How it works
     </div>
     <h2 class="reveal">A three-stage handshake.</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="n">01</span>
-        <div>
-          <h3>Embed and authenticate</h3>
+    <div class="phases">
+      <div class="phase reveal">
+        <span class="n">STAGE 01</span>
+        <h3>Embed and authenticate</h3>
           <p>One postMessage carries everything the viewer needs.</p>
-          <ul class="list">
+        <ul class="list">
             <li>The host sends a JWT, a file ID and display hints</li>
             <li>Folio exchanges the JWT for an authoritative session and gets back the capability set and UI flags</li>
             <li>Display hints only shape the loading screen. They never decide access.</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">02</span>
-        <div>
-          <h3>View and redact</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 02</span>
+        <h3>View and redact</h3>
           <p>Large files open as quickly as small ones.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Pages stream on demand with a buffer window, never loading the whole file into memory</li>
             <li>Draw redactions on the page. Positions are stored on a 0-to-1 scale so they stay exact through zoom and rotation</li>
             <li>Redactions are burned into the PDF with an untouched backup kept in storage</li>
             <li>Rotate, reorder, delete and merge pages, saved on the server</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">03</span>
-        <div>
-          <h3>Search and export</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 03</span>
+        <h3>Search and export</h3>
           <p>Every way out is gated separately.</p>
-          <ul class="list">
+        <ul class="list">
             <li>OCR and PII detection run as background jobs</li>
             <li>Full-text and PII search limited to the pages each user may see</li>
             <li>Download, print and email each need their own capability, and exports use time-limited links</li>
             <li>Every action written to an audit log the host application can query</li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -280,23 +279,40 @@
   </div>
 </section>
 
+<!-- ================= MORE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      More products
+    </div>
+    <h2 class="reveal">The other five products.</h2>
+    <nav class="mini reveal" aria-label="Other products">
+      <a href="../docket/"><span class="tile" aria-hidden="true">D</span><b>Docket</b><span>Document platform</span></a>
+      <a href="../sweep/"><span class="tile" aria-hidden="true">S</span><b>Sweep</b><span>Document hygiene scanner</span></a>
+      <a href="../ireview/"><span class="tile" aria-hidden="true">I</span><b>iReview</b><span>Code review</span></a>
+      <a href="../sonetx/"><span class="tile" aria-hidden="true">S</span><b>SonetX</b><span>AI engineering platform</span></a>
+      <a href="../marshal/"><span class="tile" aria-hidden="true">M</span><b>Marshal</b><span>Fire prevention inspection</span></a>
+    </nav>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <section class="band">
   <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Next step
+    </div>
     <h2 class="reveal">Embed Folio in your application.</h2>
     <p class="lead reveal">Tell us what your users need to see and what they must not. We'll show you Folio running inside an app like yours.</p>
     <div class="btn-row reveal">
       <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20Folio" data-form="general" data-subject="Demo request: Folio" data-title="Embed Folio in your application." data-sub="Tell us what your users need to see and what they must not. We'll show you Folio running inside an app like yours.">Request a demo</a>
       <a class="btn btn-ghost" href="../">All products</a>
     </div>
-    <p class="caption reveal" style="margin-top:var(--s4)">More products</p>
-    <nav class="more-products reveal" aria-label="Other products">
-      <a href="../docket/">Docket: document platform</a>
-      <a href="../sweep/">Sweep: document hygiene scanner</a>
-      <a href="../ireview/">iReview: code review</a>
-      <a href="../sonetx/">SonetX: AI engineering platform</a>
-      <a href="../marshal/">Marshal: fire prevention inspection</a>
-    </nav>
+    <p class="caption reveal" style="margin-top:var(--s3)">
+      <a class="link" href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
+    </p>
   </div>
 </section>
 
@@ -322,7 +338,7 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="../../assets/site.js" defer></script>
-<script src="../../assets/forms.js" defer></script>
+<script src="../../assets/site.js?v=20260927" defer></script>
+<script src="../../assets/forms.js?v=20260927" defer></script>
 </body>
 </html>

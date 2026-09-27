@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css?v=20260927">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -124,9 +124,12 @@
   <div>
     <div class="label crumb">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
-      <a href="../">Products</a><span>/</span><span>Document platform</span>
+      <a href="../">Products</a><span>/</span><a href="../#documents">Documents &amp; records</a>
     </div>
-    <p style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:var(--s2)">Docket</p>
+    <div class="p-lockup">
+      <span class="tile" aria-hidden="true">D</span>
+      <div><b>Docket</b><span>Document platform</span></div>
+    </div>
     <h1>Once it is redacted, it stays redacted.</h1>
     <p class="lead">Docket gives legal, compliance and records teams one place to view, search, redact and release documents. It flags personal data for you, burns redactions into the file so nothing can be recovered, and logs every action.</p>
     <p class="body">Built for open-records requests, case-file expungement and any release where a missed social security number is a real problem.</p>
@@ -136,10 +139,12 @@
     </div>
   </div>
   <figure class="p-figure">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/docket-still.svg">
-      <img src="../../assets/products/docket.svg" alt="A page is read, three pieces of personal data are flagged, then burned out. The audit log fills in as it happens." width="560" height="420">
-    </picture>
+    <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/docket-still.svg">
+            <img src="../../assets/products/docket.svg" alt="A page is read, three pieces of personal data are flagged, then burned out. The audit log fills in as it happens." width="560" height="420">
+          </picture>
+        </div>
     <figcaption>A page is read, three pieces of personal data are flagged, then burned out. The audit log fills in as it happens.</figcaption>
   </figure>
 </section>
@@ -162,44 +167,38 @@
       How it works
     </div>
     <h2 class="reveal">From upload to release, in three stages.</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="n">01</span>
-        <div>
-          <h3>Ingest and analyze</h3>
+    <div class="phases">
+      <div class="phase reveal">
+        <span class="n">STAGE 01</span>
+        <h3>Ingest and analyze</h3>
           <p>Drop in scanned files or native PDFs and processing starts on its own.</p>
-          <ul class="list">
+        <ul class="list">
             <li>AI-powered OCR indexes every page, in real time or on a background queue</li>
             <li>Personal data flagged automatically across eight categories, including SSNs, emails, phone numbers and names</li>
             <li>Metadata captured on the way in, and editable afterwards</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">02</span>
-        <div>
-          <h3>Search and redact</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 02</span>
+        <h3>Search and redact</h3>
           <p>Find what matters, and remove what shouldn't leave.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Vector rendering that stays sharp from 50% to 300% zoom</li>
             <li>Full-text search across the repository, limited to what each user is allowed to see</li>
             <li>Burn AI-flagged fields in one click, or draw your own boxes</li>
             <li>Rotate, reorder, delete, append and merge pages inside the viewer</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">03</span>
-        <div>
-          <h3>Govern and release</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 03</span>
+        <h3>Govern and release</h3>
           <p>Send documents out without losing track of them.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Download, print, or email through time-limited links, never permanent URLs</li>
             <li>Role-based permissions enforced on the server and tied to your identity provider</li>
             <li>Every view, edit, redaction and export written to an immutable audit trail</li>
             <li>Expungement destroys the file and everything derived from it, while the audit record survives</li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -280,23 +279,40 @@
   </div>
 </section>
 
+<!-- ================= MORE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      More products
+    </div>
+    <h2 class="reveal">The other five products.</h2>
+    <nav class="mini reveal" aria-label="Other products">
+      <a href="../folio/"><span class="tile" aria-hidden="true">F</span><b>Folio</b><span>Document viewer</span></a>
+      <a href="../sweep/"><span class="tile" aria-hidden="true">S</span><b>Sweep</b><span>Document hygiene scanner</span></a>
+      <a href="../ireview/"><span class="tile" aria-hidden="true">I</span><b>iReview</b><span>Code review</span></a>
+      <a href="../sonetx/"><span class="tile" aria-hidden="true">S</span><b>SonetX</b><span>AI engineering platform</span></a>
+      <a href="../marshal/"><span class="tile" aria-hidden="true">M</span><b>Marshal</b><span>Fire prevention inspection</span></a>
+    </nav>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <section class="band">
   <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Next step
+    </div>
     <h2 class="reveal">See Docket on your own documents.</h2>
     <p class="lead reveal">Tell us what you release and how you redact today. We'll show you Docket working on files like yours.</p>
     <div class="btn-row reveal">
       <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20Docket" data-form="general" data-subject="Demo request: Docket" data-title="See Docket on your own documents." data-sub="Tell us what you release and how you redact today. We'll show you Docket working on files like yours.">Request a demo</a>
       <a class="btn btn-ghost" href="../">All products</a>
     </div>
-    <p class="caption reveal" style="margin-top:var(--s4)">More products</p>
-    <nav class="more-products reveal" aria-label="Other products">
-      <a href="../folio/">Folio: document viewer</a>
-      <a href="../sweep/">Sweep: document hygiene scanner</a>
-      <a href="../ireview/">iReview: code review</a>
-      <a href="../sonetx/">SonetX: AI engineering platform</a>
-      <a href="../marshal/">Marshal: fire prevention inspection</a>
-    </nav>
+    <p class="caption reveal" style="margin-top:var(--s3)">
+      <a class="link" href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
+    </p>
   </div>
 </section>
 
@@ -322,7 +338,7 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="../../assets/site.js" defer></script>
-<script src="../../assets/forms.js" defer></script>
+<script src="../../assets/site.js?v=20260927" defer></script>
+<script src="../../assets/forms.js?v=20260927" defer></script>
 </body>
 </html>

@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css?v=20260927">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -124,9 +124,12 @@
   <div>
     <div class="label crumb">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
-      <a href="../">Products</a><span>/</span><span>Code review</span>
+      <a href="../">Products</a><span>/</span><a href="../#engineering">Software engineering</a>
     </div>
-    <p style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:var(--s2)">iReview</p>
+    <div class="p-lockup">
+      <span class="tile" aria-hidden="true">I</span>
+      <div><b>iReview</b><span>Code review</span></div>
+    </div>
     <h1>AI code review that reasons out loud.</h1>
     <p class="lead">iReview reviews every pull request with the context of your whole codebase. It flags bugs, security issues and style problems before a human reviewer picks it up, and streams its reasoning so you can see how it got there.</p>
     <p class="body">Works with GitHub, GitHub Enterprise Server and Azure DevOps. Supports TypeScript, Python, Java, Go, C# and more, with guidelines for each language.</p>
@@ -136,10 +139,12 @@
     </div>
   </div>
   <figure class="p-figure">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/ireview-still.svg">
-      <img src="../../assets/products/ireview.svg" alt="iReview reads the diff, reasons about the function it calls, checks its own work in a second pass, then posts one finding with a fix on the exact line." width="560" height="420">
-    </picture>
+    <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/ireview-still.svg">
+            <img src="../../assets/products/ireview.svg" alt="iReview reads the diff, reasons about the function it calls, checks its own work in a second pass, then posts one finding with a fix on the exact line." width="560" height="420">
+          </picture>
+        </div>
     <figcaption>iReview reads the diff, reasons about the function it calls, checks its own work in a second pass, then posts one finding with a fix on the exact line.</figcaption>
   </figure>
 </section>
@@ -162,43 +167,37 @@
       How it works
     </div>
     <h2 class="reveal">From pull request to posted comment, in three stages.</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="n">01</span>
-        <div>
-          <h3>Ingest and build context</h3>
+    <div class="phases">
+      <div class="phase reveal">
+        <span class="n">STAGE 01</span>
+        <h3>Ingest and build context</h3>
           <p>Paste a pull request link, or let a webhook start the review.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Non-source files filtered out by more than 35 patterns: tests, lock files, generated code, binaries</li>
             <li>Changed files split at syntax-tree boundaries and indexed per project for semantic search</li>
             <li>Language and framework detected automatically</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">02</span>
-        <div>
-          <h3>Analyze and validate</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 02</span>
+        <h3>Analyze and validate</h3>
           <p>A draft pass, then a second pass that checks the draft.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Relevant existing code and the signatures of called functions added as context, which keeps suggested fixes grounded</li>
             <li>Draft findings ranked critical, high, medium or low</li>
             <li>The self-check confirms line numbers, makes sure fixes would actually run, and drops low-confidence findings</li>
             <li>Existing threads and earlier reviews checked, so the same point isn't raised twice</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">03</span>
-        <div>
-          <h3>Post and track</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 03</span>
+        <h3>Post and track</h3>
           <p>Findings land where your team already works.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Comments posted straight into the GitHub or Azure DevOps thread</li>
             <li>Reasoning streamed live and stored for replay</li>
             <li>Token use, model and cost recorded for every review</li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -278,23 +277,40 @@
   </div>
 </section>
 
+<!-- ================= MORE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      More products
+    </div>
+    <h2 class="reveal">The other five products.</h2>
+    <nav class="mini reveal" aria-label="Other products">
+      <a href="../docket/"><span class="tile" aria-hidden="true">D</span><b>Docket</b><span>Document platform</span></a>
+      <a href="../folio/"><span class="tile" aria-hidden="true">F</span><b>Folio</b><span>Document viewer</span></a>
+      <a href="../sweep/"><span class="tile" aria-hidden="true">S</span><b>Sweep</b><span>Document hygiene scanner</span></a>
+      <a href="../sonetx/"><span class="tile" aria-hidden="true">S</span><b>SonetX</b><span>AI engineering platform</span></a>
+      <a href="../marshal/"><span class="tile" aria-hidden="true">M</span><b>Marshal</b><span>Fire prevention inspection</span></a>
+    </nav>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <section class="band">
   <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Next step
+    </div>
     <h2 class="reveal">Run iReview on your next pull request.</h2>
     <p class="lead reveal">Tell us where your code lives and how review works today. We'll show you iReview on a pull request of yours.</p>
     <div class="btn-row reveal">
       <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20iReview" data-form="general" data-subject="Demo request: iReview" data-title="Run iReview on your next pull request." data-sub="Tell us where your code lives and how review works today. We'll show you iReview on a pull request of yours.">Request a demo</a>
       <a class="btn btn-ghost" href="../">All products</a>
     </div>
-    <p class="caption reveal" style="margin-top:var(--s4)">More products</p>
-    <nav class="more-products reveal" aria-label="Other products">
-      <a href="../docket/">Docket: document platform</a>
-      <a href="../folio/">Folio: document viewer</a>
-      <a href="../sweep/">Sweep: document hygiene scanner</a>
-      <a href="../sonetx/">SonetX: AI engineering platform</a>
-      <a href="../marshal/">Marshal: fire prevention inspection</a>
-    </nav>
+    <p class="caption reveal" style="margin-top:var(--s3)">
+      <a class="link" href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
+    </p>
   </div>
 </section>
 
@@ -320,7 +336,7 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="../../assets/site.js" defer></script>
-<script src="../../assets/forms.js" defer></script>
+<script src="../../assets/site.js?v=20260927" defer></script>
+<script src="../../assets/forms.js?v=20260927" defer></script>
 </body>
 </html>

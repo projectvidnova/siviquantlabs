@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css?v=20260927">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -124,9 +124,12 @@
   <div>
     <div class="label crumb">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
-      <a href="../">Products</a><span>/</span><span>Document hygiene scanner</span>
+      <a href="../">Products</a><span>/</span><a href="../#documents">Documents &amp; records</a>
     </div>
-    <p style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:var(--s2)">Sweep</p>
+    <div class="p-lockup">
+      <span class="tile" aria-hidden="true">S</span>
+      <div><b>Sweep</b><span>Document hygiene scanner</span></div>
+    </div>
     <h1>The last check before a document leaves the building.</h1>
     <p class="lead">What you see on screen isn't everything in the file. Sweep finds the hidden sheets, tracked changes, embedded objects, password protection and personal data sitting where nobody thought to look, and cleans them out before release.</p>
     <p class="body">Works on Excel (.xlsx), Word (.docx) and PDF files through one pipeline.</p>
@@ -136,10 +139,12 @@
     </div>
   </div>
   <figure class="p-figure">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/sweep-still.svg">
-      <img src="../../assets/products/sweep.svg" alt="Sweep opens up the file's structure, finds a hidden sheet full of SSNs and three other issues, and writes a clean copy. The original is left untouched." width="560" height="420">
-    </picture>
+    <div class="p-media">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/sweep-still.svg">
+            <img src="../../assets/products/sweep.svg" alt="Sweep opens up the file's structure, finds a hidden sheet full of SSNs and three other issues, and writes a clean copy. The original is left untouched." width="560" height="420">
+          </picture>
+        </div>
     <figcaption>Sweep opens up the file's structure, finds a hidden sheet full of SSNs and three other issues, and writes a clean copy. The original is left untouched.</figcaption>
   </figure>
 </section>
@@ -162,45 +167,39 @@
       How it works
     </div>
     <h2 class="reveal">Scan, review, clean. With proof it was done.</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="n">01</span>
-        <div>
-          <h3>Scan and detect</h3>
+    <div class="phases">
+      <div class="phase reveal">
+        <span class="n">STAGE 01</span>
+        <h3>Scan and detect</h3>
           <p>Sweep reads how the file is built, not how it looks.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Parses the file's actual container format, not just what renders on screen</li>
             <li>Finds hidden sheets, tracked changes and embedded objects</li>
             <li>Extracts text from every layer, including hidden content</li>
             <li>Flags encrypted and password-protected files</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">02</span>
-        <div>
-          <h3>Flag and review</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 02</span>
+        <h3>Flag and review</h3>
           <p>You decide what gets fixed.</p>
-          <ul class="list">
+        <ul class="list">
             <li>Findings tagged by severity, with their exact location</li>
             <li>Personal data detected in visible and hidden content alike</li>
             <li>An interactive review panel to choose what to fix</li>
             <li>Catches fake redactions in PDFs: selectable text sitting under a black box</li>
-          </ul>
-        </div>
+        </ul>
       </div>
-      <div class="step reveal">
-        <span class="n">03</span>
-        <div>
-          <h3>Clean and audit</h3>
+      <div class="phase reveal">
+        <span class="n">STAGE 03</span>
+        <h3>Clean and audit</h3>
           <p>A clean copy out, a record kept.</p>
-          <ul class="list">
+        <ul class="list">
             <li>One-click remediation</li>
             <li>Writes a sanitized copy and never modifies the original</li>
             <li>An exportable, timestamped audit report of every check</li>
             <li>Nothing retained by default</li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -273,23 +272,40 @@
   </div>
 </section>
 
+<!-- ================= MORE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      More products
+    </div>
+    <h2 class="reveal">The other five products.</h2>
+    <nav class="mini reveal" aria-label="Other products">
+      <a href="../docket/"><span class="tile" aria-hidden="true">D</span><b>Docket</b><span>Document platform</span></a>
+      <a href="../folio/"><span class="tile" aria-hidden="true">F</span><b>Folio</b><span>Document viewer</span></a>
+      <a href="../ireview/"><span class="tile" aria-hidden="true">I</span><b>iReview</b><span>Code review</span></a>
+      <a href="../sonetx/"><span class="tile" aria-hidden="true">S</span><b>SonetX</b><span>AI engineering platform</span></a>
+      <a href="../marshal/"><span class="tile" aria-hidden="true">M</span><b>Marshal</b><span>Fire prevention inspection</span></a>
+    </nav>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <section class="band">
   <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Next step
+    </div>
     <h2 class="reveal">Sweep your next release before it goes out.</h2>
     <p class="lead reveal">Tell us what kind of documents leave your organization and how they're checked today. We'll run Sweep on files like them.</p>
     <div class="btn-row reveal">
       <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20Sweep" data-form="general" data-subject="Demo request: Sweep" data-title="Sweep your next release before it goes out." data-sub="Tell us what kind of documents leave your organization and how they're checked today. We'll run Sweep on files like them.">Request a demo</a>
       <a class="btn btn-ghost" href="../">All products</a>
     </div>
-    <p class="caption reveal" style="margin-top:var(--s4)">More products</p>
-    <nav class="more-products reveal" aria-label="Other products">
-      <a href="../docket/">Docket: document platform</a>
-      <a href="../folio/">Folio: document viewer</a>
-      <a href="../ireview/">iReview: code review</a>
-      <a href="../sonetx/">SonetX: AI engineering platform</a>
-      <a href="../marshal/">Marshal: fire prevention inspection</a>
-    </nav>
+    <p class="caption reveal" style="margin-top:var(--s3)">
+      <a class="link" href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
+    </p>
   </div>
 </section>
 
@@ -315,7 +331,7 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="../../assets/site.js" defer></script>
-<script src="../../assets/forms.js" defer></script>
+<script src="../../assets/site.js?v=20260927" defer></script>
+<script src="../../assets/forms.js?v=20260927" defer></script>
 </body>
 </html>

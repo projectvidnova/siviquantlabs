@@ -482,26 +482,54 @@ dialog.modal::backdrop{background:rgba(17,17,17,0.42)}
 
 /* ---------- products ---------------------------------------------------- */
 
-/* Each product demo is a self-contained animated SVG loaded as an <img>. The
-   SVGs honour prefers-reduced-motion themselves and settle on their finished
-   frame, so nothing here needs to pause them. */
+/* Each product demo is a self-contained animated SVG, set on a light tray the
+   way a screenshot sits on a desk. The tray also keeps the SVG's own 1px frame
+   from doubling up against the card border. A <picture> swaps in a still of
+   the finished frame for visitors who prefer reduced motion. */
+.p-media{display:block;background:#F4F4F4;padding:var(--s3)}
+.p-media picture{display:block}
+.p-media img{width:100%;height:auto}
+
+/* Catalog hero: copy left, a scannable index of every product right */
+.p-top{
+  padding-top:var(--s5);padding-bottom:var(--s5);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);
+  gap:var(--s5);align-items:end;
+}
+.p-top h1{max-width:13ch}
+.p-top .lead{margin-top:var(--s3)}
+.p-top .body{margin-top:var(--s2)}
+.p-index{border-top:1px solid var(--ink)}
+.p-index .grp{
+  display:block;padding:var(--s3) 0 6px;
+  font-size:11.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);
+}
+.p-index a{
+  display:flex;align-items:baseline;gap:12px;
+  padding:11px 0;border-bottom:1px solid var(--line);
+  transition:border-color .15s ease;
+}
+.p-index a b{font-size:16px;font-weight:600;letter-spacing:-0.01em}
+.p-index a .k{font-size:14px;color:var(--mid);flex:1}
+.p-index a .ar{font-size:14px;transition:transform .18s ease}
+.p-index a:hover{border-bottom-color:var(--ink)}
+.p-index a:hover .ar{transform:translateX(4px)}
+
+/* Product cards */
 .p-grid{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:var(--s3);margin-top:var(--s4);
 }
 .p-grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .p-card{
-  display:flex;flex-direction:column;
-  border:1px solid var(--line);border-radius:2px;
+  display:flex;flex-direction:column;background:var(--bg);
+  border:1px solid var(--line);border-radius:2px;overflow:hidden;
   transition:border-color .16s ease;
 }
 .p-card:hover{border-color:var(--ink)}
-/* Each demo sits in a <picture> whose reduced-motion source is a still of
-   the finished frame. */
-.p-card picture,.p-figure picture{display:block}
-.p-card img{width:100%;height:auto;border-bottom:1px solid var(--line)}
-.p-card .p-body{display:flex;flex-direction:column;gap:6px;padding:var(--s3);flex:1}
-.p-card .p-kind{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.p-card .p-media{border-bottom:1px solid var(--line)}
+.p-card .p-body{display:flex;flex-direction:column;gap:8px;padding:var(--s3);flex:1}
+.p-card .p-kind{font-size:11.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
 .p-card h3{font-size:22px;letter-spacing:-0.02em}
 .p-card p{font-size:15px;color:var(--mid);line-height:1.55;flex:1}
 .p-card .go{font-size:14px;font-weight:500;display:inline-flex;gap:8px;align-items:center;margin-top:var(--s1)}
@@ -510,10 +538,11 @@ dialog.modal::backdrop{background:rgba(17,17,17,0.42)}
 
 /* A group with a single product gets one wide card instead of half a row */
 .p-grid--1{grid-template-columns:1fr}
-.p-grid--1 .p-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.p-grid--1 .p-card img{border-bottom:none;border-right:1px solid var(--line)}
+.p-grid--1 .p-card{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.p-grid--1 .p-card .p-media{border-bottom:none;border-right:1px solid var(--line)}
 .p-grid--1 .p-body{justify-content:center;padding:var(--s4)}
-.p-grid--1 .p-card p{flex:none}
+.p-grid--1 .p-card h3{font-size:28px}
+.p-grid--1 .p-card p{flex:none;font-size:16px;max-width:44ch}
 
 .p-group{padding:var(--s5) 0;border-top:1px solid var(--line)}
 .p-group .body{margin-top:var(--s2)}
@@ -521,16 +550,25 @@ dialog.modal::backdrop{background:rgba(17,17,17,0.42)}
 /* Product page hero: copy left, live demo right */
 .p-hero{
   padding-top:var(--s5);padding-bottom:var(--s5);
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);
-  gap:var(--s4);align-items:center;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);
+  gap:var(--s5);align-items:center;
 }
-.p-hero h1{font-size:clamp(34px,4.6vw,54px);max-width:14ch}
+.p-hero h1{font-size:clamp(32px,3.7vw,46px);max-width:none;letter-spacing:-0.03em;line-height:1.08}
+.p-hero .lead{font-size:clamp(17px,1.6vw,18.5px)}
 .p-hero .lead{margin-top:var(--s3)}
 .p-hero .body{margin-top:var(--s2)}
-.p-figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:2px}
-.p-figure figcaption{margin-top:var(--s2);font-size:13.5px;line-height:1.5;color:var(--mid);max-width:52ch}
 .crumb a{color:var(--mid);transition:color .15s ease}
 .crumb a:hover{color:var(--ink)}
+.p-lockup{display:flex;align-items:center;gap:14px;margin-bottom:var(--s3)}
+.p-lockup .tile{
+  flex:none;width:44px;height:44px;border-radius:2px;
+  display:grid;place-items:center;
+  background:var(--ink);color:#fff;font-size:21px;font-weight:600;letter-spacing:-0.03em;
+}
+.p-lockup b{display:block;font-size:20px;letter-spacing:-0.02em;line-height:1.2}
+.p-lockup span{display:block;font-size:13.5px;color:var(--mid)}
+.p-figure .p-media{border:1px solid var(--line);border-radius:2px}
+.p-figure figcaption{margin-top:var(--s2);font-size:13.5px;line-height:1.5;color:var(--mid);max-width:56ch}
 
 /* Headline numbers */
 .stats{
@@ -542,10 +580,19 @@ dialog.modal::backdrop{background:rgba(17,17,17,0.42)}
 .stat b{display:block;font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.035em;line-height:1.05}
 .stat span{display:block;margin-top:8px;font-size:14px;line-height:1.45;color:var(--mid);max-width:24ch}
 
-/* A step can carry a short list under its summary */
-.step .list{margin-top:12px}
-.step .list li{font-size:15.5px}
-.step .list li + li{margin-top:6px}
+/* Workflow: three stages side by side */
+.phases{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--s4);margin-top:var(--s4);
+}
+.phase{border-top:2px solid var(--ink);padding-top:var(--s3)}
+.phase .n{display:block;font-size:12px;font-weight:500;letter-spacing:0.12em;color:var(--mid)}
+.phase h3{margin:10px 0 8px}
+.phase p{font-size:15.5px;color:var(--mid);line-height:1.55}
+.phase .list{margin-top:var(--s2)}
+.phase .list li{font-size:15px;line-height:1.55}
+.phase .list li + li{margin-top:10px}
+.phase .list li::before{top:9px}
 
 /* Before / after comparison */
 .compare{width:100%;margin-top:var(--s4);border-collapse:collapse;font-size:15.5px}
@@ -561,22 +608,63 @@ dialog.modal::backdrop{background:rgba(17,17,17,0.42)}
 /* Visually hidden, still read by screen readers */
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-.more-products{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-top:var(--s3)}
-.more-products a{font-size:15px;border-bottom:1px solid var(--line);transition:border-color .15s ease}
-.more-products a:hover{border-bottom-color:var(--ink)}
+/* The other products, as compact cards */
+.mini{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:var(--s2);margin-top:var(--s4);
+}
+.mini a{
+  display:flex;flex-direction:column;gap:4px;
+  padding:var(--s2) var(--s2) 18px;
+  border:1px solid var(--line);border-radius:2px;
+  transition:border-color .16s ease;
+}
+.mini a:hover{border-color:var(--ink)}
+.mini .tile{
+  width:28px;height:28px;margin-bottom:10px;border-radius:2px;
+  display:grid;place-items:center;
+  background:var(--ink);color:#fff;font-size:14px;font-weight:600;
+}
+.mini b{font-size:16px;letter-spacing:-0.01em}
+.mini span{font-size:13.5px;color:var(--mid);line-height:1.4}
 
 @media (max-width:980px){
+  .p-top,.p-hero{grid-template-columns:1fr;gap:var(--s4)}
+  .p-hero .p-figure{max-width:620px}
+  .p-top{align-items:start}
   .p-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .p-hero{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stat:nth-child(3){padding-left:0;border-left:none}
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .phases{grid-template-columns:1fr;gap:var(--s3)}
+  .mini{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+/* Two columns on tablets: an odd last card spans the row in the wide layout
+   rather than sitting alone in half of it. */
+@media (min-width:641px) and (max-width:980px){
+  .p-grid .p-card:last-child:nth-child(odd){
+    grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  }
+  .p-grid .p-card:last-child:nth-child(odd) .p-media{border-bottom:none;border-right:1px solid var(--line)}
+  .p-grid .p-card:last-child:nth-child(odd) .p-body{justify-content:center}
+  .p-grid .p-card:last-child:nth-child(odd) p{flex:none}
+}
+@media (max-width:720px){
+  .p-grid--1 .p-card{grid-template-columns:1fr}
+  .p-grid--1 .p-card .p-media{border-right:none;border-bottom:1px solid var(--line)}
+  .p-grid--1 .p-body{padding:var(--s3)}
+  .p-grid--1 .p-card h3{font-size:22px}
 }
 @media (max-width:640px){
   .p-grid,.p-grid--2{grid-template-columns:1fr}
-  .p-grid--1 .p-card{grid-template-columns:1fr}
-  .p-grid--1 .p-card img{border-right:none;border-bottom:1px solid var(--line)}
-  .p-grid--1 .p-body{padding:var(--s3)}
+  .p-media{padding:var(--s2)}
+  .mini{grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+  .mini a{
+    display:grid;grid-template-columns:28px auto 1fr;align-items:center;gap:14px;
+    padding:14px 0;border:none;border-bottom:1px solid var(--line);border-radius:0;
+  }
+  .mini .tile{margin:0}
+  .mini span:last-child{text-align:right}
   .compare,.compare tbody,.compare tr,.compare th,.compare td{display:block;width:100%}
   .compare thead{display:none}
   .compare tbody tr{padding:var(--s2) 0;border-bottom:1px solid var(--line)}
