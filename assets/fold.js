@@ -115,7 +115,14 @@
     canvas.width = Math.round(w * dpr);
     canvas.height = Math.round(hgt * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // Resizing a canvas wipes it. The animated path redraws on the next
+    // frame; the reduced-motion still has no loop, so it redraws here.
+    still();
   }
+
+  // Reduced motion: no loop, one closed box, redrawn only when something
+  // changes (a resize, a drag, an arrow key).
+  function still() { if (reduced) draw(Math.PI / 2); }
 
   /* ---- draw ------------------------------------------------------------- */
 
@@ -220,6 +227,7 @@
     if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
     az += dx * 0.008;
     el = Math.max(0.12, Math.min(1.35, el + dy * 0.006));
+    still();
   }
 
   function up() { dragging = false; }
@@ -241,6 +249,7 @@
     if (e.key === 'ArrowRight') { az += step; e.preventDefault(); }
     if (e.key === 'ArrowUp')    { el = Math.min(1.35, el + step); e.preventDefault(); }
     if (e.key === 'ArrowDown')  { el = Math.max(0.12, el - step); e.preventDefault(); }
+    still();
   });
 
   /* ---- boot ------------------------------------------------------------- */
@@ -249,6 +258,5 @@
   else window.addEventListener('resize', resize);
 
   resize();
-  if (reduced) draw(Math.PI / 2);
-  else requestAnimationFrame(frame);
+  if (!reduced) requestAnimationFrame(frame);
 })();

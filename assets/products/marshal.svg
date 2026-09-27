@@ -33,7 +33,7 @@ text{font-family:Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-s
 @media (prefers-reduced-motion:reduce){.a{animation:none!important}}
 </style>
 
-<rect x=".5" y=".5" width="559" height="419" rx="3" fill="#fff" stroke="#E5E5E5"/>
+<rect x=".5" y=".5" width="559" height="419" rx="12" fill="#fff" stroke="#E5E5E5"/>
 <line x1="0" y1="40.5" x2="560" y2="40.5" stroke="#E5E5E5"/>
 <text x="20" y="25" style="font-size:11.5px;font-weight:600">Fire Prevention Bureau</text>
 <text x="540" y="25" class="mid" text-anchor="end" style="font-size:11px">Marshal · District 4</text>

@@ -168,3 +168,46 @@
   window.addEventListener('resize', update);
   update();
 })();
+
+/* Liquid glass layer: the bar's scrolled and dark states, and menu dismissal. */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+
+  /* ---- the bar is part of the page until content scrolls beneath it; then
+     header and sub-nav frost over together. Over the black band the whole
+     bar turns smoked glass, judged at the bar's own vertical centre so the
+     two rows never disagree. */
+  var darks = document.querySelectorAll('.band--ink');
+  var top = document.querySelector('header');
+  var bottom = document.querySelector('.subnav') || top;
+  if (!top) return;
+  var queued = false;
+  var update = function () {
+    queued = false;
+    root.classList.toggle('scrolled', window.scrollY > 4);
+    var y = (top.getBoundingClientRect().top + bottom.getBoundingClientRect().bottom) / 2;
+    var dark = false;
+    for (var i = 0; i < darks.length; i++) {
+      var r = darks[i].getBoundingClientRect();
+      if (r.top <= y && r.bottom >= y) { dark = true; break; }
+    }
+    root.classList.toggle('on-dark', dark);
+  };
+  window.addEventListener('scroll', function () {
+    if (!queued) { queued = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+
+  /* ---- the menu is now a sheet, not full screen: tapping outside closes it */
+  var btn = document.querySelector('.menu-btn');
+  var menu = document.getElementById('menu');
+  if (btn && menu) {
+    document.addEventListener('click', function (e) {
+      if (menu.hidden) return;
+      if (menu.contains(e.target) || btn.contains(e.target)) return;
+      btn.click();
+    });
+  }
+})();

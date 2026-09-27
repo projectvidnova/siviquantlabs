@@ -1,7 +1,9 @@
 /* ==========================================================================
    Sivi Quant Labs, design system
    White background, near-black text. Hierarchy from size, weight and space
-   only. One typeface. No brand color, no gradients, no shadows.
+   only. One typeface. No brand color. Shadows, gradients and translucency
+   belong to the liquid glass layer at the end of this file, and only to
+   the floating layer it styles; content stays flat.
    Spacing scale, base 8: 8 / 16 / 24 / 48 / 96.
    ========================================================================== */
 
@@ -35,6 +37,9 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
+  /* clip, where supported, stops sideways scroll without turning <body> into
+     a scroll container, which would break the sticky header */
+  overflow-x:clip;
 }
 
 ::selection{background:var(--ink);color:#fff}
@@ -218,7 +223,10 @@ header{
 .menu-foot{margin-top:auto;padding-top:var(--s4)}
 .menu-foot .btn{width:100%;padding:16px 24px}
 .menu-foot .caption{margin-top:var(--s2);text-align:center}
-html.menu-open,html.menu-open body{overflow:hidden}
+/* Lock <html> only: overflow on <body> would make it a scroll container and
+   silently break the sticky header. */
+html.menu-open{overflow:hidden}
+html.menu-open body{overflow:visible}
 
 /* ---------- page sub-navigation ----------------------------------------- */
 
@@ -898,3 +906,213 @@ html.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transfor
   body{font-size:12pt}
   .section,.role{border-top:1px solid #ccc;padding:16pt 0}
 }
+
+/* ==========================================================================
+   Liquid glass layer. Deliberately last in this file: it refines the rules
+   above rather than repeating them.
+
+   Two rules keep this honest:
+   1. Rounding is everywhere; glass is only on the floating layer (header,
+      sub-nav, menu, dialog, toast) and on secondary buttons. Content
+      (cards, text, tables, demos) is never glass.
+   2. Every glass surface has a solid fallback: no backdrop-filter support,
+      "reduce transparency" or "increase contrast" all get opaque surfaces.
+   ========================================================================== */
+
+:root{
+  --r-xs:6px;      /* tags */
+  --r-sm:10px;     /* inputs, small controls, tiles */
+  --r-md:16px;     /* cards, trays */
+  --r-lg:22px;     /* dialog, menu sheet */
+  --r-pill:999px;  /* buttons, capsules */
+
+  --glass:rgba(255,255,255,0.64);
+  --glass-strong:rgba(255,255,255,0.84);
+  --glass-edge:rgba(17,17,17,0.08);
+  --glass-blur:blur(22px) saturate(180%);
+  /* the light catching the top edge, plus a faint inner rim */
+  --glass-hi:inset 0 1px 0 rgba(255,255,255,0.95),inset 0 0 0 1px rgba(255,255,255,0.45);
+  --glass-lift:0 1px 2px rgba(17,17,17,0.04),0 10px 30px rgba(17,17,17,0.07);
+
+  --glass-dark:rgba(20,20,20,0.82);  /* dense enough to read as dark mid-transition */
+  --glass-dark-edge:rgba(255,255,255,0.14);
+  --glass-dark-hi:inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+/* ---------- header + sub-nav: part of the page until content passes under -
+   At the top of a page there is no bar at all: logo, links and buttons sit
+   straight on the page. Once content scrolls beneath, the header and sub-nav
+   frost over together as ONE surface, closed by a single hairline. No
+   capsules, no drop shadows: the glass is only there when it has a job. */
+
+header,.subnav{
+  background:transparent;border-bottom:1px solid transparent;
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+  transition:background-color .28s ease,border-color .28s ease;
+}
+header .nav{height:64px}
+.subnav{top:64px}
+.subnav-in{height:48px;align-items:center;gap:var(--s2)}
+html:has(.subnav){scroll-padding-top:120px}
+
+html.scrolled header,html.scrolled .subnav{
+  background:var(--glass);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+}
+/* the hairline closes the whole bar: under the sub-nav when there is one */
+html.scrolled header{border-bottom-color:var(--glass-edge)}
+html.scrolled:has(.subnav) header{border-bottom-color:transparent}
+html.scrolled .subnav{border-bottom-color:var(--glass-edge)}
+
+.navlinks .btn{margin-left:8px;padding:10px 18px}
+/* the current page keeps the site's underline (set in site.css) */
+
+/* sub-nav: the section in view is marked by an ink bar on the bar's bottom
+   edge, as in site.css; only the heights change here */
+.subnav-in{align-items:stretch}
+.subnav-t{border-right:1px solid var(--line);align-self:center;height:22px}
+.subnav .btn{align-self:center;padding:9px 16px}
+
+/* ---------- adaptive: over the black band the bar turns smoked glass ---- */
+
+html.on-dark header,html.on-dark .subnav{
+  background:var(--glass-dark);border-bottom-color:transparent;
+}
+html.on-dark .subnav{border-bottom-color:var(--glass-dark-edge)}
+html.on-dark header .brand img{filter:invert(1)}
+html.on-dark .navlinks a:not(.btn){color:rgba(255,255,255,0.72)}
+html.on-dark .navlinks a:not(.btn):hover,html.on-dark .navlinks a[aria-current="page"]:not(.btn){color:#fff}
+html.on-dark .btn-solid{background:#fff;color:var(--ink);border-color:#fff}
+html.on-dark .menu-btn{border-color:var(--glass-dark-edge);background:rgba(255,255,255,0.06)}
+html.on-dark .menu-btn span{background:#fff}
+html.on-dark .subnav-t{color:#fff;border-right-color:var(--glass-dark-edge)}
+html.on-dark .subnav-links a{color:rgba(255,255,255,0.7)}
+html.on-dark .subnav-links a:hover{color:#fff}
+html.on-dark .subnav-links a[aria-current="true"]{color:#fff;border-bottom-color:#fff}
+
+/* ---------- buttons: pills; primary solid, secondary glass --------------- */
+
+.btn{border-radius:var(--r-pill);padding:15px 26px}
+.btn-solid{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),0 1px 2px rgba(17,17,17,0.12),0 6px 16px rgba(17,17,17,0.12);
+  transition:background-color .16s ease,box-shadow .2s ease,transform .12s ease;
+}
+.btn-solid:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),0 2px 4px rgba(17,17,17,0.14),0 10px 24px rgba(17,17,17,0.16)}
+.btn:active{transform:scale(0.98)}
+.btn-ghost{
+  background:rgba(255,255,255,0.55);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);
+  border-color:rgba(17,17,17,0.14);
+  box-shadow:var(--glass-hi),0 1px 2px rgba(17,17,17,0.04);
+  transition:background-color .16s ease,border-color .16s ease,color .16s ease,transform .12s ease;
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.9);color:var(--ink);border-color:var(--ink)}
+
+.band--ink .btn-solid{box-shadow:inset 0 -1px 0 rgba(17,17,17,0.08),0 6px 20px rgba(0,0,0,0.35)}
+.band--ink .btn-ghost{
+  background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.22);color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.22);
+}
+.band--ink .btn-ghost:hover{background:rgba(255,255,255,0.16);border-color:rgba(255,255,255,0.5);color:#fff}
+
+.menu-btn{
+  border-radius:var(--r-pill);border-color:var(--glass-edge);
+  background:rgba(255,255,255,0.5);box-shadow:var(--glass-hi);
+}
+
+/* ---------- mobile menu: a glass sheet under the header ---------------- */
+
+.menu{
+  top:72px;left:10px;right:10px;bottom:auto;max-height:calc(100dvh - 84px);
+  border:1px solid var(--glass-edge);border-radius:var(--r-lg);
+  background:var(--glass-strong);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  /* the last shadow is a scrim: it dims the page around the sheet, but not
+     the header, which sits on a higher layer */
+  box-shadow:var(--glass-hi),0 20px 60px rgba(17,17,17,0.18),0 0 0 100vmax rgba(17,17,17,0.16);
+}
+/* with the menu open the header stays crisp above the dimmed page */
+html.menu-open header{background:rgba(255,255,255,0.97);border-bottom-color:var(--glass-edge)}
+html.menu-open.on-dark header{background:rgba(24,24,24,0.97)}
+.menu-in{min-height:0;padding:8px 22px 22px}
+.menu-links a{padding:15px 0}
+.menu-links b{font-size:22px}
+.menu-foot{padding-top:var(--s3)}
+
+/* ---------- announcement pill ------------------------------------------- */
+
+.pill{
+  border-radius:var(--r-pill);padding:5px 16px 5px 5px;
+  background:rgba(255,255,255,0.6);border-color:rgba(17,17,17,0.1);
+  box-shadow:var(--glass-hi),0 1px 2px rgba(17,17,17,0.04);
+}
+.pill-tag{border-radius:var(--r-pill);padding:4px 10px}
+
+/* ---------- content: rounded, never glass -------------------------------- */
+
+.p-card,.role-card{border-radius:var(--r-md)}
+.p-card{transition:border-color .16s ease,box-shadow .2s ease,transform .2s ease}
+.p-card:hover{box-shadow:0 12px 32px rgba(17,17,17,0.08);transform:translateY(-2px)}
+.p-figure .p-media{border-radius:var(--r-md);overflow:hidden}
+.mini a{border-radius:12px}
+.mini .tile{border-radius:8px}
+.p-lockup .tile{border-radius:12px}
+code{border-radius:var(--r-xs)}
+.callout{border-radius:var(--r-md)}
+
+/* ---------- dialog: a glass sheet over a blurred page ------------------- */
+
+dialog.modal{
+  border-radius:var(--r-lg);border-color:var(--glass-edge);
+  background:var(--glass-strong);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  box-shadow:var(--glass-hi),0 30px 80px rgba(17,17,17,0.25);
+}
+dialog.modal::backdrop{
+  background:rgba(17,17,17,0.22);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+.modal-close{border-radius:var(--r-pill);background:rgba(255,255,255,0.6)}
+.field input,.field textarea,.field select{border-radius:var(--r-sm);background:rgba(255,255,255,0.85)}
+.modal-actions{background:transparent}
+
+/* ---------- toast -------------------------------------------------------- */
+
+#toast{
+  border-radius:var(--r-pill);padding:12px 20px;
+  background:rgba(17,17,17,0.8);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.14),0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* ---------- mobile ------------------------------------------------------- */
+
+@media (max-width:720px){
+  header .nav{height:60px}
+  .subnav{top:60px}
+  .subnav-in{height:44px}
+  .menu{top:68px}
+  html:has(.subnav){scroll-padding-top:112px}
+}
+}
+
+/* ---------- fallbacks: glass only where it can be honest --------------- */
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  html.scrolled header,html.scrolled .subnav,.menu,dialog.modal{background:rgba(255,255,255,0.97)}
+  html.on-dark header,html.on-dark .subnav{background:rgba(24,24,24,0.96)}
+}
+@media (prefers-reduced-transparency:reduce){
+  html.scrolled header,html.scrolled .subnav,.menu,dialog.modal,.btn-ghost,.pill{
+    background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;
+  }
+  html.on-dark header,html.on-dark .subnav{background:#181818}
+  #toast{background:var(--ink)}
+}
+@media (prefers-contrast:more){
+  html.scrolled header,html.scrolled .subnav,.menu,dialog.modal,.btn-ghost,.pill{border-color:var(--ink);background:#fff}
+}
+
+/* Focus rings follow the rounded shapes */
+.menu-links a:focus-visible{outline-offset:-2px;border-radius:var(--r-sm)}
+.subnav-links a:focus-visible{outline-offset:-2px}
