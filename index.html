@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20260927">
+<link rel="stylesheet" href="assets/site.css?v=2026092702">
 
 <script type="application/ld+json">
 {
@@ -334,23 +334,42 @@
     </a>
     <nav class="navlinks" aria-label="Primary">
       <a class="desktop-only" href="services/">Services</a>
-      <a class="desktop-only" href="#how">How we work</a>
       <a class="desktop-only" href="products/">Products</a>
-      <a class="btn btn-solid" href="careers/">We're hiring</a>
+      <a class="desktop-only" href="#how">How we work</a>
+      <a class="desktop-only" href="careers/">Careers</a>
+      <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Talk%20to%20Sivi%20Quant%20Labs" data-form="general" data-subject="Website enquiry">Talk to us</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
     </nav>
   </div>
 </header>
+
+<div id="menu" class="menu" hidden>
+  <div class="menu-in">
+    <nav class="menu-links" aria-label="Menu">
+      <a href="./"><b>Home</b><span>Sivi Quant Labs</span></a>
+      <a href="services/"><b>Services</b><span>AI, 3D and Cloud</span></a>
+      <a href="products/"><b>Products</b><span>Six products</span></a>
+      <a href="#how"><b>How we work</b><span>Our commitments</span></a>
+      <a href="careers/"><b>Careers</b><span>Open roles</span></a>
+    </nav>
+    <div class="menu-foot">
+      <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Talk%20to%20Sivi%20Quant%20Labs" data-form="general" data-subject="Website enquiry">Talk to us</a>
+      <p class="caption"><a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a></p>
+    </div>
+  </div>
+</div>
 
 <main id="main">
 
 <!-- ================= HERO ================= -->
 <section class="wrap hero">
   <div class="hero-copy">
+    <a class="pill" href="products/"><span class="pill-tag">New</span>Six products, from secure documents to AI code review <span class="ar" aria-hidden="true">&rarr;</span></a>
     <h1>AI, Visualization, and Cloud. Built for measurable ROI.</h1>
     <p class="lead">We're an AI company with one rule: every system we build has to move a number you care about. Private, secure AI. High-performance 3D. Cloud done right. For any industry.</p>
     <div class="btn-row">
-      <a class="btn btn-solid" href="#what">What we do</a>
-      <a class="btn btn-ghost" href="mailto:connect@siviquantlabs.com?subject=Talk%20to%20Sivi%20Quant%20Labs" data-form="general" data-subject="Website enquiry">Talk to us</a>
+      <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Talk%20to%20Sivi%20Quant%20Labs" data-form="general" data-subject="Website enquiry">Talk to us</a>
+      <a class="btn btn-ghost" href="#what">What we do</a>
     </div>
   </div>
 
@@ -437,7 +456,7 @@
 </section>
 
 <!-- ================= ENGAGEMENT ================= -->
-<section id="engagement" class="section">
+<section id="engagement" class="section soft">
   <div class="wrap">
     <div class="label reveal">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
@@ -511,7 +530,7 @@
 </section>
 
 <!-- ================= PRODUCTS ================= -->
-<section id="products" class="section">
+<section id="products" class="section soft">
   <div class="wrap">
     <div class="label reveal">
       <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
@@ -705,7 +724,7 @@
 </section>
 
 <!-- ================= CONTACT ================= -->
-<section id="contact" class="band">
+<section id="contact" class="band band--ink">
   <div class="wrap">
     <h2 class="reveal">Tell us the outcome you want to move.</h2>
     <p class="lead reveal">One email, one number you'd like to change. We'll tell you honestly whether we're the right people to move it.</p>
@@ -728,9 +747,10 @@
       <img class="word" src="assets/wordmark-ink.png" alt="Sivi Quant Labs" width="955" height="66">
     </a>
     <nav class="foot-links" aria-label="Footer">
+      <a href="./">Home</a>
       <a href="services/">Services</a>
-      <a href="#how">How we work</a>
       <a href="products/">Products</a>
+      <a href="#how">How we work</a>
       <a href="careers/">Careers</a>
       <a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
       <a href="https://www.linkedin.com/company/siviquantlabs" rel="me noopener" target="_blank">LinkedIn</a>
@@ -741,8 +761,8 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/fold.js?v=20260927" defer></script>
-<script src="assets/site.js?v=20260927" defer></script>
-<script src="assets/forms.js?v=20260927" defer></script>
+<script src="assets/fold.js?v=2026092702" defer></script>
+<script src="assets/site.js?v=2026092702" defer></script>
+<script src="assets/forms.js?v=2026092702" defer></script>
 </body>
 </html>

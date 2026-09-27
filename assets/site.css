@@ -10,6 +10,7 @@
   --ink:#111111;
   --mid:#666666;
   --line:#E5E5E5;
+  --soft:#FAFAFA;   /* quiet alternate section background */
 
   --s1:8px; --s2:16px; --s3:24px; --s4:48px; --s5:96px;
 
@@ -148,7 +149,7 @@ code{
 
 header{
   position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,0.88);
+  background:rgba(255,255,255,0.97);
   backdrop-filter:saturate(180%) blur(12px);
   -webkit-backdrop-filter:saturate(180%) blur(12px);
   border-bottom:1px solid var(--line);
@@ -169,6 +170,128 @@ header{
 }
 .navlinks a:not(.btn):hover{color:var(--ink)}
 .navlinks .btn{padding:10px 16px;font-size:13.5px}
+
+/* Where you are: the current section's nav link sits in ink, underlined */
+.navlinks a[aria-current="page"]:not(.btn){
+  color:var(--ink);
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px;
+}
+
+/* ---------- mobile menu -------------------------------------------------- */
+
+/* The menu lives outside <header>: the header's backdrop-filter would
+   otherwise become the containing block and trap this fixed panel inside it. */
+.menu-btn{
+  display:none;position:relative;flex:none;
+  width:40px;height:40px;padding:0;
+  background:transparent;border:1px solid var(--line);border-radius:2px;cursor:pointer;
+  transition:border-color .15s ease;
+}
+.menu-btn:hover{border-color:var(--ink)}
+.menu-btn span{
+  position:absolute;left:11px;right:11px;height:1.5px;background:var(--ink);
+  transition:transform .22s ease,top .22s ease;
+}
+.menu-btn span:first-child{top:15px}
+.menu-btn span:last-child{top:23px}
+.menu-btn[aria-expanded="true"] span:first-child{top:19px;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:last-child{top:19px;transform:rotate(-45deg)}
+
+.menu{
+  position:fixed;left:0;right:0;top:72px;bottom:0;z-index:99;
+  background:var(--bg);border-top:1px solid var(--line);overflow-y:auto;
+}
+.menu[hidden]{display:none}
+.menu-in{
+  display:flex;flex-direction:column;min-height:100%;
+  padding:var(--s2) var(--gutter) var(--s4);
+  animation:menu-in .22s ease;
+}
+@keyframes menu-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.menu-links a{
+  display:flex;align-items:baseline;justify-content:space-between;gap:var(--s2);
+  padding:18px 0;border-bottom:1px solid var(--line);
+}
+.menu-links b{font-size:26px;font-weight:600;letter-spacing:-0.025em;line-height:1.15}
+.menu-links span{font-size:14px;color:var(--mid);text-align:right}
+.menu-links a[aria-current="page"] b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.menu-foot{margin-top:auto;padding-top:var(--s4)}
+.menu-foot .btn{width:100%;padding:16px 24px}
+.menu-foot .caption{margin-top:var(--s2);text-align:center}
+html.menu-open,html.menu-open body{overflow:hidden}
+
+/* ---------- page sub-navigation ----------------------------------------- */
+
+/* A slim second bar for jumping within long pages. It sticks under the main
+   header and marks the section currently in view. */
+.subnav{
+  position:sticky;top:72px;z-index:90;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.subnav-in{height:52px;display:flex;align-items:stretch;gap:var(--s3)}
+.subnav-t{
+  display:flex;align-items:center;flex:none;
+  padding-right:var(--s3);border-right:1px solid var(--line);
+  font-size:15px;font-weight:600;letter-spacing:-0.01em;
+}
+.subnav-links{
+  display:flex;align-items:stretch;gap:var(--s3);flex:1;min-width:0;
+  overflow-x:auto;scrollbar-width:none;
+}
+.subnav-links::-webkit-scrollbar{display:none}
+.subnav-links a{
+  display:flex;align-items:center;white-space:nowrap;
+  font-size:13.5px;color:var(--mid);
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:color .15s ease,border-color .15s ease;
+}
+.subnav-links a:hover{color:var(--ink)}
+.subnav-links a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.subnav .btn{align-self:center;flex:none;padding:9px 14px;font-size:13px}
+html:has(.subnav){scroll-padding-top:124px}  /* 72px header + 52px sub-bar */
+
+/* ---------- homepage announcement --------------------------------------- */
+
+.pill{
+  display:inline-flex;align-items:center;gap:12px;
+  margin-bottom:var(--s3);padding:5px 14px 5px 5px;
+  font-size:14px;line-height:1.3;
+  border:1px solid var(--line);border-radius:2px;
+  transition:border-color .16s ease;
+}
+.pill:hover{border-color:var(--ink)}
+.pill-tag{
+  flex:none;padding:4px 8px;border-radius:2px;
+  background:var(--ink);color:#fff;
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+}
+.pill .ar{transition:transform .18s ease}
+.pill:hover .ar{transform:translateX(4px)}
+
+/* ---------- section rhythm ---------------------------------------------- */
+
+/* One or two quiet grey sections per page break up long runs of white; the
+   hairline is dropped where the background change already separates them. */
+.soft{background:var(--soft);border-top-color:transparent}
+.soft + *{border-top-color:transparent}
+
+/* The closing call to action on every page is inverted, so each page ends
+   on one unmistakable next step. */
+.band--ink{background:var(--ink);color:#fff;border-top-color:var(--ink)}
+.band--ink h2,.band--ink .lead,.band--ink strong{color:#fff}
+.band--ink .label,.band--ink .caption,.band--ink .body{color:#A8A8A8}
+.band--ink .link{color:#fff;border-bottom-color:rgba(255,255,255,0.35)}
+.band--ink .link:hover{border-bottom-color:#fff}
+.band--ink .btn-solid{background:#fff;color:var(--ink);border-color:#fff}
+.band--ink .btn-solid:hover{background:#E6E6E6;border-color:#E6E6E6}
+.band--ink .btn-ghost{color:#fff;border-color:rgba(255,255,255,0.45)}
+.band--ink .btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+.band--ink :focus-visible{outline-color:#fff}
+.band--ink ::selection{background:#fff;color:var(--ink)}
+.band--ink + *,main:has(> .band--ink:last-child) + footer{border-top-color:transparent}
 
 /* ---------- hero -------------------------------------------------------- */
 
@@ -726,6 +849,16 @@ html.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transfor
 @media (max-width:720px){
   :root{--gutter:20px;--s5:64px}
   .navlinks .desktop-only{display:none}
+  html.js .menu-btn{display:inline-block}
+  .navlinks{gap:var(--s2)}
+  .subnav-t{padding-right:var(--s2);font-size:14px}
+  /* Fade the edges so it's obvious the links scroll sideways */
+  .subnav-links{
+    gap:20px;padding:0 24px 0 4px;
+    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 12px,#000 calc(100% - 28px),transparent 100%);
+            mask-image:linear-gradient(to right,transparent 0,#000 12px,#000 calc(100% - 28px),transparent 100%);
+  }
+  .subnav .btn{display:none}
   .spec > div{grid-template-columns:1fr;gap:4px}
   .spec dt{padding-top:0}
   .step{grid-template-columns:36px 1fr;gap:var(--s2)}
@@ -741,6 +874,7 @@ html.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transfor
   .brand .mark{height:26px}
   .brand .word{height:9px}
   .navlinks .btn{padding:9px 12px;font-size:13px}
+  html.js .navlinks .btn{display:none}   /* it lives in the menu instead */
 }
 
 @media (prefers-reduced-motion:reduce){

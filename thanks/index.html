@@ -12,7 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/site.css?v=20260927">
+<link rel="stylesheet" href="../assets/site.css?v=2026092702">
+<script>document.documentElement.className+=' js';</script>
 </head>
 <body>
 
@@ -25,10 +26,31 @@
       <img class="word" src="../assets/wordmark-ink.png" alt="Sivi Quant Labs" width="955" height="66">
     </a>
     <nav class="navlinks" aria-label="Primary">
-      <a class="btn btn-ghost" href="../">Back to site</a>
+      <a class="desktop-only" href="../services/">Services</a>
+      <a class="desktop-only" href="../products/">Products</a>
+      <a class="desktop-only" href="../#how">How we work</a>
+      <a class="desktop-only" href="../careers/">Careers</a>
+      <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Talk%20to%20Sivi%20Quant%20Labs" data-form="general" data-subject="Website enquiry">Talk to us</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
     </nav>
   </div>
 </header>
+
+<div id="menu" class="menu" hidden>
+  <div class="menu-in">
+    <nav class="menu-links" aria-label="Menu">
+      <a href="../"><b>Home</b><span>Sivi Quant Labs</span></a>
+      <a href="../services/"><b>Services</b><span>AI, 3D and Cloud</span></a>
+      <a href="../products/"><b>Products</b><span>Six products</span></a>
+      <a href="../#how"><b>How we work</b><span>Our commitments</span></a>
+      <a href="../careers/"><b>Careers</b><span>Open roles</span></a>
+    </nav>
+    <div class="menu-foot">
+      <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Talk%20to%20Sivi%20Quant%20Labs" data-form="general" data-subject="Website enquiry">Talk to us</a>
+      <p class="caption"><a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a></p>
+    </div>
+  </div>
+</div>
 
 <main id="main">
   <section class="wrap" style="padding-top:var(--s5);padding-bottom:var(--s5)">
@@ -56,6 +78,8 @@
     <nav class="foot-links" aria-label="Footer">
       <a href="../">Home</a>
       <a href="../services/">Services</a>
+      <a href="../products/">Products</a>
+      <a href="../#how">How we work</a>
       <a href="../careers/">Careers</a>
       <a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
       <a href="https://www.linkedin.com/company/siviquantlabs" rel="me noopener" target="_blank">LinkedIn</a>
@@ -64,5 +88,9 @@
   </div>
 </footer>
 
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="../assets/site.js?v=2026092702" defer></script>
+<script src="../assets/forms.js?v=2026092702" defer></script>
 </body>
 </html>
