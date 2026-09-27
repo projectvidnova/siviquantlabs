@@ -27,6 +27,14 @@ a general-purpose library costs more than it returns.
 recommends lift-and-shift when that is genuinely the right fit for a client's
 budget and timeline, rather than defaulting to a full rebuild.
 
+**Microsoft Dynamics 365.** Implementation of every Dynamics 365 app (Sales,
+Customer Service, Field Service, Customer Insights, Finance, Supply Chain
+Management, Business Central, Project Operations, Commerce, Human Resources);
+migration from Dynamics AX, NAV, GP, on-premises CRM or other systems;
+customization with Power Platform, Dataverse, X++ and AL; integration;
+Copilot and Copilot Studio agents; and post-go-live support, optimization and
+license review.
+
 ## How the company works
 
 - **ROI first.** Every project begins by naming the number it has to move. If the
@@ -92,9 +100,9 @@ connect@siviquantlabs.com.
 
 - [Home](https://siviquantlabs.com/): overview, engagement process, data
   sovereignty approach, and frequently asked questions.
-- [Services](https://siviquantlabs.com/services/): the full catalog of fifteen
-  named offerings across AI (6), Visualization & 3D (5), and Cloud (4), each
-  with the deliverables a client receives.
+- [Services](https://siviquantlabs.com/services/): the full catalog of
+  twenty-one named offerings across AI (6), Visualization & 3D (5), Cloud (4)
+  and Microsoft Dynamics 365 (6), each with the deliverables a client receives.
 - [Products](https://siviquantlabs.com/products/): the six products, grouped
   into documents and records, software engineering, and public safety.
 - [Careers](https://siviquantlabs.com/careers/): all three open roles and the
