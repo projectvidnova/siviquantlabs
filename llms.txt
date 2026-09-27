@@ -60,6 +60,34 @@ connect@siviquantlabs.com.
   one of: model training / SLMs and edge inference; real-time 3D (Three.js,
   WebGL, rendering math); or cloud architecture and cost optimization.
 
+## Products
+
+- **Docket** (document platform): view, search, redact and release documents
+  for legal, compliance and records teams. AI OCR, PII detection across eight
+  categories, redactions burned into the file, immutable audit trail,
+  expungement. Self-hosted or cloud.
+  https://siviquantlabs.com/products/docket/
+- **Folio** (document viewer): secure viewer embedded by iframe with one
+  postMessage contract. Streams PDFs and TIFFs over 600 MB page by page; every
+  permission resolved on the server, never from client hints.
+  https://siviquantlabs.com/products/folio/
+- **Sweep** (document hygiene scanner): checks Excel, Word and PDF files for
+  hidden sheets, tracked changes, embedded objects, passwords, fake redactions
+  and PII before release; writes a clean copy and a timestamped audit report.
+  https://siviquantlabs.com/products/sweep/
+- **iReview** (AI code review): reviews pull requests on GitHub, GitHub
+  Enterprise Server and Azure DevOps with codebase context, a two-pass
+  self-check and live reasoning; five-level RBAC and cost tracking.
+  https://siviquantlabs.com/products/ireview/
+- **SonetX** (AI engineering platform): a terminal SDLC agent with eight
+  specialist personas behind a private gateway, plus requirements-to-BDD test
+  generation with traceability and impact analysis.
+  https://siviquantlabs.com/products/sonetx/
+- **Marshal** (fire prevention inspection): code-based inspection scheduling,
+  life-hazard classification, offline field capture, AI-assisted hazard
+  flagging confirmed by inspectors, violation tracking to certificate.
+  https://siviquantlabs.com/products/marshal/
+
 ## Pages
 
 - [Home](https://siviquantlabs.com/): overview, engagement process, data
@@ -67,6 +95,8 @@ connect@siviquantlabs.com.
 - [Services](https://siviquantlabs.com/services/): the full catalog of fifteen
   named offerings across AI (6), Visualization & 3D (5), and Cloud (4), each
   with the deliverables a client receives.
+- [Products](https://siviquantlabs.com/products/): the six products, grouped
+  into documents and records, software engineering, and public safety.
 - [Careers](https://siviquantlabs.com/careers/): all three open roles and the
   build challenge download.
 
@@ -75,5 +105,5 @@ connect@siviquantlabs.com.
 - The company is remote-first and does not publish a street address.
 - "Sovereign AI" here means AI deployed inside the client's own infrastructure
   boundary, not a product name.
-- The company builds its own products as well as client work; none have launched
-  publicly yet.
+- The company offers six products (listed above) alongside its client
+  engineering work.

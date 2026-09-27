@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="560" height="420" role="img" aria-labelledby="t d">
+<title id="t">Sweep</title>
+<desc id="d">Sweep opens a spreadsheet's internal structure layer by layer, finds a hidden sheet holding social security numbers, tracked changes, an embedded object and author metadata, then writes a cleaned copy and an audit report while leaving the original untouched.</desc>
+<style>
+text{font-family:Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#111;font-size:12px}
+.mono{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace}
+.mid{fill:#666}
+.lbl{font-size:9.5px;letter-spacing:.14em;fill:#666;font-weight:500}
+.s{font-size:10px}
+.tag{fill:#fff;font-size:7.5px;font-weight:600;letter-spacing:.08em}
+.otag{fill:#111;font-size:7.5px;font-weight:600;letter-spacing:.08em}
+.a{animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.fc{transform-box:fill-box;transform-origin:center}
+@keyframes drop{0%{opacity:0;transform:translateY(-14px)}5%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+@keyframes beam{0%,6%{opacity:0;transform:translateY(0)}7%{opacity:1;transform:translateY(0)}18%{opacity:1;transform:translateY(80px)}19%,100%{opacity:0;transform:translateY(80px)}}
+@keyframes L1{0%,19%{transform:translateY(80px)}27%,92%{transform:translateY(0)}96%,100%{transform:translateY(0)}}
+@keyframes L2{0%,19%{transform:translateY(24px)}27%,92%{transform:translateY(0)}96%,100%{transform:translateY(0)}}
+@keyframes L3{0%,19%{transform:translateY(-32px)}27%,92%{transform:translateY(0)}96%,100%{transform:translateY(0)}}
+@keyframes L4{0%,19%{transform:translateY(-88px)}27%,92%{transform:translateY(0)}96%,100%{transform:translateY(0)}}
+@keyframes lab{0%,24%{opacity:0}28%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes f1{0%,29%{opacity:0}31%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes f2{0%,34%{opacity:0}36%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes f3{0%,39%{opacity:0}41%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes f4{0%,44%{opacity:0}46%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes btn{0%,47%{opacity:0}49%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes press{0%,53%{transform:scale(1)}55%{transform:scale(.96)}57%,100%{transform:scale(1)}}
+@keyframes res{0%,58%{opacity:0;transform:translateY(8px)}62%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes strike{0%,58%{opacity:0}61%,92%{opacity:1}96%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.a{animation:none!important}}
+</style>
+<defs>
+  <linearGradient id="bm" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#111" stop-opacity="0"/>
+    <stop offset="1" stop-color="#111" stop-opacity=".1"/>
+  </linearGradient>
+</defs>
+
+<rect x=".5" y=".5" width="559" height="419" rx="3" fill="#fff" stroke="#E5E5E5"/>
+<rect x="1" y="41" width="259" height="378" fill="#F7F7F7"/>
+<line x1="0" y1="40.5" x2="560" y2="40.5" stroke="#E5E5E5"/>
+<line x1="260.5" y1="41" x2="260.5" y2="419" stroke="#E5E5E5"/>
+<text x="20" y="25" class="mono" style="font-size:11px">Q3-board-pack.xlsx</text>
+<text x="540" y="25" class="mid" text-anchor="end" style="font-size:11px">Sweep · pre-release scan</text>
+
+<text x="20" y="66" class="lbl">INSIDE THE FILE</text>
+
+<!-- layers, collapsed into one stack then fanned out -->
+<g class="a" style="animation-name:drop">
+  <g class="a" style="animation-name:L4">
+    <rect x="20.5" y="264.5" width="220" height="52" fill="#fff" stroke="#E5E5E5"/>
+    <text x="32" y="284" style="font-size:11px;font-weight:600">Comments &amp; changes</text>
+    <text x="32" y="300" class="mid s">12 tracked revisions</text>
+  </g>
+  <g class="a" style="animation-name:L3">
+    <rect x="20.5" y="204.5" width="220" height="52" fill="#fff" stroke="#111" stroke-dasharray="4 3"/>
+    <text x="32" y="224" style="font-size:11px;font-weight:600">Payroll</text>
+    <text x="32" y="240" class="mid s">hidden sheet · 214 rows</text>
+    <g class="a" style="animation-name:lab"><rect x="186" y="214" width="44" height="12" fill="#111"/><text x="208" y="222.6" class="tag" text-anchor="middle">HIDDEN</text></g>
+  </g>
+  <g class="a" style="animation-name:L2">
+    <rect x="20.5" y="144.5" width="220" height="52" fill="#fff" stroke="#E5E5E5"/>
+    <text x="32" y="164" style="font-size:11px;font-weight:600">Forecast</text>
+    <text x="32" y="180" class="mid s">visible · 1 embedded object</text>
+  </g>
+  <g class="a" style="animation-name:L1">
+    <rect x="20.5" y="84.5" width="220" height="52" fill="#fff" stroke="#111"/>
+    <text x="32" y="104" style="font-size:11px;font-weight:600">Summary</text>
+    <text x="32" y="120" class="mid s">visible · what reviewers saw</text>
+  </g>
+</g>
+<g class="a" style="animation-name:beam;animation-timing-function:linear" opacity="0">
+  <rect x="14" y="120" width="232" height="40" fill="url(#bm)"/>
+  <rect x="14" y="159" width="232" height="1.5" fill="#111"/>
+</g>
+
+<text x="20" y="348" class="lbl">ENGINE</text>
+<text x="20" y="368" class="s">Rule-based · runs locally</text>
+<text x="20" y="384" class="mid s">AI engine is opt-in</text>
+
+<!-- findings -->
+<text x="280" y="66" class="lbl">FINDINGS</text>
+<line x1="280" y1="76.5" x2="540" y2="76.5" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:f1">
+  <rect x="280" y="86" width="34" height="12" fill="#111"/><text x="297" y="94.6" class="tag" text-anchor="middle">HIGH</text>
+  <text x="324" y="96" style="font-size:11.5px;font-weight:600">Hidden sheet holds 214 SSNs</text>
+  <text x="324" y="112" class="mid s">Sheet “Payroll” · column D</text>
+</g>
+<line x1="280" y1="122.5" x2="540" y2="122.5" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:f2">
+  <rect x="280.5" y="130.5" width="33" height="11" fill="#fff" stroke="#111"/><text x="297" y="138.6" class="otag" text-anchor="middle">MED</text>
+  <text x="324" y="140" style="font-size:11.5px;font-weight:600">Tracked changes still in file</text>
+  <text x="324" y="156" class="mid s">12 revisions from 3 authors</text>
+</g>
+<line x1="280" y1="166.5" x2="540" y2="166.5" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:f3">
+  <rect x="280.5" y="174.5" width="33" height="11" fill="#fff" stroke="#111"/><text x="297" y="182.6" class="otag" text-anchor="middle">MED</text>
+  <text x="324" y="184" style="font-size:11.5px;font-weight:600">Embedded object</text>
+  <text x="324" y="200" class="mid s">OLE package inside “Forecast”</text>
+</g>
+<line x1="280" y1="210.5" x2="540" y2="210.5" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:f4">
+  <rect x="280.5" y="218.5" width="33" height="11" fill="#fff" stroke="#999"/><text x="297" y="226.6" class="otag" text-anchor="middle" style="fill:#666">LOW</text>
+  <text x="324" y="228" style="font-size:11.5px;font-weight:600">Author metadata</text>
+  <text x="324" y="244" class="mid s">Company and last editor</text>
+</g>
+<line x1="280" y1="254.5" x2="540" y2="254.5" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:strike" stroke="#111">
+  <line x1="324" y1="92" x2="476" y2="92"/><line x1="324" y1="136" x2="464" y2="136"/>
+  <line x1="324" y1="180" x2="416" y2="180"/><line x1="324" y1="224" x2="413" y2="224"/>
+</g>
+
+<g class="a" style="animation-name:btn">
+  <g class="a fc" style="animation-name:press">
+    <rect x="280" y="268" width="260" height="34" rx="2" fill="#111"/>
+    <text x="410" y="289" text-anchor="middle" style="fill:#fff;font-size:12px;font-weight:500">Clean 4 issues</text>
+  </g>
+</g>
+<g class="a" style="animation-name:res">
+  <rect x="280.5" y="316.5" width="259" height="58" fill="#fff" stroke="#111"/>
+  <text x="294" y="338" class="mono" style="font-size:10.5px;font-weight:700">✓ Q3-board-pack.clean.xlsx</text>
+  <text x="294" y="356" class="mid s">Original untouched · report exported 14:20</text>
+</g>
+<text x="280" y="396" class="mid s">Files retained after the scan</text><text x="540" y="396" text-anchor="end" style="font-weight:600">0</text>
+</svg>

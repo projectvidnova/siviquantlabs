@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iReview: AI Code Review for Pull Requests | Sivi Quant Labs</title>
+<meta name="description" content="iReview reviews every pull request on GitHub, GitHub Enterprise Server and Azure DevOps with full codebase context, a two-pass self-check, live reasoning, five-level access control and per-team cost tracking.">
+<link rel="canonical" href="https://siviquantlabs.com/products/ireview/">
+<link rel="icon" href="../../assets/mark-ink.png">
+<link rel="apple-touch-icon" href="../../assets/mark-ink.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="alternate" type="text/plain" href="https://siviquantlabs.com/llms.txt" title="llms.txt plain-text summary for AI assistants">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://siviquantlabs.com/products/ireview/">
+<meta property="og:site_name" content="Sivi Quant Labs">
+<meta property="og:title" content="iReview: AI Code Review for Pull Requests | Sivi Quant Labs">
+<meta property="og:description" content="AI code review that reads every pull request like a senior engineer, flags bugs and security issues, and shows its reasoning.">
+<meta property="og:image" content="https://siviquantlabs.com/assets/products/og/ireview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Reveal animations are gated on this class, so the page stays fully
+     visible if JavaScript never runs. -->
+<script>document.documentElement.className+=' js';</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://siviquantlabs.com/products/ireview/#webpage",
+      "url": "https://siviquantlabs.com/products/ireview/",
+      "name": "iReview: AI Code Review for Pull Requests | Sivi Quant Labs",
+      "description": "iReview reviews every pull request on GitHub, GitHub Enterprise Server and Azure DevOps with full codebase context, a two-pass self-check, live reasoning, five-level access control and per-team cost tracking.",
+      "about": {
+        "@id": "https://siviquantlabs.com/products/ireview/#software"
+      },
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://siviquantlabs.com/assets/products/og/ireview.png"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://siviquantlabs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://siviquantlabs.com/products/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "iReview",
+          "item": "https://siviquantlabs.com/products/ireview/"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://siviquantlabs.com/products/ireview/#software",
+      "name": "iReview",
+      "description": "iReview reviews every pull request on GitHub, GitHub Enterprise Server and Azure DevOps with full codebase context, a two-pass self-check, live reasoning, five-level access control and per-team cost tracking.",
+      "applicationCategory": "DeveloperApplication",
+      "url": "https://siviquantlabs.com/products/ireview/",
+      "image": "https://siviquantlabs.com/assets/products/og/ireview.png",
+      "publisher": {
+        "@id": "https://siviquantlabs.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://siviquantlabs.com/#organization",
+      "name": "Sivi Quant Labs",
+      "url": "https://siviquantlabs.com/",
+      "logo": "https://siviquantlabs.com/assets/og.png",
+      "email": "connect@siviquantlabs.com",
+      "sameAs": [
+        "https://www.linkedin.com/company/siviquantlabs"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../../" aria-label="Sivi Quant Labs home">
+      <img class="mark" src="../../assets/mark-ink.png" alt="" width="390" height="465">
+      <img class="word" src="../../assets/wordmark-ink.png" alt="Sivi Quant Labs" width="955" height="66">
+    </a>
+    <nav class="navlinks" aria-label="Primary">
+      <a class="desktop-only" href="../">All products</a>
+      <a class="desktop-only" href="#how">How it works</a>
+      <a class="desktop-only" href="../../services/">Services</a>
+      <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20iReview" data-form="general" data-subject="Demo request: iReview" data-title="Run iReview on your next pull request." data-sub="Tell us where your code lives and how review works today. We'll show you iReview on a pull request of yours.">Request a demo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="wrap p-hero">
+  <div>
+    <div class="label crumb">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      <a href="../">Products</a><span>/</span><span>Code review</span>
+    </div>
+    <p style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:var(--s2)">iReview</p>
+    <h1>AI code review that reasons out loud.</h1>
+    <p class="lead">iReview reviews every pull request with the context of your whole codebase. It flags bugs, security issues and style problems before a human reviewer picks it up, and streams its reasoning so you can see how it got there.</p>
+    <p class="body">Works with GitHub, GitHub Enterprise Server and Azure DevOps. Supports TypeScript, Python, Java, Go, C# and more, with guidelines for each language.</p>
+    <div class="btn-row">
+      <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20iReview" data-form="general" data-subject="Demo request: iReview" data-title="Run iReview on your next pull request." data-sub="Tell us where your code lives and how review works today. We'll show you iReview on a pull request of yours.">Request a demo</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+  </div>
+  <figure class="p-figure">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/products/ireview-still.svg">
+      <img src="../../assets/products/ireview.svg" alt="iReview reads the diff, reasons about the function it calls, checks its own work in a second pass, then posts one finding with a fix on the exact line." width="560" height="420">
+    </picture>
+    <figcaption>iReview reads the diff, reasons about the function it calls, checks its own work in a second pass, then posts one finding with a fix on the exact line.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= NUMBERS ================= -->
+<section class="wrap" style="padding-bottom:var(--s5)">
+  <div class="stats reveal">
+      <div class="stat"><b>2 passes</b><span>on every finding: a draft, then a self-check</span></div>
+      <div class="stat"><b>35+</b><span>file patterns skipped automatically, from tests to lock files</span></div>
+      <div class="stat"><b>5 roles</b><span>in the access hierarchy, from viewer to organization owner</span></div>
+      <div class="stat"><b>30s</b><span>for a fast review. The most thorough tier takes up to 10 minutes</span></div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how" class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      How it works
+    </div>
+    <h2 class="reveal">From pull request to posted comment, in three stages.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="n">01</span>
+        <div>
+          <h3>Ingest and build context</h3>
+          <p>Paste a pull request link, or let a webhook start the review.</p>
+          <ul class="list">
+            <li>Non-source files filtered out by more than 35 patterns: tests, lock files, generated code, binaries</li>
+            <li>Changed files split at syntax-tree boundaries and indexed per project for semantic search</li>
+            <li>Language and framework detected automatically</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step reveal">
+        <span class="n">02</span>
+        <div>
+          <h3>Analyze and validate</h3>
+          <p>A draft pass, then a second pass that checks the draft.</p>
+          <ul class="list">
+            <li>Relevant existing code and the signatures of called functions added as context, which keeps suggested fixes grounded</li>
+            <li>Draft findings ranked critical, high, medium or low</li>
+            <li>The self-check confirms line numbers, makes sure fixes would actually run, and drops low-confidence findings</li>
+            <li>Existing threads and earlier reviews checked, so the same point isn't raised twice</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step reveal">
+        <span class="n">03</span>
+        <div>
+          <h3>Post and track</h3>
+          <p>Findings land where your team already works.</p>
+          <ul class="list">
+            <li>Comments posted straight into the GitHub or Azure DevOps thread</li>
+            <li>Reasoning streamed live and stored for replay</li>
+            <li>Token use, model and cost recorded for every review</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Capabilities
+    </div>
+    <h2 class="reveal">A reviewer you can talk back to.</h2>
+    <div class="offers">
+      <article class="offer reveal">
+        <h3>Reply in the thread</h3>
+        <p>Ask for an explanation with examples from the same repository, a fix written in your codebase's style, or whether the pattern appears elsewhere.</p>
+      </article>
+      <article class="offer reveal">
+        <h3>Memory per thread</h3>
+        <p>Each thread keeps its own conversation history, so a follow-up question doesn't start from zero.</p>
+      </article>
+      <article class="offer reveal">
+        <h3>Review tiers</h3>
+        <p>Choose between fast and thorough, from about 30 seconds to 10 minutes per review.</p>
+      </article>
+      <article class="offer reveal">
+        <h3>Consistent standards</h3>
+        <p>The same checks run on every pull request and every file, whoever happens to be free to review.</p>
+      </article>
+      <article class="offer reveal">
+        <h3>Spend you can see</h3>
+        <p>Token usage and cost rolled up by organization, project and user.</p>
+      </article>
+      <article class="offer reveal">
+        <h3>Tenant isolation</h3>
+        <p>No data crosses between organizations, and every webhook is verified with an HMAC signature.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Security &amp; deployment
+    </div>
+    <h2 class="reveal">Built to be checked, not just trusted.</h2>
+    <dl class="spec reveal">
+      <div><dt>Platforms</dt><dd>GitHub, GitHub Enterprise Server and Azure DevOps. Started by a pasted URL or a webhook.</dd></div>
+      <div><dt>Access</dt><dd>Five-level role hierarchy, resolved per organization and per project.</dd></div>
+      <div><dt>Audit</dt><dd>Every review logged. Admin impersonation, deletions and role changes recorded in the audit trail.</dd></div>
+      <div><dt>Isolation</dt><dd>Complete tenant isolation and webhook HMAC validation.</dd></div>
+      <div><dt>Built for</dt><dd>Engineering organizations that need governance: access control, spend management and compliance.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= COMPARE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="label reveal">
+      <svg class="cube" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.2 14.2 4.8 14.2 11.2 8 14.8 1.8 11.2 1.8 4.8Z"/><path d="M8 8V1.2M8 8 1.8 4.8M8 8l6.2-3.2"/></svg>
+      Why it's different
+    </div>
+    <h2 class="reveal">Compared with manual review alone.</h2>
+    <table class="compare reveal">
+      <thead><tr><th scope="col"><span class="vh">Area</span></th><th scope="col">Manual review only</th><th scope="col">With iReview</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Consistency</th><td data-h="Manual review only">Depends on who reviews</td><td data-h="With iReview">The same standard on every pull request</td></tr>
+        <tr><th scope="row">Coverage</th><td data-h="Manual review only">Large diffs get skimmed</td><td data-h="With iReview">Every changed source file is read</td></tr>
+        <tr><th scope="row">Turnaround</th><td data-h="Manual review only">Hours or days waiting for a reviewer</td><td data-h="With iReview">Minutes, before a human picks it up</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="band">
+  <div class="wrap">
+    <h2 class="reveal">Run iReview on your next pull request.</h2>
+    <p class="lead reveal">Tell us where your code lives and how review works today. We'll show you iReview on a pull request of yours.</p>
+    <div class="btn-row reveal">
+      <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Demo%20request%3A%20iReview" data-form="general" data-subject="Demo request: iReview" data-title="Run iReview on your next pull request." data-sub="Tell us where your code lives and how review works today. We'll show you iReview on a pull request of yours.">Request a demo</a>
+      <a class="btn btn-ghost" href="../">All products</a>
+    </div>
+    <p class="caption reveal" style="margin-top:var(--s4)">More products</p>
+    <nav class="more-products reveal" aria-label="Other products">
+      <a href="../docket/">Docket: document platform</a>
+      <a href="../folio/">Folio: document viewer</a>
+      <a href="../sweep/">Sweep: document hygiene scanner</a>
+      <a href="../sonetx/">SonetX: AI engineering platform</a>
+      <a href="../marshal/">Marshal: fire prevention inspection</a>
+    </nav>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="../../" aria-label="Sivi Quant Labs home">
+      <img class="mark" src="../../assets/mark-ink.png" alt="" width="390" height="465">
+      <img class="word" src="../../assets/wordmark-ink.png" alt="Sivi Quant Labs" width="955" height="66">
+    </a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="../../">Home</a>
+      <a href="../../services/">Services</a>
+      <a href="../">Products</a>
+      <a href="../../careers/">Careers</a>
+      <a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
+      <a href="https://www.linkedin.com/company/siviquantlabs" rel="me noopener" target="_blank">LinkedIn</a>
+    </nav>
+    <span class="caption">© 2026 Sivi Quant Labs</span>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="../../assets/site.js" defer></script>
+<script src="../../assets/forms.js" defer></script>
+</body>
+</html>

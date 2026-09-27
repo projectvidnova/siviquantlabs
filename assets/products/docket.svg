@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="560" height="420" role="img" aria-labelledby="t d">
+<title id="t">Docket</title>
+<desc id="d">A page is scanned, three pieces of personal data are flagged (SSN, email, phone), then burned out permanently while each action is written to the audit log.</desc>
+<style>
+text{font-family:Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#111;font-size:12px}
+.mono{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace}
+.mid{fill:#666}
+.lbl{font-size:9.5px;letter-spacing:.14em;fill:#666;font-weight:500}
+.tag{fill:#fff;font-size:7.5px;font-weight:600;letter-spacing:.08em}
+.a{animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.fb{transform-box:fill-box;transform-origin:left center}
+.fc{transform-box:fill-box;transform-origin:center}
+@keyframes scan{0%{transform:translateY(0);opacity:1}26%{transform:translateY(344px);opacity:1}27%,100%{transform:translateY(344px);opacity:0}}
+@keyframes f1{0%,5%{opacity:0}7%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes f2{0%,10%{opacity:0}12%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes f3{0%,16%{opacity:0}18%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes press{0%,33%{transform:scale(1)}35%{transform:scale(.96)}37%,100%{transform:scale(1)}}
+@keyframes b1{0%,38%{transform:scaleX(0);opacity:1}41%,92%{transform:scaleX(1);opacity:1}96%{transform:scaleX(1);opacity:0}100%{transform:scaleX(0);opacity:0}}
+@keyframes b2{0%,41%{transform:scaleX(0);opacity:1}44%,92%{transform:scaleX(1);opacity:1}96%{transform:scaleX(1);opacity:0}100%{transform:scaleX(0);opacity:0}}
+@keyframes b3{0%,44%{transform:scaleX(0);opacity:1}47%,92%{transform:scaleX(1);opacity:1}96%{transform:scaleX(1);opacity:0}100%{transform:scaleX(0);opacity:0}}
+@keyframes a1{0%,39%{opacity:0}41%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes a2{0%,42%{opacity:0}44%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes a3{0%,45%{opacity:0}47%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes a4{0%,51%{opacity:0}53%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes l1{0%,46%{opacity:1}48%,96%{opacity:0}100%{opacity:1}}
+@keyframes l2{0%,46%{opacity:0}48%,92%{opacity:1}96%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.a{animation:none!important}}
+</style>
+<defs>
+  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#111" stop-opacity="0"/>
+    <stop offset="1" stop-color="#111" stop-opacity=".09"/>
+  </linearGradient>
+  <clipPath id="pg"><rect x="24" y="58" width="244" height="344"/></clipPath>
+</defs>
+
+<rect x=".5" y=".5" width="559" height="419" rx="3" fill="#fff" stroke="#E5E5E5"/>
+<rect x="1" y="41" width="291" height="378" fill="#F7F7F7"/>
+<line x1="0" y1="40.5" x2="560" y2="40.5" stroke="#E5E5E5"/>
+<line x1="292.5" y1="41" x2="292.5" y2="419" stroke="#E5E5E5"/>
+<text x="20" y="25" class="mono" style="font-size:11.5px">case-2291.pdf</text>
+<text x="540" y="25" class="mid" text-anchor="end" style="font-size:11px">Docket · page 3 of 14</text>
+
+<!-- page -->
+<rect x="24" y="58" width="244" height="344" fill="#fff" stroke="#E5E5E5"/>
+<g fill="#E5E5E5">
+  <rect x="44" y="76" width="150" height="7" fill="#D6D6D6"/>
+  <rect x="44" y="93.5" width="204" height="5"/>
+  <rect x="44" y="109.5" width="196" height="5"/>
+  <rect x="44" y="125.5" width="70" height="5"/>
+  <rect x="44" y="141.5" width="204" height="5"/>
+  <rect x="44" y="157.5" width="180" height="5"/>
+  <rect x="44" y="173.5" width="204" height="5"/>
+  <rect x="44" y="189.5" width="40" height="5"/>
+  <rect x="44" y="205.5" width="204" height="5"/>
+  <rect x="44" y="221.5" width="160" height="5"/>
+  <rect x="44" y="237.5" width="204" height="5"/>
+  <rect x="44" y="253.5" width="198" height="5"/>
+  <rect x="44" y="269.5" width="70" height="5"/>
+  <rect x="44" y="285.5" width="204" height="5"/>
+  <rect x="44" y="301.5" width="120" height="5"/>
+  <rect x="44" y="317.5" width="204" height="5"/>
+  <rect x="44" y="333.5" width="188" height="5"/>
+  <rect x="44" y="349.5" width="204" height="5"/>
+  <rect x="44" y="365.5" width="172" height="5"/>
+  <rect x="44" y="381.5" width="96" height="5"/>
+</g>
+<text x="122" y="131.5" class="mono" style="font-size:9.5px">000-45-6789</text>
+<text x="92" y="195.5" class="mono" style="font-size:9.5px">d.okafor@example.com</text>
+<text x="122" y="275.5" class="mono" style="font-size:9.5px">(555) 014-2290</text>
+
+<!-- scan beam -->
+<g clip-path="url(#pg)">
+  <g class="a" style="animation-name:scan;animation-timing-function:linear" opacity="0">
+    <rect x="24" y="18" width="244" height="40" fill="url(#beam)"/>
+    <rect x="24" y="57" width="244" height="1.5" fill="#111"/>
+  </g>
+</g>
+
+<!-- flags -->
+<g class="a" style="animation-name:f1">
+  <rect x="118" y="120" width="71" height="15" fill="none" stroke="#111" stroke-dasharray="3 2"/>
+  <rect x="193" y="122.5" width="24" height="11" fill="#111"/><text x="205" y="130.8" class="tag" text-anchor="middle">SSN</text>
+</g>
+<g class="a" style="animation-name:f2">
+  <rect x="88" y="184" width="122" height="15" fill="none" stroke="#111" stroke-dasharray="3 2"/>
+  <rect x="214" y="186.5" width="32" height="11" fill="#111"/><text x="230" y="194.8" class="tag" text-anchor="middle">EMAIL</text>
+</g>
+<g class="a" style="animation-name:f3">
+  <rect x="118" y="264" width="88" height="15" fill="none" stroke="#111" stroke-dasharray="3 2"/>
+  <rect x="210" y="266.5" width="36" height="11" fill="#111"/><text x="228" y="274.8" class="tag" text-anchor="middle">PHONE</text>
+</g>
+
+<!-- burned redactions -->
+<rect class="a fb" style="animation-name:b1" x="119" y="121" width="69" height="13" fill="#111"/>
+<rect class="a fb" style="animation-name:b2" x="89" y="185" width="120" height="13" fill="#111"/>
+<rect class="a fb" style="animation-name:b3" x="119" y="265" width="86" height="13" fill="#111"/>
+
+<!-- findings -->
+<text x="312" y="72" class="lbl">PII FINDINGS</text>
+<line x1="312" y1="84.5" x2="540" y2="84.5" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:f1">
+  <text x="312" y="105" style="font-weight:600">SSN</text><text x="364" y="105" class="mid" style="font-size:11px">p.3 · line 4</text>
+  <text x="540" y="105" class="mono" text-anchor="end" style="font-size:11px">0.99</text>
+</g>
+<line x1="312" y1="116.5" x2="540" y2="116.5" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:f2">
+  <text x="312" y="137" style="font-weight:600">Email</text><text x="364" y="137" class="mid" style="font-size:11px">p.3 · line 8</text>
+  <text x="540" y="137" class="mono" text-anchor="end" style="font-size:11px">0.97</text>
+</g>
+<line x1="312" y1="148.5" x2="540" y2="148.5" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:f3">
+  <text x="312" y="169" style="font-weight:600">Phone</text><text x="364" y="169" class="mid" style="font-size:11px">p.3 · line 13</text>
+  <text x="540" y="169" class="mono" text-anchor="end" style="font-size:11px">0.91</text>
+</g>
+<line x1="312" y1="180.5" x2="540" y2="180.5" stroke="#E5E5E5"/>
+
+<!-- audit log -->
+<text x="312" y="214" class="lbl">AUDIT LOG · IMMUTABLE</text>
+<g class="mono" style="font-size:10.5px">
+  <g class="a" style="animation-name:a1"><text x="312" y="238" class="mid">14:02:11</text><text x="374" y="238">redact</text><text x="424" y="238">SSN</text><text x="540" y="238" class="mid" text-anchor="end">p.3</text></g>
+  <g class="a" style="animation-name:a2"><text x="312" y="258" class="mid">14:02:11</text><text x="374" y="258">redact</text><text x="424" y="258">EMAIL</text><text x="540" y="258" class="mid" text-anchor="end">p.3</text></g>
+  <g class="a" style="animation-name:a3"><text x="312" y="278" class="mid">14:02:12</text><text x="374" y="278">redact</text><text x="424" y="278">PHONE</text><text x="540" y="278" class="mid" text-anchor="end">p.3</text></g>
+  <g class="a" style="animation-name:a4"><line x1="312" y1="290.5" x2="540" y2="290.5" stroke="#E5E5E5"/><text x="312" y="308" class="mid">14:02:13</text><text x="374" y="308" style="font-weight:600">burn</text><text x="424" y="308" style="font-weight:600">0 bytes left</text></g>
+</g>
+
+<!-- action -->
+<g class="a fc" style="animation-name:press">
+  <rect x="312" y="344" width="228" height="40" rx="2" fill="#111"/>
+  <text class="a" style="animation-name:l1;fill:#fff;font-weight:500;font-size:12.5px" x="426" y="368" text-anchor="middle" opacity="0">Burn 3 redactions</text>
+  <text class="a" style="animation-name:l2;fill:#fff;font-weight:500;font-size:12.5px" x="426" y="368" text-anchor="middle">Burned · audit written</text>
+</g>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="560" height="420" role="img" aria-labelledby="t d">
+<title id="t">iReview</title>
+<desc id="d">iReview reads a pull request diff while streaming its reasoning, validates its finding in a second pass, then posts a high-severity comment with a suggested fix on the exact line.</desc>
+<style>
+text{font-family:Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#111;font-size:12px}
+.mono{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace}
+.code{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace;font-size:10.5px;white-space:pre}
+.mid{fill:#666}
+.lbl{font-size:9.5px;letter-spacing:.14em;fill:#666;font-weight:500}
+.rs{font-size:10.5px}
+.a{animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.mask{transform-box:fill-box;transform-origin:right center;transform:scaleX(0)}
+@keyframes cur{0%{transform:translateY(0);opacity:1}30%{transform:translateY(147px);opacity:1}33%,100%{transform:translateY(147px);opacity:0}}
+@keyframes k1{0%,4%{transform:scaleX(1)}8%,96%{transform:scaleX(0)}97%,100%{transform:scaleX(1)}}
+@keyframes k2{0%,10%{transform:scaleX(1)}14%,96%{transform:scaleX(0)}97%,100%{transform:scaleX(1)}}
+@keyframes k3{0%,16%{transform:scaleX(1)}20%,96%{transform:scaleX(0)}97%,100%{transform:scaleX(1)}}
+@keyframes k4{0%,22%{transform:scaleX(1)}26%,96%{transform:scaleX(0)}97%,100%{transform:scaleX(1)}}
+@keyframes k5{0%,28%{transform:scaleX(1)}32%,96%{transform:scaleX(0)}97%,100%{transform:scaleX(1)}}
+@keyframes rst{0%,92%{opacity:1}95%,97%{opacity:0}100%{opacity:1}}
+@keyframes v0{0%,37%{opacity:0}39%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes v1{0%,41%{opacity:0}43%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes v2{0%,45%{opacity:0}47%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes v3{0%,49%{opacity:0}51%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes bub{0%,55%{opacity:0;transform:translateY(10px)}59%,92%{opacity:1;transform:translateY(0)}96%,100%{opacity:0;transform:translateY(0)}}
+@keyframes hi{0%,55%{opacity:0}58%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes st{0%,61%{opacity:0}64%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes s1{0%,36%{opacity:1}38%,97%{opacity:0}100%{opacity:1}}
+@keyframes s2{0%,36%{opacity:0}38%,55%{opacity:1}57%,100%{opacity:0}}
+@keyframes s3{0%,55%{opacity:0}57%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes dot{0%,50%,100%{opacity:1}25%,75%{opacity:.25}}
+.a{animation:none!important}
+</style>
+
+<rect x=".5" y=".5" width="559" height="419" rx="3" fill="#fff" stroke="#E5E5E5"/>
+<rect x="331" y="41" width="228" height="378" fill="#F7F7F7"/>
+<line x1="0" y1="40.5" x2="560" y2="40.5" stroke="#E5E5E5"/>
+<line x1="330.5" y1="41" x2="330.5" y2="419" stroke="#E5E5E5"/>
+<text x="20" y="25" class="mono" style="font-size:11px">PR #482 · auth: rotate refresh tokens</text>
+<circle class="a" style="animation-name:dot;animation-duration:2s" cx="452" cy="21" r="3.5" fill="#111"/>
+<text class="a" style="animation-name:s1;font-size:11px" x="540" y="25" text-anchor="end" opacity="0">Pass 1 · draft</text>
+<text class="a" style="animation-name:s2;font-size:11px" x="540" y="25" text-anchor="end" opacity="0">Pass 2 · validate</text>
+<text class="a" style="animation-name:s3;font-size:11px" x="540" y="25" text-anchor="end">Posted</text>
+
+<!-- diff -->
+<rect x="1" y="97" width="329" height="21" fill="#FAFAFA"/>
+<rect x="1" y="118" width="329" height="63" fill="#F1F1F1"/>
+<g class="code">
+  <text x="16" y="70" class="mid">41</text><text x="54" y="70" class="code">async function refresh(req) {</text>
+  <text x="16" y="91" class="mid">42</text><text x="54" y="91" class="code">  const rt = req.cookies.rt;</text>
+  <text x="16" y="112" class="mid">43</text><text x="40" y="112" class="code mid">-</text><text x="54" y="112" class="code mid">  const u = await users.find(rt.sub);</text>
+  <text x="16" y="133" class="mid">43</text><text x="40" y="133" class="code">+</text><text x="54" y="133" class="code">  const c = verify(rt, KEY);</text>
+  <text x="16" y="154" class="mid">44</text><text x="40" y="154" class="code">+</text><text x="54" y="154" class="code">  const u = await users.find(c.sub);</text>
+  <text x="16" y="175" class="mid">45</text><text x="40" y="175" class="code">+</text><text x="54" y="175" class="code">  await tokens.revoke(rt);</text>
+  <text x="16" y="196" class="mid">46</text><text x="54" y="196" class="code">  return issue(u);</text>
+  <text x="16" y="217" class="mid">47</text><text x="54" y="217" class="code">}</text>
+</g>
+<rect class="a" style="animation-name:cur;animation-timing-function:linear" x="1" y="55" width="329" height="21" fill="#111" fill-opacity=".07" opacity="0"/>
+<rect class="a" style="animation-name:hi" x="1" y="139" width="3" height="21" fill="#111"/>
+
+<!-- posted comment -->
+<g class="a" style="animation-name:bub">
+  <path d="M52 238 L60 229 L68 238" fill="#111"/>
+  <rect x="24" y="238" width="292" height="150" rx="2" fill="#fff" stroke="#111"/>
+  <rect x="24" y="238" width="292" height="26" rx="2" fill="#111"/>
+  <text x="36" y="255" style="fill:#fff;font-size:11px;font-weight:600;letter-spacing:.04em">HIGH</text>
+  <text x="72" y="255" style="fill:#fff;font-size:11px">Possible null user on line 44</text>
+  <text x="36" y="284" class="mid" style="font-size:11px">users.find() returns null for a deleted</text>
+  <text x="36" y="300" class="mid" style="font-size:11px">account, and issue() would still sign it.</text>
+  <text x="36" y="326" class="lbl">SUGGESTED FIX</text>
+  <rect x="36" y="334" width="268" height="24" fill="#F4F4F4"/>
+  <text x="46" y="350" class="code">if (!u) throw new AuthError();</text>
+  <text x="36" y="377" class="mid" style="font-size:10px">Reply in the thread to ask why, or for a precedent.</text>
+</g>
+
+<!-- reasoning stream -->
+<text x="350" y="66" class="lbl">REASONING · LIVE</text>
+<g class="a" style="animation-name:rst">
+  <text x="350" y="92" class="rs"><tspan class="mid">› </tspan>Indexed 1,204 code chunks</text>
+  <text x="350" y="114" class="rs"><tspan class="mid">› </tspan>users.find → User | null</text>
+  <text x="350" y="136" class="rs"><tspan class="mid">› </tspan>Line 44 never checks u</text>
+  <text x="350" y="158" class="rs"><tspan class="mid">› </tspan>issue(u) signs any input</text>
+  <text x="350" y="180" class="rs"><tspan class="mid">› </tspan>No earlier thread on this</text>
+</g>
+<g fill="#F7F7F7">
+  <rect class="a mask" style="animation-name:k1" x="348" y="80" width="196" height="17"/>
+  <rect class="a mask" style="animation-name:k2" x="348" y="102" width="196" height="17"/>
+  <rect class="a mask" style="animation-name:k3" x="348" y="124" width="196" height="17"/>
+  <rect class="a mask" style="animation-name:k4" x="348" y="146" width="196" height="17"/>
+  <rect class="a mask" style="animation-name:k5" x="348" y="168" width="196" height="17"/>
+</g>
+
+<g class="a" style="animation-name:v0"><line x1="350" y1="200.5" x2="540" y2="200.5" stroke="#E5E5E5"/><text x="350" y="222" class="lbl">PASS 2 · SELF-CHECK</text></g>
+<g class="a rs" style="animation-name:v1"><text x="350" y="246" class="rs">✓  Line 44 is in the diff</text></g>
+<g class="a rs" style="animation-name:v2"><text x="350" y="268" class="rs">✓  Suggested fix compiles</text></g>
+<g class="a rs" style="animation-name:v3"><text x="350" y="290" class="rs">✓  Not a duplicate thread</text></g>
+
+<g class="a" style="animation-name:st">
+  <line x1="350" y1="312.5" x2="540" y2="312.5" stroke="#E5E5E5"/>
+  <text x="350" y="336" class="mid rs">Findings</text><text x="540" y="336" class="mono rs" text-anchor="end">1 high</text>
+  <text x="350" y="358" class="mid rs">Posted to</text><text x="540" y="358" class="mono rs" text-anchor="end">GitHub</text>
+  <text x="350" y="380" class="mid rs">Turnaround</text><text x="540" y="380" class="mono rs" text-anchor="end">38 s</text>
+</g>
+</svg>

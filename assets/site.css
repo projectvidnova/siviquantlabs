@@ -480,6 +480,113 @@ dialog.modal::backdrop{background:rgba(17,17,17,0.42)}
 .faq details[open] summary::after{transform:rotate(-135deg);margin-top:-2px}
 .faq .a{padding:0 0 var(--s3);color:var(--mid);font-size:16px}
 
+/* ---------- products ---------------------------------------------------- */
+
+/* Each product demo is a self-contained animated SVG loaded as an <img>. The
+   SVGs honour prefers-reduced-motion themselves and settle on their finished
+   frame, so nothing here needs to pause them. */
+.p-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--s3);margin-top:var(--s4);
+}
+.p-grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.p-card{
+  display:flex;flex-direction:column;
+  border:1px solid var(--line);border-radius:2px;
+  transition:border-color .16s ease;
+}
+.p-card:hover{border-color:var(--ink)}
+/* Each demo sits in a <picture> whose reduced-motion source is a still of
+   the finished frame. */
+.p-card picture,.p-figure picture{display:block}
+.p-card img{width:100%;height:auto;border-bottom:1px solid var(--line)}
+.p-card .p-body{display:flex;flex-direction:column;gap:6px;padding:var(--s3);flex:1}
+.p-card .p-kind{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.p-card h3{font-size:22px;letter-spacing:-0.02em}
+.p-card p{font-size:15px;color:var(--mid);line-height:1.55;flex:1}
+.p-card .go{font-size:14px;font-weight:500;display:inline-flex;gap:8px;align-items:center;margin-top:var(--s1)}
+.p-card .go span{transition:transform .18s ease}
+.p-card:hover .go span{transform:translateX(4px)}
+
+/* A group with a single product gets one wide card instead of half a row */
+.p-grid--1{grid-template-columns:1fr}
+.p-grid--1 .p-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.p-grid--1 .p-card img{border-bottom:none;border-right:1px solid var(--line)}
+.p-grid--1 .p-body{justify-content:center;padding:var(--s4)}
+.p-grid--1 .p-card p{flex:none}
+
+.p-group{padding:var(--s5) 0;border-top:1px solid var(--line)}
+.p-group .body{margin-top:var(--s2)}
+
+/* Product page hero: copy left, live demo right */
+.p-hero{
+  padding-top:var(--s5);padding-bottom:var(--s5);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);
+  gap:var(--s4);align-items:center;
+}
+.p-hero h1{font-size:clamp(34px,4.6vw,54px);max-width:14ch}
+.p-hero .lead{margin-top:var(--s3)}
+.p-hero .body{margin-top:var(--s2)}
+.p-figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:2px}
+.p-figure figcaption{margin-top:var(--s2);font-size:13.5px;line-height:1.5;color:var(--mid);max-width:52ch}
+.crumb a{color:var(--mid);transition:color .15s ease}
+.crumb a:hover{color:var(--ink)}
+
+/* Headline numbers */
+.stats{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.stat{padding:var(--s3) var(--s3) var(--s3) 0}
+.stat + .stat{padding-left:var(--s3);border-left:1px solid var(--line)}
+.stat b{display:block;font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.035em;line-height:1.05}
+.stat span{display:block;margin-top:8px;font-size:14px;line-height:1.45;color:var(--mid);max-width:24ch}
+
+/* A step can carry a short list under its summary */
+.step .list{margin-top:12px}
+.step .list li{font-size:15.5px}
+.step .list li + li{margin-top:6px}
+
+/* Before / after comparison */
+.compare{width:100%;margin-top:var(--s4);border-collapse:collapse;font-size:15.5px}
+.compare th,.compare td{text-align:left;vertical-align:top;padding:var(--s2) var(--s3) var(--s2) 0;border-bottom:1px solid var(--line)}
+.compare thead th{
+  font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);
+  border-bottom:1px solid var(--ink);
+}
+.compare tbody th{font-weight:600;width:22%}
+.compare td{color:var(--mid);width:39%}
+.compare td:last-child{color:var(--ink)}
+
+/* Visually hidden, still read by screen readers */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.more-products{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-top:var(--s3)}
+.more-products a{font-size:15px;border-bottom:1px solid var(--line);transition:border-color .15s ease}
+.more-products a:hover{border-bottom-color:var(--ink)}
+
+@media (max-width:980px){
+  .p-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p-hero{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){padding-left:0;border-left:none}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:640px){
+  .p-grid,.p-grid--2{grid-template-columns:1fr}
+  .p-grid--1 .p-card{grid-template-columns:1fr}
+  .p-grid--1 .p-card img{border-right:none;border-bottom:1px solid var(--line)}
+  .p-grid--1 .p-body{padding:var(--s3)}
+  .compare,.compare tbody,.compare tr,.compare th,.compare td{display:block;width:100%}
+  .compare thead{display:none}
+  .compare tbody tr{padding:var(--s2) 0;border-bottom:1px solid var(--line)}
+  .compare tbody th,.compare td{border:none;padding:2px 0}
+  .compare td::before{
+    content:attr(data-h);display:block;margin-top:8px;
+    font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);
+  }
+}
+
 /* ---------- closing band ------------------------------------------------ */
 
 .band{padding:var(--s5) 0;border-top:1px solid var(--line)}
@@ -536,6 +643,16 @@ html.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transfor
   .step{grid-template-columns:36px 1fr;gap:var(--s2)}
   .btn-row .btn{width:100%}
   .foot{flex-direction:column;align-items:flex-start;gap:var(--s2)}
+}
+
+/* Product pages carry a longer header CTA ("Request a demo"); on the
+   narrowest phones it and the wordmark need a little less room. */
+@media (max-width:400px){
+  .nav{gap:var(--s2)}
+  .brand{gap:9px}
+  .brand .mark{height:26px}
+  .brand .word{height:9px}
+  .navlinks .btn{padding:9px 12px;font-size:13px}
 }
 
 @media (prefers-reduced-motion:reduce){

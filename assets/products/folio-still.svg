@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="560" height="420" role="img" aria-labelledby="t d">
+<title id="t">Folio</title>
+<desc id="d">A host application embeds Folio in an iframe. The host sends a token and a hint asking for download rights; the server ignores the hint, grants view, redact and print, streams the pages, and logs a redaction that is drawn and burned into the file.</desc>
+<style>
+text{font-family:Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#111;font-size:12px}
+.mono{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace}
+.mid{fill:#666}
+.off{fill:#BDBDBD}
+.lbl{font-size:9.5px;letter-spacing:.14em;fill:#666;font-weight:500}
+.s{font-size:10px}
+.tag{fill:#fff;font-size:7.5px;font-weight:600;letter-spacing:.08em}
+.a{animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.tl{transform-box:fill-box;transform-origin:left top}
+@keyframes m1{0%,2%{opacity:0;transform:translateX(-8px)}5%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes m2{0%,8%{opacity:0;transform:translateX(-8px)}11%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes m3{0%,14%{opacity:0;transform:translateX(8px)}17%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes on{0%,19%{opacity:0}21%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes th1{0%,23%{opacity:0;transform:translateY(6px)}25%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes th2{0%,27%{opacity:0;transform:translateY(6px)}29%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes th3{0%,31%{opacity:0;transform:translateY(6px)}33%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes th4{0%,35%{opacity:0;transform:translateY(6px)}37%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes pc{0%,24%{opacity:0}28%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes sk{0%,24%{opacity:1}28%,96%{opacity:0}100%{opacity:1}}
+@keyframes cur{0%,42%{opacity:0;transform:translate(0,0)}44%{opacity:1;transform:translate(0,0)}54%{opacity:1;transform:translate(120px,30px)}58%{opacity:1;transform:translate(120px,30px)}62%,100%{opacity:0;transform:translate(120px,30px)}}
+@keyframes draw{0%,44%{opacity:0;transform:scale(0)}45%{opacity:1;transform:scale(0)}54%,92%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(1)}}
+@keyframes burn{0%,57%{opacity:0}60%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes au1{0%,29%{opacity:0}31%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes au2{0%,55%{opacity:0}57%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes au3{0%,60%{opacity:0}62%,92%{opacity:1}96%,100%{opacity:0}}
+.a{animation:none!important}
+</style>
+
+<rect x=".5" y=".5" width="559" height="419" rx="3" fill="#fff" stroke="#E5E5E5"/>
+<line x1="0" y1="40.5" x2="560" y2="40.5" stroke="#E5E5E5"/>
+<text x="20" y="25" class="mono" style="font-size:11px">records.example.gov/case/2291</text>
+<text x="540" y="25" class="mid" text-anchor="end" style="font-size:11px">Folio · embedded viewer</text>
+
+<!-- host + iframe -->
+<rect x="20.5" y="56.5" width="336" height="344" fill="#F7F7F7" stroke="#E5E5E5"/>
+<text x="32" y="74" class="lbl">HOST APPLICATION</text>
+<rect x="32.5" y="84.5" width="312" height="304" fill="#fff" stroke="#111" stroke-dasharray="4 3"/>
+<line x1="33" y1="112.5" x2="344" y2="112.5" stroke="#E5E5E5"/>
+
+<!-- toolbar: greyed until the server answers -->
+<g class="s">
+  <text x="46" y="103" class="off">Redact</text><text x="96" y="103" class="off">Print</text><text x="138" y="103" class="off">Download</text>
+</g>
+<g class="a s" style="animation-name:on">
+  <rect x="32.5" y="84.5" width="190" height="28" fill="#fff"/>
+  <text x="46" y="103" style="font-weight:600">Redact</text><text x="96" y="103" style="font-weight:600">Print</text>
+  <text x="152" y="103" class="mid">Download</text>
+  <line x1="152" y1="99.5" x2="198" y2="99.5" stroke="#666"/>
+  <rect x="139" y="97" width="8" height="7" fill="#666"/><path d="M140.5 97 v-2.5 a2.5 2.5 0 0 1 5 0 V97" fill="none" stroke="#666" stroke-width="1.2"/>
+  <text x="332" y="103" class="mid mono" text-anchor="end" style="font-size:9.5px">p.1 / 2,140 · 612 MB</text>
+</g>
+
+<!-- page -->
+<rect x="52.5" y="124.5" width="180" height="252" fill="#fff" stroke="#E5E5E5"/>
+<g class="a" style="animation-name:sk" opacity="0" fill="#F2F2F2">
+  <rect x="68" y="140" width="148" height="220"/>
+</g>
+<g class="a" style="animation-name:pc" fill="#E5E5E5">
+  <rect x="68" y="141" width="104" height="7" fill="#D6D6D6"/>
+  <rect x="68" y="160" width="148" height="4"/><rect x="68" y="174" width="140" height="4"/>
+  <rect x="68" y="188" width="148" height="4"/><rect x="68" y="202" width="120" height="4"/>
+  <rect x="68" y="216" width="148" height="4"/><rect x="68" y="230" width="132" height="4"/>
+  <rect x="68" y="244" width="148" height="4"/><rect x="68" y="258" width="96" height="4"/>
+  <rect x="68" y="278" width="148" height="4"/><rect x="68" y="292" width="148" height="4"/>
+  <rect x="68" y="306" width="110" height="4"/><rect x="68" y="320" width="148" height="4"/>
+  <rect x="68" y="334" width="140" height="4"/><rect x="68" y="348" width="80" height="4"/>
+</g>
+<rect class="a tl" style="animation-name:draw" x="64.5" y="195.5" width="120" height="30" fill="#111" fill-opacity=".06" stroke="#111" stroke-dasharray="3 2"/>
+<g class="a" style="animation-name:burn">
+  <rect x="65" y="196" width="119" height="29" fill="#111"/>
+  <rect x="188" y="205" width="40" height="11" fill="#111"/><text x="208" y="213.3" class="tag" text-anchor="middle">BURNED</text>
+</g>
+<g class="a" style="animation-name:cur" opacity="0">
+  <path d="M64 195 v14 l3.6-3.4 2.6 6 2.4-1-2.6-5.8 5-.2 z" fill="#111" stroke="#fff" stroke-width="1"/>
+</g>
+
+<!-- streamed thumbnails -->
+<g class="a" style="animation-name:th1"><rect x="250.5" y="124.5" width="80" height="56" fill="#fff" stroke="#111"/><rect x="260" y="136" width="44" height="3" fill="#D6D6D6"/><rect x="260" y="146" width="60" height="2" fill="#E5E5E5"/><rect x="260" y="153" width="54" height="2" fill="#E5E5E5"/><rect x="260" y="160" width="60" height="2" fill="#E5E5E5"/></g>
+<g class="a" style="animation-name:th2"><rect x="250.5" y="188.5" width="80" height="56" fill="#fff" stroke="#E5E5E5"/><rect x="260" y="200" width="60" height="2" fill="#E5E5E5"/><rect x="260" y="207" width="52" height="2" fill="#E5E5E5"/><rect x="260" y="214" width="60" height="2" fill="#E5E5E5"/><rect x="260" y="221" width="40" height="2" fill="#E5E5E5"/></g>
+<g class="a" style="animation-name:th3"><rect x="250.5" y="252.5" width="80" height="56" fill="#fff" stroke="#E5E5E5"/><rect x="260" y="264" width="60" height="2" fill="#E5E5E5"/><rect x="260" y="271" width="60" height="2" fill="#E5E5E5"/><rect x="260" y="278" width="36" height="2" fill="#E5E5E5"/></g>
+<g class="a" style="animation-name:th4"><rect x="250.5" y="316.5" width="80" height="56" fill="#fff" stroke="#E5E5E5"/><rect x="260" y="328" width="60" height="2" fill="#E5E5E5"/><rect x="260" y="335" width="48" height="2" fill="#E5E5E5"/><rect x="260" y="342" width="60" height="2" fill="#E5E5E5"/></g>
+
+<!-- server -->
+<text x="372" y="74" class="lbl">FOLIO SERVER</text>
+<g class="a" style="animation-name:m1">
+  <rect x="372.5" y="84.5" width="168" height="42" fill="#fff" stroke="#E5E5E5"/>
+  <text x="384" y="101" style="font-size:11px;font-weight:600">postMessage from host</text>
+  <text x="384" y="117" class="mono mid s">jwt · fileId · hints</text>
+</g>
+<g class="a" style="animation-name:m2">
+  <rect x="372.5" y="134.5" width="168" height="30" fill="#fff" stroke="#E5E5E5"/>
+  <text x="384" y="154" class="mono s">download=true</text>
+  <rect x="482" y="144" width="48" height="11" fill="#111"/><text x="506" y="152.3" class="tag" text-anchor="middle">IGNORED</text>
+</g>
+<g class="a" style="animation-name:m3">
+  <rect x="372.5" y="172.5" width="168" height="86" fill="#fff" stroke="#111"/>
+  <text x="384" y="190" style="font-size:11px;font-weight:600">Session · JWT via JWKS</text>
+  <text x="384" y="208" class="mid s">role</text><text x="530" y="208" class="mono s" text-anchor="end">records-clerk</text>
+  <text x="384" y="226" class="s">view  ✓</text><text x="458" y="226" class="s">redact  ✓</text>
+  <text x="384" y="244" class="s">print  ✓</text><text x="458" y="244" class="s mid">download  ✗</text>
+</g>
+<text x="372" y="286" class="lbl">AUDIT LOG</text>
+<g class="mono s">
+  <g class="a" style="animation-name:au1"><text x="372" y="308" class="mid mono s">14:08:02</text><text x="436" y="308" class="mono s">view</text><text x="540" y="308" class="mid mono s" text-anchor="end">p.1</text></g>
+  <g class="a" style="animation-name:au2"><text x="372" y="328" class="mid mono s">14:09:40</text><text x="436" y="328" class="mono s">redact</text><text x="540" y="328" class="mid mono s" text-anchor="end">p.1</text></g>
+  <g class="a" style="animation-name:au3"><text x="372" y="348" class="mid mono s">14:09:41</text><text x="436" y="348" class="mono s" style="font-weight:700">burn</text><text x="540" y="348" class="mid mono s" text-anchor="end">p.1</text></g>
+</g>
+<line x1="372" y1="368.5" x2="540" y2="368.5" stroke="#E5E5E5"/>
+<text x="372" y="390" class="mid s">Client hints trusted for security</text><text x="540" y="390" text-anchor="end" style="font-weight:600">0</text>
+</svg>

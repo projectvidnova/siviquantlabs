@@ -18,6 +18,72 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://siviquantlabs.com/products/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://siviquantlabs.com/products/docket/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://siviquantlabs.com/assets/products/og/docket.png</image:loc>
+      <image:title>Docket</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://siviquantlabs.com/products/folio/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://siviquantlabs.com/assets/products/og/folio.png</image:loc>
+      <image:title>Folio</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://siviquantlabs.com/products/sweep/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://siviquantlabs.com/assets/products/og/sweep.png</image:loc>
+      <image:title>Sweep</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://siviquantlabs.com/products/ireview/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://siviquantlabs.com/assets/products/og/ireview.png</image:loc>
+      <image:title>iReview</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://siviquantlabs.com/products/sonetx/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://siviquantlabs.com/assets/products/og/sonetx.png</image:loc>
+      <image:title>SonetX</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://siviquantlabs.com/products/marshal/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://siviquantlabs.com/assets/products/og/marshal.png</image:loc>
+      <image:title>Marshal</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://siviquantlabs.com/careers/</loc>
     <lastmod>2026-08-23</lastmod>
     <changefreq>weekly</changefreq>

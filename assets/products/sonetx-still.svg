@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="560" height="420" role="img" aria-labelledby="t d">
+<title id="t">SonetX</title>
+<desc id="d">A terminal run of the SonetX CLI: the orchestrator plans eight stages, the requirements persona asks a blocking question, the run resumes and each persona completes, then the test engine turns the requirement into traced BDD scenarios.</desc>
+<style>
+text{font-family:Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#111;font-size:12px}
+.mono{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace}
+.t{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace;font-size:11px;fill:#fff;white-space:pre}
+.dim{fill:#8C8C8C}
+.mid{fill:#666}
+.lbl{font-size:9.5px;letter-spacing:.14em;fill:#666;font-weight:500}
+.nl{font-size:9.5px;fill:#666}
+.a{animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.mask{transform-box:fill-box;transform-origin:right center;transform:scaleX(0)}
+@keyframes ty1{0%,1%{transform:scaleX(1)}6%,96%{transform:scaleX(0)}97%,100%{transform:scaleX(1)}}
+@keyframes ty4{0%,20%{transform:scaleX(1)}25%,96%{transform:scaleX(0)}97%,100%{transform:scaleX(1)}}
+@keyframes rst{0%,92%{opacity:1}95%,97%{opacity:0}100%{opacity:1}}
+@keyframes L2{0%,7%{opacity:0}9%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes L3{0%,13%{opacity:0}15%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes L5{0%,27%{opacity:0}29%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes L6{0%,43%{opacity:0}45%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes L7{0%,51%{opacity:0}53%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes L8{0%,61%{opacity:0}63%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes caret{0%,15%{opacity:0}15.1%,17%{opacity:1}17.1%,18.5%{opacity:0}18.6%,20%{opacity:1}20.1%,100%{opacity:0}}
+@keyframes n1{0%,7%{opacity:0}9%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes n2{0%,29%{opacity:0}31%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes n3{0%,35%{opacity:0}37%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes n4{0%,43%{opacity:0}45%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes n5{0%,51%{opacity:0}53%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes n6{0%,56%{opacity:0}58%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes n7{0%,61%{opacity:0}63%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes n8{0%,66%{opacity:0}68%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes blk{0%,13%{opacity:0}15%,17%{opacity:1}19%{opacity:.3}21%,24%{opacity:1}26%{opacity:.3}28%{opacity:1}30%,100%{opacity:0}}
+@keyframes g1{0%,70%{opacity:0}72%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes g2{0%,74%{opacity:0}76%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes g3{0%,78%{opacity:0}80%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes g4{0%,82%{opacity:0}84%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes flow{0%,70%{stroke-dashoffset:24}84%,100%{stroke-dashoffset:0}}
+.a{animation:none!important}
+</style>
+
+<rect x=".5" y=".5" width="559" height="419" rx="3" fill="#fff" stroke="#E5E5E5"/>
+<line x1="0" y1="40.5" x2="560" y2="40.5" stroke="#E5E5E5"/>
+<text x="20" y="25" class="mono" style="font-size:11px">run pw-reset-7f2</text>
+<text x="540" y="25" class="mid" text-anchor="end" style="font-size:11px">SonetX CLI · private gateway</text>
+
+<!-- terminal -->
+<rect x="20" y="56" width="520" height="182" rx="3" fill="#111"/>
+<g class="a" style="animation-name:rst">
+  <text x="36" y="82" class="t"><tspan class="dim">$ </tspan>sonetx run "add password reset"</text>
+</g>
+<g class="a" style="animation-name:L2"><text x="36" y="102" class="t">●</text><text x="54" y="102" class="t">orchestrator</text><text x="176" y="102" class="t dim">plan: 8 stages</text></g>
+<g class="a" style="animation-name:L3"><text x="36" y="122" class="t" style="font-weight:700">?</text><text x="54" y="122" class="t">requirements</text><text x="176" y="122" class="t">Which provider sends reset emails?</text></g>
+<g class="a" style="animation-name:rst"><text x="36" y="142" class="t dim">&gt;</text><text x="54" y="142" class="t">SendGrid, existing templates</text></g>
+<rect class="a" style="animation-name:caret" x="54" y="132" width="7" height="13" fill="#fff" opacity="0"/>
+<g class="a" style="animation-name:L5"><text x="36" y="162" class="t">●</text><text x="54" y="162" class="t">resuming</text><text x="176" y="162" class="t dim">stage 2 of 8</text></g>
+<g class="a" style="animation-name:L6"><text x="36" y="182" class="t">✓</text><text x="54" y="182" class="t">implementation</text><text x="176" y="182" class="t dim">4 files changed</text></g>
+<g class="a" style="animation-name:L7"><text x="36" y="202" class="t">✓</text><text x="54" y="202" class="t">qa</text><text x="176" y="202" class="t dim">12 tests pass · report saved</text></g>
+<g class="a" style="animation-name:L8"><text x="36" y="222" class="t">✓</text><text x="54" y="222" class="t">security</text><text x="176" y="222" class="t dim">0 findings · ready for review</text></g>
+<g fill="#111">
+  <rect class="a mask" style="animation-name:ty1" x="44" y="70" width="240" height="16"/>
+  <rect class="a mask" style="animation-name:ty4" x="52" y="130" width="200" height="16"/>
+</g>
+
+<!-- personas -->
+<text x="20" y="266" class="lbl">EIGHT PERSONAS · ONE ORCHESTRATOR</text>
+<line x1="50" y1="288.5" x2="510" y2="288.5" stroke="#E5E5E5"/>
+<g fill="#fff" stroke="#111">
+  <rect x="42.5" y="280.5" width="16" height="16"/><rect x="108.5" y="280.5" width="16" height="16"/>
+  <rect x="173.5" y="280.5" width="16" height="16"/><rect x="239.5" y="280.5" width="16" height="16"/>
+  <rect x="305.5" y="280.5" width="16" height="16"/><rect x="370.5" y="280.5" width="16" height="16"/>
+  <rect x="436.5" y="280.5" width="16" height="16"/><rect x="502.5" y="280.5" width="16" height="16"/>
+</g>
+<g fill="#111">
+  <rect class="a" style="animation-name:n1" x="42.5" y="280.5" width="16" height="16"/>
+  <rect class="a" style="animation-name:n2" x="108.5" y="280.5" width="16" height="16"/>
+  <rect class="a" style="animation-name:n3" x="173.5" y="280.5" width="16" height="16"/>
+  <rect class="a" style="animation-name:n4" x="239.5" y="280.5" width="16" height="16"/>
+  <rect class="a" style="animation-name:n5" x="305.5" y="280.5" width="16" height="16"/>
+  <rect class="a" style="animation-name:n6" x="370.5" y="280.5" width="16" height="16"/>
+  <rect class="a" style="animation-name:n7" x="436.5" y="280.5" width="16" height="16"/>
+  <rect class="a" style="animation-name:n8" x="502.5" y="280.5" width="16" height="16"/>
+</g>
+<g class="a" style="animation-name:blk" opacity="0">
+  <rect x="104.5" y="276.5" width="24" height="24" fill="none" stroke="#111" stroke-dasharray="2 2"/>
+  <text x="116.5" y="292.5" text-anchor="middle" style="font-size:11px;font-weight:700">?</text>
+</g>
+<g class="nl" text-anchor="middle">
+  <text x="50.5" y="313">Orchestrator</text><text x="116.5" y="325">Requirements</text>
+  <text x="181.5" y="313">Architecture</text><text x="247.5" y="325">Build</text>
+  <text x="313.5" y="313">QA</text><text x="378.5" y="325">Review</text>
+  <text x="444.5" y="313">Security</text><text x="510.5" y="325">Docs</text>
+</g>
+
+<!-- test generation -->
+<line x1="20" y1="332.5" x2="540" y2="332.5" stroke="#E5E5E5"/>
+<text x="20" y="354" class="lbl">TEST GENERATION</text>
+<rect x="20.5" y="364.5" width="132" height="36" fill="#fff" stroke="#111"/>
+<text x="32" y="380" class="mono" style="font-size:10px;font-weight:700">REQ-7</text>
+<text x="32" y="394" class="mid" style="font-size:10px">Password reset</text>
+<path class="a" style="animation-name:flow" d="M158 382.5 H182" stroke="#111" stroke-dasharray="24" fill="none"/>
+<path d="M178 378.5 L183 382.5 L178 386.5" fill="none" stroke="#111"/>
+<g style="font-size:10px">
+  <text class="a mono" style="animation-name:g1" x="194" y="370"><tspan class="mid">Scenario:</tspan> valid link resets password</text>
+  <text class="a mono" style="animation-name:g2" x="194" y="386"><tspan class="mid">Scenario:</tspan> expired link is rejected</text>
+  <text class="a mono" style="animation-name:g3" x="194" y="402"><tspan class="mid">Scenario:</tspan> repeat requests throttled</text>
+</g>
+<g class="a" style="animation-name:g4">
+  <text x="540" y="380" text-anchor="end" style="font-size:16px;font-weight:600">3 / 3</text>
+  <text x="540" y="396" text-anchor="end" class="mid" style="font-size:10px">traced to REQ-7</text>
+</g>
+</svg>

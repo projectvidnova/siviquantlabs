@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="560" height="420" role="img" aria-labelledby="t d">
+<title id="t">Marshal</title>
+<desc id="d">Marshal classifies properties by hazard and schedules inspections by code. In the field, offline, the AI flags a blocked exit in a photo; the inspector confirms it, the device syncs, and the violation moves from citation to a filed certificate.</desc>
+<style>
+text{font-family:Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#111;font-size:12px}
+.mono{font-family:ui-monospace,'SF Mono',Consolas,Menlo,monospace}
+.mid{fill:#666}
+.lbl{font-size:9.5px;letter-spacing:.14em;fill:#666;font-weight:500}
+.s{font-size:10px}
+.tag{fill:#fff;font-size:7.5px;font-weight:600;letter-spacing:.08em}
+.otag{fill:#111;font-size:7.5px;font-weight:600;letter-spacing:.08em}
+.a{animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.fc{transform-box:fill-box;transform-origin:center}
+@keyframes c1{0%,2%{opacity:0}4%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes c2{0%,5%{opacity:0}7%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes c3{0%,8%{opacity:0}10%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes d1{0%,11%{opacity:0}13%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes d2{0%,14%{opacity:0}16%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes d3{0%,17%{opacity:0}19%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes ph{0%,20%{opacity:0}23%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes fl{0%,27%{opacity:0;transform:scale(1.15)}29%,92%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(1)}}
+@keyframes cd{0%,31%{opacity:0;transform:translateY(8px)}34%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes btn{0%,31%{opacity:0}34%,41%{opacity:1}43%,100%{opacity:0}}
+@keyframes tap{0%,38%{opacity:0;transform:scale(.2)}39%{opacity:.35;transform:scale(.4)}42%,100%{opacity:0;transform:scale(1.6)}}
+@keyframes ok{0%,42%{opacity:0}44%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes off{0%,47%{opacity:1}49%,97%{opacity:0}100%{opacity:1}}
+@keyframes syn{0%,47%{opacity:0}49%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes v1{0%,53%{opacity:0}55%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes v2{0%,59%{opacity:0}61%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes v3{0%,65%{opacity:0}67%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes v4{0%,71%{opacity:0}73%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes cert{0%,77%{opacity:0;transform:translateY(6px)}80%,92%{opacity:1;transform:none}96%,100%{opacity:0}}
+.a{animation:none!important}
+</style>
+
+<rect x=".5" y=".5" width="559" height="419" rx="3" fill="#fff" stroke="#E5E5E5"/>
+<line x1="0" y1="40.5" x2="560" y2="40.5" stroke="#E5E5E5"/>
+<text x="20" y="25" style="font-size:11.5px;font-weight:600">Fire Prevention Bureau</text>
+<text x="540" y="25" class="mid" text-anchor="end" style="font-size:11px">Marshal · District 4</text>
+
+<!-- properties -->
+<text x="20" y="66" class="lbl">PROPERTIES · SCHEDULED BY CODE</text>
+<line x1="20" y1="76.5" x2="300" y2="76.5" stroke="#E5E5E5"/>
+<text x="20" y="96" style="font-weight:600">118 Cedar Ave</text><text x="20" y="112" class="mid s">School · built 1964</text>
+<line x1="20" y1="126.5" x2="300" y2="126.5" stroke="#E5E5E5"/>
+<text x="20" y="146" style="font-weight:600">40 Mill St</text><text x="20" y="162" class="mid s">Warehouse · built 1988</text>
+<line x1="20" y1="176.5" x2="300" y2="176.5" stroke="#E5E5E5"/>
+<text x="20" y="196" style="font-weight:600">7 Harbor Rd</text><text x="20" y="212" class="mid s">Assembly hall · built 1972</text>
+<line x1="20" y1="226.5" x2="300" y2="226.5" stroke="#E5E5E5"/>
+
+<g class="a" style="animation-name:c1"><rect x="236" y="86" width="64" height="12" fill="#111"/><text x="268" y="94.6" class="tag" text-anchor="middle">LIFE HAZARD</text></g>
+<g class="a" style="animation-name:c2"><rect x="236.5" y="136.5" width="63" height="11" fill="#fff" stroke="#111"/><text x="268" y="144.6" class="otag" text-anchor="middle">NON-LIFE</text></g>
+<g class="a" style="animation-name:c3"><rect x="236" y="186" width="64" height="12" fill="#111"/><text x="268" y="194.6" class="tag" text-anchor="middle">LIFE HAZARD</text></g>
+<text class="a mid s" style="animation-name:d1" x="300" y="112" text-anchor="end">4× a year · next Mar 14</text>
+<text class="a mid s" style="animation-name:d2" x="300" y="162" text-anchor="end">every 5 yrs · next 2031</text>
+<text class="a mid s" style="animation-name:d3" x="300" y="212" text-anchor="end">pre-1979 rule · next Jun 2</text>
+
+<!-- violation lifecycle -->
+<text x="20" y="256" class="lbl">VIOLATION V-0419 · BLOCKED EXIT</text>
+<line x1="34" y1="282.5" x2="286" y2="282.5" stroke="#E5E5E5"/>
+<g fill="#fff" stroke="#111"><circle cx="34" cy="282.5" r="6"/><circle cx="118" cy="282.5" r="6"/><circle cx="202" cy="282.5" r="6"/><circle cx="286" cy="282.5" r="6"/></g>
+<g fill="#111">
+  <circle class="a" style="animation-name:v1" cx="34" cy="282.5" r="6"/>
+  <circle class="a" style="animation-name:v2" cx="118" cy="282.5" r="6"/>
+  <circle class="a" style="animation-name:v3" cx="202" cy="282.5" r="6"/>
+  <circle class="a" style="animation-name:v4" cx="286" cy="282.5" r="6"/>
+</g>
+<g class="s" text-anchor="middle"><text x="34" y="306">Cited</text><text x="118" y="306">Notice sent</text><text x="202" y="306">Corrected</text><text x="286" y="306">Re-inspected</text></g>
+<g class="a" style="animation-name:cert">
+  <rect x="20.5" y="326.5" width="280" height="44" fill="#fff" stroke="#111"/>
+  <text x="34" y="346" style="font-size:11.5px;font-weight:600">✓  Certificate filed</text>
+  <text x="34" y="361" class="mid s">118 Cedar Ave · every step in the audit log</text>
+</g>
+
+<!-- field device -->
+<rect x="326.5" y="52.5" width="208" height="352" rx="16" fill="#fff" stroke="#111"/>
+<text x="342" y="76" style="font-size:10.5px;font-weight:600">118 Cedar Ave</text>
+<g class="a" style="animation-name:off"><circle cx="428" cy="72.5" r="3" fill="none" stroke="#666"/><text x="518" y="76" class="mid s" text-anchor="end">Offline · 2 queued</text></g>
+<g class="a" style="animation-name:syn" opacity="0"><circle cx="478" cy="72.5" r="3" fill="#111"/><text x="518" y="76" class="s" text-anchor="end">Synced</text></g>
+
+<g class="a" style="animation-name:ph">
+  <rect x="340" y="86" width="180" height="136" fill="#F2F2F2"/>
+  <line x1="340" y1="200.5" x2="520" y2="200.5" stroke="#CFCFCF"/>
+  <rect x="404.5" y="114.5" width="52" height="86" fill="#fff" stroke="#999"/>
+  <circle cx="448" cy="160" r="2" fill="#999"/>
+  <rect x="416" y="98" width="30" height="11" fill="#111"/><text x="431" y="106.3" class="tag" text-anchor="middle">EXIT</text>
+  <g fill="#E0E0E0" stroke="#8A8A8A"><rect x="392.5" y="170.5" width="34" height="30"/><rect x="424.5" y="178.5" width="30" height="22"/><rect x="400.5" y="148.5" width="26" height="22"/></g>
+</g>
+<g class="a fc" style="animation-name:fl">
+  <rect x="386.5" y="142.5" width="74" height="64" fill="none" stroke="#111" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="386" y="208" width="92" height="12" fill="#111"/><text x="432" y="216.6" class="tag" text-anchor="middle">AI · BLOCKED EXIT?</text>
+</g>
+
+<g class="a" style="animation-name:cd">
+  <text x="342" y="246" class="lbl">SUGGESTED FINDING</text>
+  <text x="342" y="266" style="font-size:12px;font-weight:600">Egress path obstructed</text>
+  <text x="342" y="282" class="mid s">Checklist: exits · item 3</text>
+  <text x="342" y="296" class="mid s">Citation suggested from code library</text>
+</g>
+<g class="a" style="animation-name:btn">
+  <rect x="342" y="312" width="84" height="30" rx="2" fill="#111"/><text x="384" y="331" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:500">Confirm</text>
+  <rect x="434.5" y="312.5" width="84" height="29" rx="2" fill="#fff" stroke="#111"/><text x="476" y="331" text-anchor="middle" style="font-size:11px;font-weight:500">Dismiss</text>
+</g>
+<circle class="a fc" style="animation-name:tap" cx="384" cy="327" r="24" fill="#111" opacity="0"/>
+<g class="a" style="animation-name:ok">
+  <rect x="342" y="312" width="176" height="30" rx="2" fill="#111"/>
+  <text x="430" y="331" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:500">✓  Confirmed by inspector</text>
+</g>
+<text x="430" y="376" text-anchor="middle" class="mid" style="font-size:9.5px">AI suggests. Only an inspector files.</text>
+<rect x="408" y="390" width="44" height="3" rx="1.5" fill="#E5E5E5"/>
+</svg>
