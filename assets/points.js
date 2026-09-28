@@ -193,7 +193,14 @@
     else if ((!visible || reduced) && running) { running = false; cancelAnimationFrame(raf); }
   }
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; sync(); }).observe(canvas);
+    new IntersectionObserver(function (en) {
+      var now = en[0].isIntersecting;
+      // Back on screen after leaving it entirely: replay from the start, as on
+      // arrival (fly in, flat sheet, fold), from the original viewing angle.
+      if (now && !visible && !reduced) { t0 = null; az = -.62; el = .6; }
+      visible = now;
+      sync();
+    }).observe(canvas);
   }
 
   /* ---- interaction: drag to turn, arrow keys to step --------------------- */
