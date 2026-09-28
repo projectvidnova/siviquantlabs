@@ -1,0 +1,127 @@
+/* Layout experiments (PROTOTYPE), each behind an attribute on <html>:
+     data-type   = current | refined     display typography
+     data-hero   = standard | immersive  homepage hero
+     data-media  = grey | tinted         demo trays and UI fragments
+     data-extras = off | on              learn-more links, routing, footnotes, sitemap footer
+   With every switch on its first value the page is exactly the live design. */
+
+/* ---------- type: lighter, tighter display ------------------------------ */
+
+:root[data-type="refined"] h1{font-weight:500;letter-spacing:-0.04em;line-height:1.02}
+:root[data-type="refined"] h2{font-weight:500;letter-spacing:-0.035em;line-height:1.08}
+:root[data-type="refined"] h3{font-weight:500;letter-spacing:-0.02em}
+:root[data-type="refined"] .lead{font-size:clamp(18px,1.9vw,20px);line-height:1.5}
+:root[data-type="refined"] .p-hero h1{font-weight:500;letter-spacing:-0.04em}
+:root[data-type="refined"] .stat b{font-weight:500;letter-spacing:-0.045em}
+:root[data-type="refined"] .p-card h3{font-weight:500}
+
+/* ---------- hero: immersive --------------------------------------------- */
+
+canvas.particles{display:none}
+:root[data-hero="immersive"] .hero{
+  position:relative;isolation:isolate;
+  grid-template-columns:1fr;justify-items:center;text-align:center;
+  min-height:min(86vh,820px);align-content:center;
+  padding-top:var(--s5);padding-bottom:var(--s5);
+  /* full-bleed dark background without leaving the .wrap grid */
+  background:var(--band-bg);
+  box-shadow:0 0 0 100vmax var(--band-bg);clip-path:inset(0 -100vmax);
+  margin-top:-65px;padding-top:calc(var(--s5) + 65px);  /* run under the transparent header */
+}
+:root[data-hero="immersive"] .hero canvas.particles{
+  /* sized to the hero, not the viewport: vw includes the scrollbar and would
+     push the page sideways. The dark background is full-bleed via box-shadow. */
+  display:block;position:absolute;z-index:-1;pointer-events:none;
+  left:0;top:0;width:100%;height:100%;
+}
+/* a soft pool of shadow behind the words keeps them legible over the cloud */
+:root[data-hero="immersive"] .hero::before{
+  content:"";position:absolute;z-index:-1;left:50%;top:52%;width:100%;height:78%;
+  transform:translate(-50%,-50%);pointer-events:none;
+  background:radial-gradient(closest-side,rgb(var(--band-rgb) / .92) 35%,rgb(var(--band-rgb) / 0));
+}
+:root[data-hero="immersive"] .hero-copy{max-width:860px}
+:root[data-hero="immersive"] .hero h1{max-width:none;margin:0 auto;font-size:clamp(40px,6.4vw,76px)}
+:root[data-hero="immersive"] .hero .lead{margin-left:auto;margin-right:auto;color:var(--band-mid)}
+:root[data-hero="immersive"] .hero .btn-row{justify-content:center}
+:root[data-hero="immersive"] .hero .stage-wrap{display:none}
+:root[data-hero="immersive"] .hero .pill{background:rgb(var(--band-ink-rgb) / .06);border-color:rgb(var(--band-ink-rgb) / .18);color:var(--band-ink);box-shadow:none}
+:root[data-hero="immersive"] .hero .pill-tag{background:var(--accent-band);color:var(--on-accent)}
+:root[data-hero="immersive"] .clients{border-top:none}
+
+/* ---------- media: tinted trays + a floating UI fragment ---------------- */
+
+:root[data-media="tinted"] .p-media{
+  background:
+    radial-gradient(120% 90% at 0% 0%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%),
+    radial-gradient(90% 80% at 100% 100%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 60%),
+    var(--tray);
+}
+:root[data-media="tinted"] .p-figure .p-media{border-radius:24px}
+.frag{display:none}
+:root[data-media="tinted"] .p-figure{position:relative}
+:root[data-media="tinted"] .frag{
+  display:flex;align-items:center;gap:10px;
+  /* hangs off the tray's lower-left edge, over the document margin, not the data */
+  position:absolute;left:-18px;bottom:26%;z-index:2;
+  padding:10px 16px 10px 10px;border-radius:var(--r-pill);
+  font-size:13px;font-weight:500;color:var(--ink);white-space:nowrap;
+  background:var(--glass-strong);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);
+  box-shadow:var(--glass-hi),0 14px 36px rgb(var(--shadow-rgb) / .16);
+}
+.frag .frag-tag{padding:4px 9px;border-radius:var(--r-pill);background:var(--ink);color:var(--on-ink);font-size:10.5px;font-weight:600;letter-spacing:.1em}
+.frag .frag-k{color:var(--mid);font-weight:400}
+@media (max-width:980px){:root[data-media="tinted"] .frag{left:10px;bottom:auto;top:10px}}
+
+/* ---------- extras ------------------------------------------------------ */
+
+:root:not([data-extras="on"]) .x-extra{display:none !important}
+:root[data-extras="on"] .x-base{display:none !important}
+
+/* "Learn more ›": the third level of action, after the ink and outline pills */
+.more{
+  display:inline-flex;align-items:center;gap:6px;margin-top:var(--s2);
+  font-size:15px;font-weight:500;color:var(--accent-text);
+}
+.more span{transition:transform .18s ease}
+.more:hover span{transform:translateX(3px)}
+
+/* audience routing */
+.route{text-align:center}
+.route h2{margin:0 auto;max-width:none}
+.route .body{margin:var(--s2) auto 0}
+.routes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s2);margin-top:var(--s4);text-align:left}
+.routes a{
+  display:flex;flex-direction:column;gap:6px;padding:var(--s3);
+  border:1px solid var(--line);border-radius:var(--r-md);background:var(--bg);
+  transition:border-color .16s ease,transform .2s ease,box-shadow .2s ease;
+}
+.routes a:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 12px 30px rgb(var(--shadow-rgb) / .08)}
+.routes svg{width:28px;height:28px;margin-bottom:var(--s1);color:var(--accent)}
+.routes b{font-size:17px;font-weight:600;letter-spacing:-0.015em}
+.routes span{font-size:14.5px;color:var(--mid);line-height:1.5;flex:1}
+.routes em{font-style:normal;font-size:13px;color:var(--accent-text);font-weight:500;margin-top:6px}
+@media (max-width:980px){.routes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.routes{grid-template-columns:1fr}}
+
+/* footnotes */
+.stat sup{font-size:.36em;vertical-align:super;margin-left:2px;letter-spacing:0}
+.stat sup a{color:var(--accent-text);font-weight:600}
+/* vertical padding only: .notes shares its element with .wrap, which owns the gutters */
+.notes{padding-top:var(--s4);padding-bottom:var(--s4);border-top:1px solid var(--line)}
+.notes ol{margin:var(--s2) 0 0 18px;max-width:var(--read);color:var(--mid);font-size:13.5px;line-height:1.55}
+.notes li + li{margin-top:8px}
+.notes a{color:var(--accent-text)}
+
+/* sitemap footer */
+.foot-map{display:grid;grid-template-columns:1.2fr repeat(3,minmax(0,1fr));gap:var(--s4);padding-bottom:var(--s3)}
+.foot-map h4{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:var(--s2)}
+.foot-map ul{list-style:none}
+.foot-map li + li{margin-top:9px}
+.foot-map ul a{font-size:14.5px;color:var(--ink);transition:color .15s ease}
+.foot-map ul a:hover{color:var(--accent-text)}
+.foot-map .caption{margin-top:var(--s2);max-width:30ch}
+.foot-legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--s2);padding-top:var(--s3);border-top:1px solid var(--line);font-size:13px;color:var(--mid)}
+@media (max-width:860px){.foot-map{grid-template-columns:repeat(2,minmax(0,1fr))}.foot-map > div:first-child{grid-column:1/-1}}

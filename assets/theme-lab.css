@@ -1,0 +1,43 @@
+/* Theme lab (PROTOTYPE ONLY): a floating switcher on the preview pages.
+   Built from the same tokens, so it restyles itself with every choice. */
+
+.lab{
+  position:fixed;right:16px;bottom:16px;z-index:130;
+  width:min(640px,calc(100vw - 20px));
+  font-size:12.5px;color:var(--ink);
+  background:var(--glass-strong);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:var(--r-lg);
+  box-shadow:var(--glass-hi),0 12px 40px rgb(var(--shadow-rgb) / .2);
+}
+.lab-head{display:flex;align-items:center;gap:10px;padding:10px 10px 10px 16px}
+.lab-title{font-weight:600;letter-spacing:-0.01em}
+.lab-sum{flex:1;color:var(--mid);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lab-toggle,.lab-actions a,.lab-actions button{
+  font:inherit;font-size:12.5px;padding:7px 12px;border-radius:var(--r-pill);cursor:pointer;white-space:nowrap;
+  border:1px solid var(--glass-edge);background:rgb(var(--bg-rgb) / .7);color:var(--ink);
+}
+.lab-body{padding:4px 16px 14px;border-top:1px solid var(--glass-edge)}
+.lab:not(.open) .lab-body{display:none}
+.lab-row{display:grid;grid-template-columns:64px 1fr;align-items:center;gap:10px;padding:10px 0}
+.lab-row + .lab-row{border-top:1px solid rgb(var(--ink-rgb) / .06)}
+.lab-row > span{color:var(--mid);font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+.lab-seg{display:flex;flex-wrap:wrap;gap:4px}
+.lab-seg button{
+  font:inherit;font-size:12.5px;color:var(--mid);
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 11px 6px 8px;border-radius:var(--r-pill);cursor:pointer;
+  border:1px solid transparent;background:rgb(var(--ink-rgb) / .05);
+  transition:background-color .15s ease,color .15s ease,border-color .15s ease;
+}
+.lab-seg button:hover{color:var(--ink)}
+.lab-seg button[aria-pressed="true"]{color:var(--ink);background:var(--bg);border-color:var(--accent);box-shadow:0 1px 2px rgb(var(--shadow-rgb) / .12)}
+.lab-dot{width:14px;height:14px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgb(var(--ink-rgb) / .18)}
+.lab-note{margin:8px 0 0;color:var(--mid);font-size:11.5px;line-height:1.45;max-width:none}
+.lab-actions{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;padding-top:12px;border-top:1px solid rgb(var(--ink-rgb) / .06)}
+
+@media (max-width:640px){
+  .lab{right:10px;bottom:10px}
+  .lab-row{grid-template-columns:1fr;gap:6px}
+  .lab-body{max-height:62vh;overflow:auto}
+}

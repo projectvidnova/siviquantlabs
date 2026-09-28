@@ -178,7 +178,8 @@
      header and sub-nav frost over together. Over the black band the whole
      bar turns smoked glass, judged at the bar's own vertical centre so the
      two rows never disagree. */
-  var darks = document.querySelectorAll('.band--ink');
+  // live collection: a section that turns dark later (e.g. a themed hero) is seen too
+  var darks = document.getElementsByClassName('band--ink');
   var top = document.querySelector('header');
   var bottom = document.querySelector('.subnav') || top;
   if (!top) return;

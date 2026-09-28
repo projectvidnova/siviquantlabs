@@ -85,6 +85,16 @@
   var spin = reduced ? 0 : 0.14;      // radians / second
   var start = null;
 
+  // Colours come from the page's tokens so the drawing follows light and dark
+  // mode. Read once, and again whenever the theme changes (not every frame).
+  var colors = { bg: '#ffffff', ink: '#111111', faint: '#B4B4B4' };
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    var pick = function (name, fallback) { return (cs.getPropertyValue(name) || '').trim() || fallback; };
+    colors = { bg: pick('--bg', '#ffffff'), ink: pick('--ink', '#111111'), faint: pick('--faint', '#B4B4B4') };
+  }
+  readColors();
+
   // fold cycle, in milliseconds
   var FOLD = 2600, HOLD_SHUT = 2200, UNFOLD = 2200, HOLD_FLAT = 1400;
   var CYCLE = FOLD + HOLD_SHUT + UNFOLD + HOLD_FLAT;
@@ -174,7 +184,7 @@
       ctx.moveTo(p[0].x, p[0].y);
       for (var i = 1; i < 4; i++) ctx.lineTo(p[i].x, p[i].y);
       ctx.closePath();
-      ctx.fillStyle = '#ffffff';
+      ctx.fillStyle = colors.bg;
       ctx.fill();
 
       // edges: creases dashed and grey, cut lines solid and black
@@ -188,11 +198,11 @@
         ctx.lineTo(b.x, b.y);
         if (isCrease) {
           ctx.setLineDash([4, 5]);
-          ctx.strokeStyle = '#B4B4B4';
+          ctx.strokeStyle = colors.faint;
           ctx.lineWidth = 1;
         } else {
           ctx.setLineDash([]);
-          ctx.strokeStyle = '#111111';
+          ctx.strokeStyle = colors.ink;
           ctx.lineWidth = 1.35;
         }
         ctx.stroke();
@@ -256,6 +266,16 @@
 
   if (window.ResizeObserver) new ResizeObserver(resize).observe(stage);
   else window.addEventListener('resize', resize);
+
+  // A theme switch (or the device changing mode) re-reads the colours; the
+  // animated path picks them up on its next frame, the still redraws now.
+  window.addEventListener('themechange', function () { readColors(); still(); });
+  if (window.matchMedia) {
+    var scheme = window.matchMedia('(prefers-color-scheme: dark)');
+    var onScheme = function () { readColors(); still(); };
+    if (scheme.addEventListener) scheme.addEventListener('change', onScheme);
+    else if (scheme.addListener) scheme.addListener(onScheme);
+  }
 
   resize();
   if (!reduced) requestAnimationFrame(frame);
