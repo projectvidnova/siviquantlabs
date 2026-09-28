@@ -120,7 +120,7 @@
   function readColors() {
     var cs = getComputedStyle(root);
     var get = function (n, fb) { return (cs.getPropertyValue(n) || '').trim() || fb; };
-    col.edge = get('--accent', '#2B59FF');
+    col.edge = get('--accent', '#FF4F00');
     col.crease = get('--faint', '#ABABAB');
     col.ink = get('--ink-rgb', '20 20 20');
   }

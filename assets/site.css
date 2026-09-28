@@ -11,7 +11,7 @@
 /* ==========================================================================
    Colour system
    Components never use raw colours: they use the semantic tokens below.
-   Live palette: pure neutral, light mode, cobalt accent. The neutral is a
+   Live palette: pure neutral, light mode, signal accent. The neutral is a
    generated OKLCH ramp (--n* as rgb triplets); roles map onto ramp steps;
    *-rgb twins let a token be used at any opacity: rgb(var(--ink-rgb) / .08).
    Every text and control pairing here passes WCAG AA.
@@ -49,9 +49,12 @@
   --logo-filter:none;  --demo-filter:none;
   color-scheme:light;
 
-  /* accent: cobalt, for signals only (focus, current page, links, NEW tag, form focus) */
-  --accent:#2B59FF;  --accent-text:#2447E0;
-  --on-accent:#FFFFFF;  --accent-band:#6E8BFF;
+  /* accent: signal orange, for signals only (focus, current page, links, NEW tag, form focus).
+     #FF4F00 is 3.3:1 on white: marks and fills only, never small text.
+     Accent text uses #C43E00 (5.2:1); text on orange fills is near-black
+     (5.8:1), because white on orange is only 3.3:1. */
+  --accent:#FF4F00;  --accent-text:#C43E00;
+  --on-accent:#0F1013;  --accent-band:#FF4F00;
 }
 
 :root{
