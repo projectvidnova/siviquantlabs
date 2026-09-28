@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../../assets/site.css?v=2026092706">
+<link rel="stylesheet" href="../../assets/site.css?v=2026092901">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -177,6 +177,7 @@
             <img src="../../assets/products/docket.svg" alt="A page is read, three pieces of personal data are flagged, then burned out. The audit log fills in as it happens." width="560" height="420">
           </picture>
         </div>
+    <div class="frag frag--bl" aria-hidden="true"><span class="frag-tag">SSN</span>Burned <span class="frag-k">&middot; 0 bytes left</span></div>
     <figcaption>A page is read, three pieces of personal data are flagged, then burned out. The audit log fills in as it happens.</figcaption>
   </figure>
 </section>
@@ -184,10 +185,10 @@
 <!-- ================= NUMBERS ================= -->
 <section class="wrap" style="padding-bottom:var(--s5)">
   <div class="stats reveal">
-      <div class="stat"><b>99%</b><span>SSN detection accuracy</span></div>
-      <div class="stat"><b>97%</b><span>precision on email addresses</span></div>
-      <div class="stat"><b>88%</b><span>recall on phone numbers</span></div>
-      <div class="stat"><b>0 bytes</b><span>recoverable once a redaction is burned</span></div>
+      <div class="stat"><b>99%<sup><a href="#fn1" id="fnref1" role="doc-noteref" aria-label="Note 1">1</a></sup></b><span>SSN detection accuracy</span></div>
+      <div class="stat"><b>97%<sup><a href="#fn2" id="fnref2" role="doc-noteref" aria-label="Note 2">2</a></sup></b><span>precision on email addresses</span></div>
+      <div class="stat"><b>88%<sup><a href="#fn3" id="fnref3" role="doc-noteref" aria-label="Note 3">3</a></sup></b><span>recall on phone numbers</span></div>
+      <div class="stat"><b>0 bytes<sup><a href="#fn4" id="fnref4" role="doc-noteref" aria-label="Note 4">4</a></sup></b><span>recoverable once a redaction is burned</span></div>
   </div>
 </section>
 
@@ -311,6 +312,17 @@
   </div>
 </section>
 
+
+<aside class="wrap notes" aria-label="Notes">
+  <h2 class="label">Notes</h2>
+  <ol>
+    <li id="fn1">SSN detection accuracy as reported by the product team on their evaluation documents. Results on your documents depend on scan quality and layout. <a href="#fnref1" aria-label="Back to note 1">&#8617;</a></li>
+    <li id="fn2">Precision: of the items flagged as email addresses, the share that really were. Same source and caveat as note 1. <a href="#fnref2" aria-label="Back to note 2">&#8617;</a></li>
+    <li id="fn3">Recall: of the phone numbers present, the share that were flagged. Same source and caveat as note 1. <a href="#fnref3" aria-label="Back to note 3">&#8617;</a></li>
+    <li id="fn4">Burned redaction removes the underlying text and image data from the file instead of drawing a box over it, so nothing under the box can be recovered. <a href="#fnref4" aria-label="Back to note 4">&#8617;</a></li>
+  </ol>
+</aside>
+
 <!-- ================= MORE ================= -->
 <section id="more" class="section soft">
   <div class="wrap">
@@ -351,27 +363,35 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <a class="brand" href="../../" aria-label="Sivi Quant Labs home">
-      <img class="mark" src="../../assets/mark-ink.png" alt="" width="390" height="465">
-      <img class="word" src="../../assets/wordmark-ink.png" alt="Sivi Quant Labs" width="955" height="66">
-    </a>
-    <nav class="foot-links" aria-label="Footer">
-      <a href="../../">Home</a>
-      <a href="../../services/">Services</a>
-      <a href="../../products/">Products</a>
-      <a href="../../#how">How we work</a>
-      <a href="../../careers/">Careers</a>
-      <a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a>
-      <a href="https://www.linkedin.com/company/siviquantlabs" rel="me noopener" target="_blank">LinkedIn</a>
-    </nav>
-    <span class="caption">© 2026 Sivi Quant Labs</span>
+  <div class="wrap">
+    <div class="foot-map">
+      <div>
+        <a class="brand" href="../../" aria-label="Sivi Quant Labs home">
+          <img class="mark" src="../../assets/mark-ink.png" alt="" width="390" height="465">
+          <img class="word" src="../../assets/wordmark-ink.png" alt="Sivi Quant Labs" width="955" height="66">
+        </a>
+        <p class="caption">AI, Visualization, Cloud and Microsoft Dynamics 365. Built for measurable ROI.</p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul><li><a href="../../services/#ai">Artificial Intelligence</a></li><li><a href="../../services/#visualization">Visualization &amp; 3D</a></li><li><a href="../../services/#cloud">Cloud</a></li><li><a href="../../services/#dynamics">Dynamics 365</a></li></ul>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul><li><a href="../../products/docket/">Docket</a></li><li><a href="../../products/folio/">Folio</a></li><li><a href="../../products/sweep/">Sweep</a></li><li><a href="../../products/ireview/">iReview</a></li><li><a href="../../products/sonetx/">SonetX</a></li><li><a href="../../products/marshal/">Marshal</a></li></ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul><li><a href="../../#how">How we work</a></li><li><a href="../../careers/">Careers</a></li><li><a href="mailto:connect@siviquantlabs.com">connect@siviquantlabs.com</a></li><li><a href="https://www.linkedin.com/company/siviquantlabs">LinkedIn</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-legal"><span>&copy; 2026 Sivi Quant Labs</span><span>Remote-first</span></div>
   </div>
 </footer>
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="../../assets/site.js?v=2026092706" defer></script>
-<script src="../../assets/forms.js?v=2026092706" defer></script>
+<script src="../../assets/site.js?v=2026092901" defer></script>
+<script src="../../assets/forms.js?v=2026092901" defer></script>
 </body>
 </html>
