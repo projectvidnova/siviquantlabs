@@ -17,37 +17,57 @@
 
 /* ---------- hero: immersive --------------------------------------------- */
 
+/* The folding box as a point cloud behind a centred headline. It sits on the
+   page's own background in every mode; only the dots change colour. */
 canvas.particles{display:none}
 :root[data-hero="immersive"] .hero{
   position:relative;isolation:isolate;
   grid-template-columns:1fr;justify-items:center;text-align:center;
-  min-height:min(86vh,820px);align-content:center;
-  padding-top:var(--s5);padding-bottom:var(--s5);
-  /* full-bleed dark background without leaving the .wrap grid */
-  background:var(--band-bg);
-  box-shadow:0 0 0 100vmax var(--band-bg);clip-path:inset(0 -100vmax);
-  margin-top:-65px;padding-top:calc(var(--s5) + 65px);  /* run under the transparent header */
+  min-height:min(88vh,860px);align-content:center;
+  margin-top:-65px;padding-top:calc(var(--s5) + 65px);padding-bottom:var(--s5);
 }
+/* sized to the hero, not the viewport: vw includes the scrollbar */
 :root[data-hero="immersive"] .hero canvas.particles{
-  /* sized to the hero, not the viewport: vw includes the scrollbar and would
-     push the page sideways. The dark background is full-bleed via box-shadow. */
-  display:block;position:absolute;z-index:-1;pointer-events:none;
+  /* -2: under the page-colour pool (-1), which sits under the words */
+  display:block;position:absolute;z-index:-2;pointer-events:none;
   left:0;top:0;width:100%;height:100%;
 }
-/* a soft pool of shadow behind the words keeps them legible over the cloud */
+/* a soft pool of page colour behind the words keeps them clear of the dots */
 :root[data-hero="immersive"] .hero::before{
-  content:"";position:absolute;z-index:-1;left:50%;top:52%;width:100%;height:78%;
+  content:"";position:absolute;z-index:-1;left:50%;top:54%;width:100%;height:62%;
   transform:translate(-50%,-50%);pointer-events:none;
-  background:radial-gradient(closest-side,rgb(var(--band-rgb) / .92) 35%,rgb(var(--band-rgb) / 0));
+  background:radial-gradient(closest-side,rgb(var(--bg-rgb) / .9) 40%,rgb(var(--bg-rgb) / 0));
 }
 :root[data-hero="immersive"] .hero-copy{max-width:860px}
 :root[data-hero="immersive"] .hero h1{max-width:none;margin:0 auto;font-size:clamp(40px,6.4vw,76px)}
-:root[data-hero="immersive"] .hero .lead{margin-left:auto;margin-right:auto;color:var(--band-mid)}
+:root[data-hero="immersive"] .hero .lead{margin-left:auto;margin-right:auto}
 :root[data-hero="immersive"] .hero .btn-row{justify-content:center}
 :root[data-hero="immersive"] .hero .stage-wrap{display:none}
-:root[data-hero="immersive"] .hero .pill{background:rgb(var(--band-ink-rgb) / .06);border-color:rgb(var(--band-ink-rgb) / .18);color:var(--band-ink);box-shadow:none}
-:root[data-hero="immersive"] .hero .pill-tag{background:var(--accent-band);color:var(--on-accent)}
-:root[data-hero="immersive"] .clients{border-top:none}
+/* the box can be turned: drag anywhere on the hero outside links and buttons */
+:root[data-hero="immersive"] .hero{cursor:grab;touch-action:pan-y}
+:root[data-hero="immersive"] .hero.dragging{cursor:grabbing;user-select:none;-webkit-user-select:none}
+:root[data-hero="immersive"] .hero a,:root[data-hero="immersive"] .hero button{cursor:pointer}
+/* the canvas is behind the words, so keyboard focus is shown on the hint,
+   which then names the keys */
+:root[data-hero="immersive"] .hero:has(canvas.particles:focus-visible) .hero-hint{
+  display:inline-block;color:var(--ink);padding:4px 12px;border-radius:var(--r-pill);
+  outline:2px solid var(--accent);outline-offset:2px;
+}
+:root[data-hero="immersive"] .hero:has(canvas.particles:focus-visible) .hero-hint::after{content:" Arrow keys turn it too."}
+canvas.particles:focus{outline:none}
+.hero-hint{display:none}
+:root[data-hero="immersive"] .hero-hint{display:block;margin:var(--s3) auto 0;font-size:13.5px;color:var(--mid)}
+
+/* ---------- hero: split ------------------------------------------------ */
+
+/* The standard layout, text beside the 3D stage, with the point-cloud box
+   in the stage instead of the line drawing. Caption and drag as before. */
+:root[data-hero="split"] .stage canvas:not(.particles){display:none}
+:root[data-hero="split"] .stage canvas.particles{
+  display:block;position:absolute;inset:0;width:100%;height:100%;
+  cursor:grab;touch-action:pan-y;
+}
+:root[data-hero="split"] .hero.dragging .stage canvas.particles{cursor:grabbing}
 
 /* ---------- media: tinted trays + a floating UI fragment ---------------- */
 

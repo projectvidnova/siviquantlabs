@@ -42,8 +42,8 @@
       // base, every edge is a crease
       { p: [[-h,-h,0], [h,-h,0], [h,h,0], [-h,h,0]], crease: [0,1,2,3] },
 
-      // +Y wall (hinge on edge 0)
-      { p: [[-h,h,0], [h,h,0], [h, h+s*c, s*sn], [-h, h+s*c, s*sn]], crease: [0] },
+      // +Y wall (hinge on edge 0; its far edge 2 is the lid's hinge, so a crease too)
+      { p: [[-h,h,0], [h,h,0], [h, h+s*c, s*sn], [-h, h+s*c, s*sn]], crease: [0, 2] },
       // -Y wall
       { p: [[-h,-h,0], [h,-h,0], [h, -h-s*c, s*sn], [-h, -h-s*c, s*sn]], crease: [0] },
       // +X wall

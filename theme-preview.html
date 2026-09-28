@@ -25,9 +25,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <script>/* theme lab: apply the saved theme before first paint */(function(){var d=document.documentElement,t={};try{t=JSON.parse(localStorage.getItem('sql-theme-lab'))||{}}catch(e){}var q=function(s){return window.matchMedia&&matchMedia(s).matches},m=t.mode||'system';if(m==='system'){m=q('(prefers-color-scheme: dark)')?'dark':(q('(prefers-contrast: more)')?'contrast':'light')}d.setAttribute('data-accent',t.accent||'signal');d.setAttribute('data-neutral',t.neutral||'graphite');d.setAttribute('data-theme',m);d.setAttribute('data-tone',/^(dim|dark|midnight)$/.test(m)?'dark':'light');var L={type:'refined',hero:'standard',media:'tinted',extras:'on'};for(var k in L)d.setAttribute('data-'+k,t[k]||L[k])})();</script>
-<link rel="stylesheet" href="assets/site-next.css?v=lab9">
-<link rel="stylesheet" href="assets/theme-lab.css?v=lab9">
-<link rel="stylesheet" href="assets/proto-features.css?v=lab9">
+<link rel="stylesheet" href="assets/site-next.css?v=lab16">
+<link rel="stylesheet" href="assets/theme-lab.css?v=lab16">
+<link rel="stylesheet" href="assets/proto-features.css?v=lab16">
 
 <script type="application/ld+json">
 {
@@ -369,7 +369,7 @@
 
 <!-- ================= HERO ================= -->
 <section class="wrap hero">
-  <canvas class="particles" aria-hidden="true"></canvas>
+  <canvas class="particles"></canvas>
   <div class="hero-copy">
     <a class="pill" href="products/"><span class="pill-tag">New</span>Six products, from secure documents to AI code review <span class="ar" aria-hidden="true">&rarr;</span></a>
     <h1>AI, Visualization, and Cloud. Built for measurable ROI.</h1>
@@ -378,6 +378,7 @@
       <a class="btn btn-solid" href="mailto:connect@siviquantlabs.com?subject=Talk%20to%20Sivi%20Quant%20Labs" data-form="general" data-subject="Website enquiry">Talk to us</a>
       <a class="btn btn-ghost" href="#what">What we do</a>
     </div>
+    <p class="hero-hint">Drag the box to turn it.</p>
   </div>
 
   <div class="stage-wrap">
@@ -807,10 +808,10 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/fold.js?v=lab9" defer></script>
+<script src="assets/fold.js?v=lab16" defer></script>
 <script src="assets/site.js?v=2026092706" defer></script>
 <script src="assets/forms.js?v=2026092706" defer></script>
-<script src="assets/particles.js?v=lab9" defer></script>
+<script src="assets/particles.js?v=lab16" defer></script>
 <div class="lab" role="region" aria-label="Theme lab">
   <div class="lab-head">
     <span class="lab-title">Theme lab</span>
@@ -843,8 +844,9 @@
       <button type="button" data-set="type:refined">Refined</button>
     </div></div>
     <div class="lab-row"><span>Hero</span><div class="lab-seg">
-      <button type="button" data-set="hero:standard">Standard</button>
-      <button type="button" data-set="hero:immersive">Immersive</button>
+      <button type="button" data-set="hero:standard">Line box</button>
+      <button type="button" data-set="hero:split">Points beside text</button>
+      <button type="button" data-set="hero:immersive">Points behind text</button>
     </div></div>
     <div class="lab-row"><span>Media</span><div class="lab-seg">
       <button type="button" data-set="media:grey">Grey trays</button>
@@ -862,6 +864,6 @@
     </div>
   </div>
 </div>
-<script src="assets/theme-lab.js?v=lab9" defer></script>
+<script src="assets/theme-lab.js?v=lab16" defer></script>
 </body>
 </html>

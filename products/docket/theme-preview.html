@@ -26,9 +26,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <script>/* theme lab: apply the saved theme before first paint */(function(){var d=document.documentElement,t={};try{t=JSON.parse(localStorage.getItem('sql-theme-lab'))||{}}catch(e){}var q=function(s){return window.matchMedia&&matchMedia(s).matches},m=t.mode||'system';if(m==='system'){m=q('(prefers-color-scheme: dark)')?'dark':(q('(prefers-contrast: more)')?'contrast':'light')}d.setAttribute('data-accent',t.accent||'signal');d.setAttribute('data-neutral',t.neutral||'graphite');d.setAttribute('data-theme',m);d.setAttribute('data-tone',/^(dim|dark|midnight)$/.test(m)?'dark':'light');var L={type:'refined',hero:'standard',media:'tinted',extras:'on'};for(var k in L)d.setAttribute('data-'+k,t[k]||L[k])})();</script>
-<link rel="stylesheet" href="../../assets/site-next.css?v=lab9">
-<link rel="stylesheet" href="../../assets/theme-lab.css?v=lab9">
-<link rel="stylesheet" href="../../assets/proto-features.css?v=lab9">
+<link rel="stylesheet" href="../../assets/site-next.css?v=lab16">
+<link rel="stylesheet" href="../../assets/theme-lab.css?v=lab16">
+<link rel="stylesheet" href="../../assets/proto-features.css?v=lab16">
 <!-- Reveal animations are gated on this class, so the page stays fully
      visible if JavaScript never runs. -->
 <script>document.documentElement.className+=' js';</script>
@@ -435,8 +435,9 @@
       <button type="button" data-set="type:refined">Refined</button>
     </div></div>
     <div class="lab-row"><span>Hero</span><div class="lab-seg">
-      <button type="button" data-set="hero:standard">Standard</button>
-      <button type="button" data-set="hero:immersive">Immersive</button>
+      <button type="button" data-set="hero:standard">Line box</button>
+      <button type="button" data-set="hero:split">Points beside text</button>
+      <button type="button" data-set="hero:immersive">Points behind text</button>
     </div></div>
     <div class="lab-row"><span>Media</span><div class="lab-seg">
       <button type="button" data-set="media:grey">Grey trays</button>
@@ -454,6 +455,6 @@
     </div>
   </div>
 </div>
-<script src="../../assets/theme-lab.js?v=lab9" defer></script>
+<script src="../../assets/theme-lab.js?v=lab16" defer></script>
 </body>
 </html>

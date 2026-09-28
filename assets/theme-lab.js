@@ -46,10 +46,6 @@
     root.setAttribute('data-theme', theme);
     root.setAttribute('data-tone', DARK_MODES[theme] ? 'dark' : 'light');
     LAYOUT.forEach(function (k) { root.setAttribute('data-' + k, state[k]); });
-    // the immersive hero is a dark band, so the glass header adapts over it
-    Array.prototype.forEach.call(document.querySelectorAll('.hero'), function (h) {
-      h.classList.toggle('band--ink', state.hero === 'immersive');
-    });
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* storage blocked */ }
 
     Array.prototype.forEach.call(document.querySelectorAll('.lab [data-set]'), function (b) {
